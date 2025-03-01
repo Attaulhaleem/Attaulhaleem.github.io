@@ -1,7 +1,14 @@
+/* .work-sans-bold {
+    font-family: "Work Sans", serif;
+    font-optical-sizing: auto;
+    font-weight: 1;
+    font-style: normal;
+} */
+
 /* General Styles */
 body {
     margin: 0;
-    font-family: Arial, sans-serif;
+    font-family: "Work Sans", serif;
     background-color: #111;
     color: white;
     text-align: center;
