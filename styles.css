@@ -149,3 +149,21 @@ footer {
     border-radius: 10px;
     box-shadow: 0 0 10px rgba(255, 255, 255, 0.1);
 }
+
+.back-to-top {
+    position: absolute;
+    right: 10%; /* Moves it 10% from the right */
+    top: 50%; /* Start at 50% height */
+    transform: translateY(-50%); /* Adjust to be perfectly centered */
+    text-decoration: none;
+    color: white;
+    transition: transform 0.3s ease;
+}
+
+.back-to-top:hover {
+    text-decoration: underline;
+}
+
+html {
+    scroll-behavior: smooth;
+}
