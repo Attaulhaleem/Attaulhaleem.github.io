@@ -6,30 +6,49 @@
 } */
 
 /* General Styles */
+/* Add space at the top so content isn't hidden under fixed nav */
 body {
     margin: 0;
     font-family: "Work Sans", serif;
     background-color: #111;
     color: white;
     text-align: center;
+    padding-top: 60px; /* Adjust based on navbar height */
 }
 
 /* Navigation Bar */
 nav {
     background-color: #008c8c;
-    padding: 15px;
-    padding-left: 100px;
-    padding-right: 100px;
+    padding: 15px 0;  /* Reduce excessive padding */
     display: flex;
     justify-content: space-between;
     align-items: center;
     color: white;
+    position: fixed;
+    top: 0;
+    left: 0;
+    width: 100%;
+    max-width: 100%;  /* Set a max width */
+    margin: 0 auto;  /* Center it */
+    z-index: 1000;
+    height: 60px; /* Ensure enough height for visibility */
 }
+
+nav > div {
+    width: 90%;  /* Ensures content stays within bounds */
+    max-width: 1200px;  /* Prevents it from stretching too much */
+    margin: 0 auto;  /* Centers the content */
+    display: flex;
+    justify-content: space-between;
+    align-items: center;
+}
+
 nav ul {
-    padding: 0px;
+    padding: 0;
     list-style: none;
     display: flex;
     gap: 20px;
+    margin: 0;
 }
 nav ul li {
     display: inline;
@@ -41,6 +60,8 @@ nav ul li a {
     color: white;
     text-decoration: none;
     font-size: 18px;
+    padding: 10px 15px; /* Added padding for better clickability */
+    display: inline-block;
 }
 
 /* Hero Section */
