@@ -13,6 +13,10 @@ body {
     padding-bottom: 80px; /* Extra space to prevent content from being hidden behind the footer */
 }
 
+section {
+    scroll-margin-top: 80px; /* Adjust to match your nav height */
+}
+
 /* Navigation Bar */
 nav {
     background-color: #008c8c;
