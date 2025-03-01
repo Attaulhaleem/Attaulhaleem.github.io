@@ -51,10 +51,7 @@ nav ul {
     margin: 0;
 }
 nav ul li {
-    display: inline;
-}
-nav ul li:hover {
-    text-decoration: underline;
+    display: inline-block;
 }
 nav ul li a {
     color: white;
@@ -62,6 +59,9 @@ nav ul li a {
     font-size: 18px;
     padding: 10px 15px; /* Added padding for better clickability */
     display: inline-block;
+}
+nav ul li a:hover {
+    text-decoration: underline;
 }
 
 /* Hero Section */
