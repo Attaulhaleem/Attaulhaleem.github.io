@@ -9,7 +9,8 @@ body {
     background-color: #111;
     color: white;
     text-align: center;
-    padding-top: 60px;
+    padding-top: 80px;  /* Extra space to prevent content from being hidden behind the nav */
+    padding-bottom: 80px; /* Extra space to prevent content from being hidden behind the footer */
 }
 
 /* Navigation Bar */
@@ -153,10 +154,16 @@ nav ul li a:hover {
 footer {
     background-color: #008c8c;
     padding: 10px;
-    position: relative;
+    position: fixed;
     bottom: 0;
+    left: 0;
     width: 100%;
+    z-index: 1000;
     color: white;
+    display: flex;
+    align-items: center;
+    justify-content: center;
+    height: 50px;
 }
 
 .back-to-top {
