@@ -1,25 +1,21 @@
-/* .work-sans-bold {
-    font-family: "Work Sans", serif;
-    font-optical-sizing: auto;
-    font-weight: 1;
-    font-style: normal;
-} */
-
 /* General Styles */
-/* Add space at the top so content isn't hidden under fixed nav */
+html {
+    scroll-behavior: smooth;
+}
+
 body {
     margin: 0;
     font-family: "Work Sans", serif;
     background-color: #111;
     color: white;
     text-align: center;
-    padding-top: 60px; /* Adjust based on navbar height */
+    padding-top: 60px;
 }
 
 /* Navigation Bar */
 nav {
     background-color: #008c8c;
-    padding: 15px 0;  /* Reduce excessive padding */
+    padding: 15px 0;
     display: flex;
     justify-content: space-between;
     align-items: center;
@@ -28,16 +24,16 @@ nav {
     top: 0;
     left: 0;
     width: 100%;
-    max-width: 100%;  /* Set a max width */
-    margin: 0 auto;  /* Center it */
+    max-width: 100%;
+    margin: 0 auto;
     z-index: 1000;
-    height: 60px; /* Ensure enough height for visibility */
+    height: 60px;
 }
 
-nav > div {
-    width: 90%;  /* Ensures content stays within bounds */
-    max-width: 1200px;  /* Prevents it from stretching too much */
-    margin: 0 auto;  /* Centers the content */
+nav>div {
+    width: 90%;
+    max-width: 1200px;
+    margin: 0 auto;
     display: flex;
     justify-content: space-between;
     align-items: center;
@@ -50,16 +46,19 @@ nav ul {
     gap: 20px;
     margin: 0;
 }
+
 nav ul li {
     display: inline-block;
 }
+
 nav ul li a {
     color: white;
     text-decoration: none;
     font-size: 18px;
-    padding: 10px 15px; /* Added padding for better clickability */
+    padding: 10px 15px;
     display: inline-block;
 }
+
 nav ul li a:hover {
     text-decoration: underline;
 }
@@ -75,6 +74,7 @@ nav ul li a:hover {
     padding: 20px;
     background-color: #222;
 }
+
 .profile-pic {
     width: 200px;
     height: 200px;
@@ -83,16 +83,19 @@ nav ul li a:hover {
     object-fit: cover;
     margin-bottom: 20px;
     align-items: flex-start;
-    transition: filter 0.3s ease; /* Smooth transition */
+    transition: filter 0.3s ease;
 }
+
 .profile-pic:hover {
-    filter: grayscale(100%); /* Converts image to grayscale */
+    filter: grayscale(100%);
 }
+
 .hero-content h2 {
     font-size: 28px;
     margin-bottom: 10px;
     align-items: flex-end;
 }
+
 .hero-content p {
     font-size: 16px;
     max-width: 600px;
@@ -105,16 +108,45 @@ nav ul li a:hover {
     margin-top: 20px;
     align-items: flex-end;
 }
+
 .social-links a {
     margin: 0 10px;
 }
+
 .social-links img {
     width: 35px;
     height: 35px;
     transition: transform 0.3s;
 }
+
 .social-links img:hover {
     transform: scale(1.2);
+}
+
+/* Resume Section */
+.resume {
+    text-align: center;
+    padding: 50px 20px;
+    background-color: #222;
+}
+
+.resume h2 {
+    font-size: 28px;
+    margin-bottom: 20px;
+}
+
+.resume p {
+    font-size: 16px;
+    margin-bottom: 20px;
+}
+
+.resume-container {
+    max-width: 800px;
+    margin: 0 auto;
+    background-color: white;
+    padding: 10px;
+    border-radius: 10px;
+    box-shadow: 0 0 10px rgba(255, 255, 255, 0.1);
 }
 
 /* Footer */
@@ -127,34 +159,11 @@ footer {
     color: white;
 }
 
-/* Resume Section */
-.resume {
-    text-align: center;
-    padding: 50px 20px;
-    background-color: #222;
-}
-.resume h2 {
-    font-size: 28px;
-    margin-bottom: 20px;
-}
-.resume p {
-    font-size: 16px;
-    margin-bottom: 20px;
-}
-.resume-container {
-    max-width: 800px;
-    margin: 0 auto;
-    background-color: white;
-    padding: 10px;
-    border-radius: 10px;
-    box-shadow: 0 0 10px rgba(255, 255, 255, 0.1);
-}
-
 .back-to-top {
     position: absolute;
-    right: 10%; /* Moves it 10% from the right */
-    top: 50%; /* Start at 50% height */
-    transform: translateY(-50%); /* Adjust to be perfectly centered */
+    right: 10%;
+    top: 50%;
+    transform: translateY(-50%);
     text-decoration: none;
     color: white;
     transition: transform 0.3s ease;
@@ -162,8 +171,4 @@ footer {
 
 .back-to-top:hover {
     text-decoration: underline;
-}
-
-html {
-    scroll-behavior: smooth;
 }
