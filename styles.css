@@ -186,6 +186,80 @@ nav ul li a:hover {
     /* Adds spacing between button and iframe */
 }
 
+/* Projects Section */
+.projects {
+    text-align: center;
+    padding: 50px 20px;
+    background-color: #222;
+}
+
+.projects h2 {
+    font-size: 28px;
+    margin-bottom: 20px;
+}
+
+.projects-container {
+    display: flex;
+    flex-wrap: wrap;
+    justify-content: center;
+    gap: 20px;
+    align-items: stretch; /* Ensures all cards are the same height */
+}
+
+.project-card {
+    background-color: #333;
+    border-radius: 10px;
+    padding: 20px;
+    width: 300px;
+    box-shadow: 0 0 10px rgba(255, 255, 255, 0.1);
+    transition: transform 0.3s ease-in-out;
+    display: flex;
+    flex-direction: column; /* Ensures a vertical layout */
+    height: 420px; /* Set a fixed height for all cards */
+}
+
+.project-card img {
+    width: 100%;
+    height: 180px;
+    border-radius: 10px;
+    object-fit: contain; /* Ensures the whole image appears without distortion */
+    background: transparent; /* Removes any forced background color */
+}
+
+.project-card h3 {
+    margin: 15px 0 10px;
+    font-size: 20px;
+    min-height: 50px; /* Ensures titles align across all cards */
+}
+
+.project-card p {
+    flex-grow: 1; /* Pushes content down while keeping buttons aligned */
+    font-size: 14px;
+    line-height: 1.4;
+    color: #ddd;
+    min-height: 60px; /* Ensures text starts at the same position */
+}
+
+.project-link {
+    display: inline-block;
+    padding: 10px 15px;
+    background-color: #008c8c;
+    color: white;
+    text-decoration: none;
+    border-radius: 5px;
+    font-weight: bold;
+    transition: background 0.3s ease-in-out;
+    margin-top: auto; /* Ensures button stays at the bottom */
+}
+
+.project-card:hover {
+    transform: scale(1.05);
+}
+
+.project-link:hover {
+    background-color: #008c8c66;
+}
+
 /* Footer */
 footer {
     background-color: #008c8c;
