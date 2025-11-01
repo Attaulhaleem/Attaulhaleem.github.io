@@ -6,17 +6,17 @@ html {
 body {
     margin: 0;
     font-family: "Work Sans", serif;
-    background-color: #222;
+    background-color: #111;
     color: white;
     text-align: center;
-    padding-top: 120px;
+    padding-top: 80px;
     /* Extra space to prevent content from being hidden behind the nav */
-    padding-bottom: 120px;
+    padding-bottom: 80px;
     /* Extra space to prevent content from being hidden behind the footer */
 }
 
 section {
-    scroll-margin-top: 60px;
+    scroll-margin-top: 80px;
     /* Adjust to match your nav height */
 }
 
