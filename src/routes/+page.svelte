@@ -4,7 +4,7 @@
 	import ProjectCard from '$lib/components/features/projects/ProjectCard.svelte';
 	import Section from '$lib/components/layout/Section.svelte';
 	import Button from '$lib/components/ui/Button.svelte';
-	import { site } from '$lib/config/site';
+	import { heroProfilePhoto, site } from '$lib/config/site';
 	import { getFeaturedPostsMeta } from '$lib/content/blog';
 	import { getFeaturedProjects } from '$lib/content/projects';
 
@@ -19,8 +19,10 @@
 
 <div class="section-inner flex flex-col">
 	<Hero
-		title="Building thoughtful software"
-		subtitle="Projects, writing, and background—structured for clarity and easy updates."
+		title="Hi, I'm Atta 👋"
+		subtitle="Engineer with an obsession for electronics and <code/>"
+		profileSrc={heroProfilePhoto.src}
+		profileAlt={heroProfilePhoto.alt}
 	>
 		{#snippet actions()}
 			<Button href="/projects">View projects</Button>

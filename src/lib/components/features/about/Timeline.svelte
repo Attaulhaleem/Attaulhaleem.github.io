@@ -10,7 +10,7 @@
 </script>
 
 <ol class="relative list-none pl-0">
-	{#each entries as entry, i (entry.id)}
-		<TimelineItem {entry} isLast={i === entries.length - 1} />
+	{#each entries as entry (entry.id)}
+		<TimelineItem {entry} />
 	{/each}
 </ol>

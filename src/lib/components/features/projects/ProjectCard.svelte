@@ -1,7 +1,8 @@
 <script lang="ts">
 	import { resolve } from '$app/paths';
-	import { ArrowUpRight } from 'lucide-svelte';
+	import arrowUpRight from '$lib/assets/arrow_up_right.svg';
 	import GlowingCard from '$lib/components/ui/GlowingCard.svelte';
+	import Icon from '$lib/components/ui/Icon.svelte';
 	import OutboundLink from '$lib/components/ui/OutboundLink.svelte';
 	import Tag from '$lib/components/ui/Tag.svelte';
 	import type { Project } from '$lib/types/content';
@@ -43,7 +44,7 @@
 						class="inline-flex items-center gap-1 text-sm font-medium text-accent-teal no-underline hover:text-main"
 					>
 						{link.label}
-						<ArrowUpRight class="h-4 w-4" aria-hidden="true" />
+						<Icon src={arrowUpRight} class="h-4 w-4" />
 					</OutboundLink>
 				{:else}
 					<a

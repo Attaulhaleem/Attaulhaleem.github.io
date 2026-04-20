@@ -11,8 +11,8 @@ export type NavItem = {
 export type SocialLink = {
 	label: string;
 	href: string;
-	/** lucide-svelte icon key (brand icons use generic `link`) */
-	icon: 'link' | 'mail' | 'external';
+	/** Vite-resolved URL of an SVG from `$lib/assets` (e.g. `github_logo.svg`) */
+	iconSrc: string;
 };
 
 export type TimelineEntry = {

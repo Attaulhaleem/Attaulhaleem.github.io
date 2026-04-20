@@ -13,21 +13,6 @@ const posts: BlogPost[] = [
 			<p>Code samples can use monospace styling from your design system:</p>
 			<pre><code>npm run dev</code></pre>
 		`.trim()
-	},
-	{
-		slug: 'on-structure',
-		title: 'On scalable site structure',
-		date: '2026-02-01',
-		readingMinutes: 5,
-		summary: 'Why separating tokens, components, and content data pays off.',
-		html: `
-			<p>Keep routes thin, put copy and lists in <code>$lib/content</code>, and validate slugs in <code>load</code>.</p>
-			<ul>
-				<li>Semantic tokens in CSS / Tailwind theme</li>
-				<li>Reusable primitives in <code>components/ui</code></li>
-				<li>Feature blocks in <code>components/features</code></li>
-			</ul>
-		`.trim()
 	}
 ];
 

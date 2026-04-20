@@ -2,23 +2,99 @@ import type { Project } from '$lib/types/content';
 
 const projects: Project[] = [
 	{
-		slug: 'sample-sveltekit-app',
-		title: 'Sample SvelteKit app',
-		summary: 'A minimal scaffold you can extend with real project details and imagery.',
-		imageAlt: 'Abstract project preview',
-		tags: ['SvelteKit', 'TypeScript', 'Tailwind'],
+		slug: 'flash',
+		title: 'Flash',
+		summary: 'Proactive traffic management using real-time traffic and event data.',
+		imageAlt: 'Flash',
+		tags: ['Svelte', 'TypeScript', 'Tailwind CSS'],
 		links: [
-			{ label: 'Source', href: 'https://github.com', external: true },
-			{ label: 'Demo', href: 'https://example.com', external: true }
+			{
+				label: 'Source',
+				href: 'https://github.com/anirudhprabhakaran3/llm-traffic-management',
+				external: true
+			}
 		]
 	},
 	{
-		slug: 'another-project',
-		title: 'Another project',
-		summary: 'Short description of problem, approach, and outcome.',
-		imageAlt: 'Project diagram placeholder',
-		tags: ['API', 'Performance'],
-		links: [{ label: 'Write-up', href: '/blog/hello-world', external: false }]
+		slug: 'oblivision',
+		title: 'Oblivision',
+		summary: 'A 2D puzzle platformer made in Godot for a game jam.',
+		imageAlt: 'Oblivision',
+		tags: ['Godot'],
+		links: [
+			{
+				label: 'Demo',
+				href: 'https://dustypizza.itch.io/oblivision',
+				external: true
+			},
+			{
+				label: 'Source',
+				href: 'https://github.com/Attaulhaleem/oblivision',
+				external: true
+			}
+		]
+	},
+	{
+		slug: 'grounded',
+		title: 'Grounded',
+		summary: 'A casual side-scroller with fun mini-games.',
+		imageAlt: 'Grounded',
+		tags: ['Godot'],
+		links: [
+			{
+				label: 'Demo',
+				href: 'https://dustypizza.itch.io/grounded',
+				external: true
+			},
+			{
+				label: 'Source',
+				href: 'https://github.com/Attaulhaleem/grounded',
+				external: true
+			}
+		]
+	},
+	{
+		slug: 'omnidirectional-conveyor',
+		title: 'Omnidirectional Conveyor',
+		summary: 'A modular omnidirectional conveyor for material flow.',
+		imageAlt: 'Omnidirectional Conveyor',
+		tags: ['Python', 'Raspberry Pi', 'Computer Vision'],
+		links: [
+			{
+				label: 'Source',
+				href: 'https://github.com/Attaulhaleem/omnidirectional-conveyor',
+				external: true
+			}
+		]
+	},
+	{
+		slug: 'smart-dumbbell',
+		title: 'Smart Dumbbell',
+		summary:
+			'Real-time workout classification using Arduino Nano 33 BLE Sense, Edge Impulse, and Web Bluetooth.',
+		imageAlt: 'Smart Dumbbell',
+		tags: ['C++', 'Edge Impulse'],
+		links: [
+			{ label: 'Source', href: 'https://github.com/Attaulhaleem/smart-dumbbell', external: true }
+		]
+	},
+	{
+		slug: 'arduino-maze',
+		title: 'Maze Solving Robot',
+		summary: 'Mapping and solving of closed mazes using the Arduino platform.',
+		imageAlt: 'Maze Solving Robot',
+		tags: ['Arduino'],
+		links: [
+			{ label: 'Source', href: 'https://github.com/Attaulhaleem/arduino-maze', external: true }
+		]
+	},
+	{
+		slug: 'sfml-chess',
+		title: 'Chess Game',
+		summary: 'A vanilla Chess game created using C++ and SFML.',
+		imageAlt: 'Chess Game',
+		tags: ['C++', 'SFML'],
+		links: [{ label: 'Source', href: 'https://github.com/Attaulhaleem/sfml-chess', external: true }]
 	}
 ];
 

@@ -90,4 +90,4 @@ Break down the UI into highly reusable Svelte components.
 
 - **Framework:** SvelteKit (App routing, SSR/SSG capabilities).
 - **Styling:** Tailwind CSS (Perfect for mapping the definitive color palette to custom variables in `tailwind.config.js`).
-- **Icons:** `lucide-svelte` (Clean, minimal SVG icons for GitHub, External Links, Socials).
+- **Icons:** Local SVG assets in `src/lib/assets/`, rendered through a small `Icon.svelte` wrapper that uses CSS `mask-image` so icons inherit the surrounding `color` (enabling hover states like `hover:text-accent-teal`).

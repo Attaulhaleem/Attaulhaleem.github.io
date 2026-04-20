@@ -3,10 +3,9 @@
 
 	type Props = {
 		entry: TimelineEntry;
-		isLast?: boolean;
 	};
 
-	let { entry, isLast = false }: Props = $props();
+	let { entry }: Props = $props();
 </script>
 
 <li class="relative flex gap-6 pb-10 last:pb-0">
@@ -15,9 +14,7 @@
 			class="z-10 mt-1.5 h-3 w-3 shrink-0 rounded-full border-2 border-accent-teal bg-app shadow-[0_0_10px_rgba(45,212,191,0.5)]"
 			aria-hidden="true"
 		></span>
-		{#if !isLast}
-			<span class="w-px grow bg-subtle" aria-hidden="true"></span>
-		{/if}
+		<span class="w-px grow bg-subtle" aria-hidden="true"></span>
 	</div>
 	<div class="min-w-0 flex-1">
 		<p class="font-mono text-xs tracking-wide text-accent-teal uppercase">
