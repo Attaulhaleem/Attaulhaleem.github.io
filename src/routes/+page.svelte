@@ -26,7 +26,7 @@
 	>
 		{#snippet actions()}
 			<Button href="/projects">View projects</Button>
-			<Button variant="ghost" href="/blog">Read the blog</Button>
+			<Button href="/blog">Read the blog</Button>
 		{/snippet}
 	</Hero>
 </div>

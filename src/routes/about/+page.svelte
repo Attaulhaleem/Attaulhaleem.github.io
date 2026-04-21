@@ -14,7 +14,7 @@
 </svelte:head>
 
 <Section title={aboutContent.title} id="about-intro">
-	<div class="flex max-w-3xl flex-col gap-4 text-main/90">
+	<div class="flex flex-col gap-4 text-main/90">
 		{#each aboutContent.paragraphs as paragraph, i (i)}
 			<p>{paragraph}</p>
 		{/each}
