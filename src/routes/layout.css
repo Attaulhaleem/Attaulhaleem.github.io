@@ -48,7 +48,7 @@
 	}
 
 	.app-main {
-		@apply flex flex-1 flex-col;
+		@apply flex flex-1 flex-col pb-28;
 	}
 
 	/* Constrain readable width; gap between major sections via Section */
