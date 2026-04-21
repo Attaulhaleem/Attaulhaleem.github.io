@@ -1,5 +1,5 @@
-/* Google Fonts first (DESIGN.md: Inter + JetBrains Mono) */
-@import url('https://fonts.googleapis.com/css2?family=Inter:wght@400;500;700;800&family=JetBrains+Mono:wght@400&display=swap');
+/* Google Fonts first (Work Sans + Space Mono) */
+@import url('https://fonts.googleapis.com/css2?family=Work+Sans:wght@400;500;700;800&family=Space+Mono:wght@400;700&display=swap');
 
 @import 'tailwindcss';
 @plugin '@tailwindcss/forms';
@@ -7,8 +7,8 @@
 
 /* Semantic palette + typography — single source for Tailwind utilities */
 @theme {
-	--font-sans: 'Inter', ui-sans-serif, system-ui, sans-serif;
-	--font-mono: 'JetBrains Mono', ui-monospace, monospace;
+	--font-sans: 'Work Sans', ui-sans-serif, system-ui, sans-serif;
+	--font-mono: 'Space Mono', ui-monospace, monospace;
 
 	--color-app: #0a0f1c;
 	--color-surface: #111827;

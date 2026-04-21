@@ -53,7 +53,7 @@ export const timeline: TimelineEntry[] = [
 		id: 'pel',
 		kind: 'experience',
 		title: 'Intern',
-		subtitle: 'Pak Elektron Limited',
+		subtitle: 'Pak Elektron Limited (PEL)',
 		period: 'Jun 2022 — Aug 2022',
 		description: [
 			'First exposure to assembly-line work: energy meter types/classes, fabrication, and QA.',
