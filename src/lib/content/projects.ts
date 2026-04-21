@@ -16,9 +16,9 @@ const projects: Project[] = [
 		tags: ['Svelte', 'TypeScript', 'Tailwind CSS'],
 		links: [
 			{
-				label: 'Source',
-				href: 'https://github.com/anirudhprabhakaran3/llm-traffic-management',
-				external: true
+				label: 'Source (Coming Soon...)',
+				href: '',
+				external: false
 			}
 		],
 		imageSrc: flashImage

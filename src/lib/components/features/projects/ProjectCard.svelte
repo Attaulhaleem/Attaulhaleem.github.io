@@ -16,12 +16,16 @@
 
 <GlowingCard as="article" class="flex h-full flex-col overflow-hidden">
 	<div
-		class="relative -mx-6 -mt-6 mb-4 aspect-video bg-gradient-to-br from-subtle to-app"
+		class="relative -mx-6 -mt-6 mb-4 flex aspect-video justify-center overflow-hidden bg-gradient-to-br from-subtle to-app"
 		role="img"
 		aria-label={project.imageAlt}
 	>
 		{#if project.imageSrc}
-			<img src={project.imageSrc} alt={project.imageAlt} class="h-full w-full object-cover" />
+			<img
+				src={project.imageSrc}
+				alt={project.imageAlt}
+				class="block h-full w-auto"
+			/>
 		{:else}
 			<div class="absolute inset-0 flex items-center justify-center p-6 text-center">
 				<span class="font-mono text-xs text-muted">{project.imageAlt}</span>

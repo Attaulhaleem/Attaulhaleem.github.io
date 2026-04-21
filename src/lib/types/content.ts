@@ -20,7 +20,7 @@ export type TimelineEntry = {
 	title: string;
 	subtitle: string;
 	period: string;
-	description: string;
+	description: string[];
 	kind: 'education' | 'experience';
 };
 

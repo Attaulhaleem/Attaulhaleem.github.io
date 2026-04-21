@@ -13,15 +13,14 @@ export const site = {
 	brand: 'Personal Site · Atta Ul Haleem',
 	name: 'Atta Ul Haleem',
 	titleTemplate: '%s · Personal Site',
-	description:
-		"Engineer with an obsession for electronics and <code/>.Engineer's portfolio: projects, writing, and background.",
+	description: "Engineer's portfolio: projects, writing, and background.",
 	url: 'https://example.com' // TODO: replace when deploying
 } as const;
 
 /** Hero eyebrow line */
 export const heroEyebrow = 'Electronics Engineer · Software Developer · Game Designer';
 
-/** Main hero image — swap `profile.svg` for e.g. `profile.jpg` and update the import above */
+/** Main hero image */
 export const heroProfilePhoto = {
 	src: profilePhoto,
 	alt: `Portrait of ${site.name}`
@@ -34,7 +33,7 @@ export const navItems: NavItem[] = [
 	{ label: 'Blog', href: '/blog' }
 ];
 
-/** Footer / social row — swap hrefs to your invite, Fiverr handle, Upwork freelancer URL, etc. */
+/** Footer / social row */
 export const socialLinks: SocialLink[] = [
 	{ label: 'Email', href: 'mailto:haleem.attaul@gmail.com', iconSrc: gmailLogo },
 	{ label: 'LinkedIn', href: 'https://linkedin.com/in/attaulhaleem', iconSrc: linkedinLogo },

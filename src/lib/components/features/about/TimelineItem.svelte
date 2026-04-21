@@ -22,6 +22,12 @@
 		</p>
 		<h3 class="mt-1 text-lg font-semibold text-main">{entry.title}</h3>
 		<p class="text-sm text-muted">{entry.subtitle}</p>
-		<p class="mt-3 text-sm leading-relaxed text-main/90">{entry.description}</p>
+		<ul
+			class="mt-3 list-outside list-disc space-y-2 ps-4 text-sm leading-relaxed text-main/90 marker:text-accent-teal"
+		>
+			{#each entry.description as line, i (`${entry.id}-${i}`)}
+				<li>{line}</li>
+			{/each}
+		</ul>
 	</div>
 </li>

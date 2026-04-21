@@ -4,15 +4,12 @@ import type { BlogPost, BlogPostMeta } from '$lib/types/content';
 const posts: BlogPost[] = [
 	{
 		slug: 'hello-world',
-		title: 'Hello, world',
-		date: '2026-01-15',
-		readingMinutes: 3,
-		summary: 'Kickoff post for the blog section—swap for real content anytime.',
+		title: 'Hello, world!',
+		date: '2026-04-21',
+		readingMinutes: 2,
+		summary: 'Welcome to my blog!',
 		html: `
-			<p>This is a <strong>sample article</strong> body. Replace it with markdown-driven content or a CMS.</p>
-			<p>Code samples can use monospace styling from your design system:</p>
-			<pre><code>npm run dev</code></pre>
-		`.trim()
+			<p>Coming soon...`.trim()
 	}
 ];
 
