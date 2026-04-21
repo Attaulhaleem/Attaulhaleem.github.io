@@ -1,3 +1,10 @@
+import flashImage from '$lib/assets/captures/flash.gif';
+import oblivisionImage from '$lib/assets/captures/oblivision.png';
+import groundedImage from '$lib/assets/captures/grounded.png';
+import omnidirectionalConveyorImage from '$lib/assets/captures/omnidirectional_conveyor.gif';
+import smartDumbbellImage from '$lib/assets/captures/smart_dumbbell.png';
+import mazeSolvingRobotImage from '$lib/assets/captures/arduino_maze.png';
+import chessGameImage from '$lib/assets/captures/sfml_chess.png';
 import type { Project } from '$lib/types/content';
 
 const projects: Project[] = [
@@ -13,7 +20,8 @@ const projects: Project[] = [
 				href: 'https://github.com/anirudhprabhakaran3/llm-traffic-management',
 				external: true
 			}
-		]
+		],
+		imageSrc: flashImage
 	},
 	{
 		slug: 'oblivision',
@@ -32,7 +40,8 @@ const projects: Project[] = [
 				href: 'https://github.com/Attaulhaleem/oblivision',
 				external: true
 			}
-		]
+		],
+		imageSrc: oblivisionImage
 	},
 	{
 		slug: 'grounded',
@@ -51,7 +60,8 @@ const projects: Project[] = [
 				href: 'https://github.com/Attaulhaleem/grounded',
 				external: true
 			}
-		]
+		],
+		imageSrc: groundedImage
 	},
 	{
 		slug: 'omnidirectional-conveyor',
@@ -65,7 +75,8 @@ const projects: Project[] = [
 				href: 'https://github.com/Attaulhaleem/omnidirectional-conveyor',
 				external: true
 			}
-		]
+		],
+		imageSrc: omnidirectionalConveyorImage
 	},
 	{
 		slug: 'smart-dumbbell',
@@ -76,7 +87,8 @@ const projects: Project[] = [
 		tags: ['C++', 'Edge Impulse'],
 		links: [
 			{ label: 'Source', href: 'https://github.com/Attaulhaleem/smart-dumbbell', external: true }
-		]
+		],
+		imageSrc: smartDumbbellImage
 	},
 	{
 		slug: 'arduino-maze',
@@ -86,7 +98,8 @@ const projects: Project[] = [
 		tags: ['Arduino'],
 		links: [
 			{ label: 'Source', href: 'https://github.com/Attaulhaleem/arduino-maze', external: true }
-		]
+		],
+		imageSrc: mazeSolvingRobotImage
 	},
 	{
 		slug: 'sfml-chess',
@@ -94,7 +107,10 @@ const projects: Project[] = [
 		summary: 'A vanilla Chess game created using C++ and SFML.',
 		imageAlt: 'Chess Game',
 		tags: ['C++', 'SFML'],
-		links: [{ label: 'Source', href: 'https://github.com/Attaulhaleem/sfml-chess', external: true }]
+		links: [
+			{ label: 'Source', href: 'https://github.com/Attaulhaleem/sfml-chess', external: true }
+		],
+		imageSrc: chessGameImage
 	}
 ];
 

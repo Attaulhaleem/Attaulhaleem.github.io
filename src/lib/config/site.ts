@@ -1,4 +1,4 @@
-import profilePhoto from '$lib/assets/pictures/profile_picture.png';
+import profilePhoto from '$lib/assets/photos/profile_photo.png';
 import discordLogo from '$lib/assets/logos/discord_logo.svg';
 import fiverrLogo from '$lib/assets/logos/fiverr_logo.svg';
 import githubLogo from '$lib/assets/logos/github_logo.svg';
