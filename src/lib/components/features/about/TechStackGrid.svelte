@@ -11,6 +11,6 @@
 
 <div class="flex flex-wrap gap-2">
 	{#each skills as skill (skill.id)}
-		<Tag text={skill.label} />
+		<Tag text={skill.label} iconSrc={skill.iconSrc} />
 	{/each}
 </div>

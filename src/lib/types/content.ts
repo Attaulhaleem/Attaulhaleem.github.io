@@ -27,6 +27,7 @@ export type TimelineEntry = {
 export type Skill = {
 	id: string;
 	label: string;
+	iconSrc?: string;
 };
 
 export type Project = {
