@@ -5,12 +5,12 @@
 	const year = new Date().getFullYear();
 </script>
 
-<footer class="fixed inset-x-0 bottom-0 z-50 border-t border-subtle bg-surface/95 py-6 backdrop-blur">
-	<div class="section-inner flex flex-col gap-6 sm:flex-row sm:items-center sm:justify-between">
-		<p class="text-sm text-muted">
+<footer class="fixed inset-x-0 bottom-0 z-50 border-t border-subtle bg-surface/95 py-4 backdrop-blur sm:py-6">
+	<div class="section-inner flex flex-col items-center gap-3 text-center sm:flex-row sm:justify-between sm:gap-6 sm:text-left">
+		<p class="text-sm text-muted sm:text-base">
 			© {year}
 			{site.name}. All rights reserved.
 		</p>
-		<SocialLinks links={socialLinks} />
+		<SocialLinks links={socialLinks} class="justify-center sm:justify-end" />
 	</div>
 </footer>

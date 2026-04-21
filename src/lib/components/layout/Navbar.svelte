@@ -10,14 +10,14 @@
 </script>
 
 <header class="nav-blur sticky top-0 z-50">
-	<div class="section-inner flex h-14 items-center justify-between gap-4">
+	<div class="section-inner flex min-h-14 flex-wrap items-center justify-between gap-3 py-2 sm:flex-nowrap sm:gap-4">
 		<a
 			href={resolve('/')}
 			class="font-semibold tracking-tight text-main no-underline hover:text-accent-teal"
 		>
 			{site.brand}
 		</a>
-		<nav aria-label="Main" class="flex flex-wrap items-center gap-1 sm:gap-2">
+		<nav aria-label="Main" class="flex w-full flex-wrap items-center gap-1 sm:w-auto sm:justify-end sm:gap-2">
 			{#each navItems as item (item.href)}
 				<a
 					href={resolve(item.href)}
