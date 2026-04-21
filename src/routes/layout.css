@@ -95,10 +95,27 @@
 			var(--shadow-glow);
 	}
 
-	/* Navbar translucent bar - heavy blur, very subtle bottom border */
-	.nav-blur {
-		@apply border-b border-subtle/80 bg-app/45 backdrop-blur-2xl;
+	/*
+	 * Header + footer: shared glass chrome (same blur, opacity, and min height).
+	 * Background uses a single rgba so “bleed-through” matches top and bottom.
+	 */
+	.chrome-bar {
+		@apply border-subtle/80 backdrop-blur-2xl;
+		background-color: rgba(0, 0, 0, 0.5);
+	}
+
+	.chrome-bar--top {
+		@apply border-b;
 		box-shadow: 0 6px 24px rgba(0, 0, 0, 0.35);
+	}
+
+	.chrome-bar--bottom {
+		@apply border-t;
+		box-shadow: 0 -6px 24px rgba(0, 0, 0, 0.35);
+	}
+
+	.chrome-bar-inner {
+		@apply flex min-h-16 flex-col items-center justify-center gap-3 py-3 text-center sm:flex-row sm:justify-between sm:gap-6 sm:text-left;
 	}
 
 	.section-title {

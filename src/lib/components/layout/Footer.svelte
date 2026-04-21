@@ -5,12 +5,8 @@
 	const year = new Date().getFullYear();
 </script>
 
-<footer
-	class="fixed inset-x-0 bottom-0 z-50 border-t border-subtle/80 bg-surface/85 py-4 backdrop-blur-2xl sm:py-6"
->
-	<div
-		class="section-inner flex flex-col items-center gap-3 text-center sm:flex-row sm:justify-between sm:gap-6 sm:text-left"
-	>
+<footer class="chrome-bar chrome-bar--bottom fixed inset-x-0 bottom-0 z-50">
+	<div class="section-inner chrome-bar-inner">
 		<p class="text-sm text-muted sm:text-base">
 			© {year}
 			{site.name}

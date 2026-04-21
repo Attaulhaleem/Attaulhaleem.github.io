@@ -9,10 +9,8 @@
 	}
 </script>
 
-<header class="nav-blur sticky top-0 z-50">
-	<div
-		class="section-inner flex min-h-14 flex-wrap items-center justify-between gap-3 py-2 sm:flex-nowrap sm:gap-4"
-	>
+<header class="chrome-bar chrome-bar--top sticky top-0 z-50">
+	<div class="section-inner chrome-bar-inner">
 		<a
 			href={resolve('/')}
 			class="text-base font-semibold tracking-tight text-main no-underline transition-colors hover:text-accent-green"
@@ -21,7 +19,7 @@
 		</a>
 		<nav
 			aria-label="Main"
-			class="flex w-full flex-wrap items-center gap-1 sm:w-auto sm:justify-end sm:gap-2"
+			class="flex w-full flex-wrap items-center justify-center gap-1 sm:w-auto sm:justify-end sm:gap-2"
 		>
 			{#each navItems as item (item.href)}
 				<a
