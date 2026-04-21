@@ -33,7 +33,7 @@
 	{/if}
 
 	<div class="flex min-w-0 flex-1 flex-col gap-6">
-		<p class="font-mono text-sm text-accent-teal">{eyebrow}</p>
+		<p class="font-mono text-sm text-accent-green">{eyebrow}</p>
 		<h1 class="max-w-3xl text-4xl font-extrabold tracking-tight md:text-5xl lg:text-6xl">
 			{title}
 		</h1>

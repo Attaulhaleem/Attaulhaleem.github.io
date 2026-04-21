@@ -16,16 +16,12 @@
 
 <GlowingCard as="article" class="flex h-full flex-col overflow-hidden">
 	<div
-		class="relative -mx-6 -mt-6 mb-4 flex aspect-video justify-center overflow-hidden bg-gradient-to-br from-subtle to-app"
+		class="relative -mx-6 -mt-6 mb-4 flex aspect-video justify-center overflow-hidden bg-app"
 		role="img"
 		aria-label={project.imageAlt}
 	>
 		{#if project.imageSrc}
-			<img
-				src={project.imageSrc}
-				alt={project.imageAlt}
-				class="block h-full w-auto"
-			/>
+			<img src={project.imageSrc} alt={project.imageAlt} class="block h-full w-auto max-w-none object-contain" />
 		{:else}
 			<div class="absolute inset-0 flex items-center justify-center p-6 text-center">
 				<span class="font-mono text-xs text-muted">{project.imageAlt}</span>
@@ -39,13 +35,13 @@
 			<Tag text={tag} />
 		{/each}
 	</div>
-	<ul class="mt-5 flex flex-wrap gap-3 border-t border-subtle pt-4">
+	<ul class="mt-5 flex flex-wrap gap-3 border-t border-subtle/70 pt-4">
 		{#each project.links as link (link.href)}
 			<li>
 				{#if link.external}
 					<OutboundLink
 						href={link.href}
-						class="inline-flex items-center gap-1 text-sm font-medium text-accent-teal no-underline hover:text-main"
+						class="inline-flex items-center gap-1 text-sm font-medium text-accent-green no-underline hover:text-main"
 					>
 						{link.label}
 						<Icon src={arrowUpRight} class="h-4 w-4" />
@@ -53,7 +49,7 @@
 				{:else}
 					<a
 						href={resolve(link.href as '/')}
-						class="inline-flex items-center gap-1 text-sm font-medium text-accent-teal no-underline hover:text-main"
+						class="inline-flex items-center gap-1 text-sm font-medium text-accent-green no-underline hover:text-main"
 					>
 						{link.label}
 					</a>

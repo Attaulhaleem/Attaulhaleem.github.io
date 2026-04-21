@@ -10,21 +10,26 @@
 </script>
 
 <header class="nav-blur sticky top-0 z-50">
-	<div class="section-inner flex min-h-14 flex-wrap items-center justify-between gap-3 py-2 sm:flex-nowrap sm:gap-4">
+	<div
+		class="section-inner flex min-h-14 flex-wrap items-center justify-between gap-3 py-2 sm:flex-nowrap sm:gap-4"
+	>
 		<a
 			href={resolve('/')}
-			class="font-semibold tracking-tight text-main no-underline hover:text-accent-teal"
+			class="text-base font-semibold tracking-tight text-main no-underline transition-colors hover:text-accent-green"
 		>
 			{site.brand}
 		</a>
-		<nav aria-label="Main" class="flex w-full flex-wrap items-center gap-1 sm:w-auto sm:justify-end sm:gap-2">
+		<nav
+			aria-label="Main"
+			class="flex w-full flex-wrap items-center gap-1 sm:w-auto sm:justify-end sm:gap-2"
+		>
 			{#each navItems as item (item.href)}
 				<a
 					href={resolve(item.href)}
-					class={`rounded-md px-3 py-2 text-sm font-medium no-underline transition-colors ${
+					class={`rounded-md border px-3 py-2 text-sm font-medium no-underline transition-all ${
 						isActive(item.href, page.url.pathname)
-							? 'bg-surface text-accent-teal'
-							: 'text-muted hover:bg-surface/60 hover:text-main'
+							? 'border-accent-green/30 bg-white/8 text-main shadow-[0_0_24px_rgba(0,255,102,0.18)]'
+							: 'border-transparent text-muted hover:border-subtle hover:bg-white/6 hover:text-main'
 					}`}
 				>
 					{item.label}

@@ -18,7 +18,7 @@
 <Section>
 	<article class="max-w-3xl">
 		<header class="mb-8 border-b border-subtle pb-8">
-			<p class="font-mono text-sm text-accent-teal">
+			<p class="font-mono text-sm text-accent-green">
 				<time datetime={data.post.date}>{data.post.date}</time>
 				· {data.post.readingMinutes} min read
 			</p>
@@ -27,7 +27,7 @@
 		</header>
 		<Prose html={data.post.html} />
 		<p class="mt-10">
-			<a href={blogIndexHref} class="font-medium text-accent-teal no-underline hover:underline">
+			<a href={blogIndexHref} class="font-medium text-accent-green no-underline hover:underline">
 				← All posts
 			</a>
 		</p>

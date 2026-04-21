@@ -5,7 +5,7 @@
 - **Persona:** Engineer, current Master's student, tech enthusiast.
 - **Core Goal:** Showcase engineering projects, academic background, technical skills, and writings.
 - **Framework:** **SvelteKit** (chosen for its excellent performance, elegant state management, and seamless routing).
-- **Vibe/Style:** Clean, minimal, modern, dark mode with a teal bioluminescent/cyber-glow.
+- **Vibe/Style:** Clean, minimal, modern, dark mode with a green bioluminescent/cyber-glow.
 
 ---
 
@@ -29,7 +29,7 @@ This section outlines the exact CSS values and typographic choices to ensure abs
 - **Borders (`border-subtle`):** `#1F2937` (Faint structural lines)
 - **Primary Text (`text-main`):** `#F3F4F6` (Soft off-white, prevents eye strain)
 - **Secondary Text (`text-muted`):** `#9CA3AF` (Cool gray for dates, roles, and minor details)
-- **Main Accent / Glow (`accent-teal`):** `#2DD4BF` (Vibrant Teal)
+- **Main Accent / Glow (`accent-green`):** `#2DD4BF` (Vibrant green)
 
 ### 2.3. UI Components & Effects
 
@@ -69,20 +69,20 @@ Break down the UI into highly reusable Svelte components.
 
 - `Button.svelte` — Reusable button component. Props: `href` (optional for link behavior), `variant` (primary with glow, or ghost/outline).
 - `Tag.svelte` — Small pill component for tech stack elements using `JetBrains Mono`. Props: `text`.
-- `GlowingCard.svelte` — Base wrapper for anything that needs the subtle 1px border and teal glow on hover.
+- `GlowingCard.svelte` — Base wrapper for anything that needs the subtle 1px border and green glow on hover.
 
 #### 📂 Feature Components
 
 - **Home:**
   - `Hero.svelte` — The introduction, tagline, and CTA.
 - **About:**
-  - `Timeline.svelte` & `TimelineItem.svelte` — For Education and Experience. Vertical line with teal nodes.
+  - `Timeline.svelte` & `TimelineItem.svelte` — For Education and Experience. Vertical line with green nodes.
   - `TechStackGrid.svelte` — Maps through an array of skills and renders them via `Tag.svelte`.
 - **Projects:**
   - `ProjectCard.svelte` — Composes `GlowingCard`, `Tag` (for tech stack), and standard HTML for images/links.
 - **Blog:**
   - `ArticleCard.svelte` — Minimalist list item for the blog feed showing Title, Date, and Reading Time.
-  - `Prose.svelte` — A wrapper utilizing `@tailwindcss/typography` (`prose prose-invert prose-teal`) to style the rendered Markdown content beautifully.
+  - `Prose.svelte` — A wrapper utilizing `@tailwindcss/typography` (`prose prose-invert prose-green`) to style the rendered Markdown content beautifully.
 
 ---
 
@@ -90,4 +90,4 @@ Break down the UI into highly reusable Svelte components.
 
 - **Framework:** SvelteKit (App routing, SSR/SSG capabilities).
 - **Styling:** Tailwind CSS (Perfect for mapping the definitive color palette to custom variables in `tailwind.config.js`).
-- **Icons:** Local SVG assets in `src/lib/assets/`, rendered through a small `Icon.svelte` wrapper that uses CSS `mask-image` so icons inherit the surrounding `color` (enabling hover states like `hover:text-accent-teal`).
+- **Icons:** Local SVG assets in `src/lib/assets/`, rendered through a small `Icon.svelte` wrapper that uses CSS `mask-image` so icons inherit the surrounding `color` (enabling hover states like `hover:text-accent-green`).

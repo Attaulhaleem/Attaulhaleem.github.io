@@ -6,7 +6,7 @@
 </script>
 
 <footer
-	class="fixed inset-x-0 bottom-0 z-50 border-t border-subtle bg-surface/95 py-4 backdrop-blur sm:py-6"
+	class="fixed inset-x-0 bottom-0 z-50 border-t border-subtle/80 bg-surface/85 py-4 backdrop-blur-2xl sm:py-6"
 >
 	<div
 		class="section-inner flex flex-col items-center gap-3 text-center sm:flex-row sm:justify-between sm:gap-6 sm:text-left"

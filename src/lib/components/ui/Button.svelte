@@ -23,12 +23,12 @@
 	);
 
 	const base =
-		'inline-flex items-center justify-center gap-2 rounded-lg px-4 py-2.5 text-sm font-medium transition-all duration-300 focus-visible:outline focus-visible:outline-2 focus-visible:outline-offset-2 focus-visible:outline-accent-teal';
+		'inline-flex items-center justify-center gap-2 rounded-lg px-4 py-2.5 text-sm font-medium transition-all duration-300 focus-visible:outline focus-visible:outline-2 focus-visible:outline-offset-2 focus-visible:outline-accent-green';
 
 	const variantClass = $derived(
 		variant === 'ghost'
-			? 'border border-transparent text-main hover:border-subtle hover:bg-surface/60'
-			: 'interactive-surface bg-surface text-main'
+			? 'border border-transparent text-main hover:border-subtle hover:bg-white/[0.06]'
+			: 'border border-subtle bg-white/[0.07] text-main shadow-[0_8px_28px_rgba(0,0,0,0.38)] hover:-translate-y-0.5 hover:border-accent-green/45 hover:bg-white/[0.13] hover:shadow-[0_14px_32px_rgba(0,255,102,0.2)]'
 	);
 </script>
 

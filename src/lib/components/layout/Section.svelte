@@ -14,7 +14,7 @@
 <section {id} class="section-stack {className}">
 	<div class="section-inner flex flex-col gap-6">
 		{#if title}
-			<h2 class="text-2xl font-bold tracking-tight md:text-3xl">{title}</h2>
+			<h2 class="section-title">{title}</h2>
 		{/if}
 		{@render children()}
 	</div>
