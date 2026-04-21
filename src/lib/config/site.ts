@@ -12,7 +12,6 @@ export const site = {
 	/** Shown in nav + footer */
 	brand: 'Personal Site · Atta Ul Haleem',
 	name: 'Atta Ul Haleem',
-	titleTemplate: '%s · Personal Site',
 	description: "Engineer's portfolio: projects, writing, and background.",
 	url: 'https://example.com' // TODO: replace when deploying
 } as const;
