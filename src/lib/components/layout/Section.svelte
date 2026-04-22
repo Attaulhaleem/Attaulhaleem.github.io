@@ -12,9 +12,11 @@
 </script>
 
 <section {id} class="section-stack {className}">
-	<div class="section-inner flex flex-col gap-6">
+	<div class="section-inner flex flex-col gap-8">
 		{#if title}
-			<h2 class="section-title">{title}</h2>
+			<header class="section-heading">
+				<h2 class="section-title">{title}</h2>
+			</header>
 		{/if}
 		{@render children()}
 	</div>

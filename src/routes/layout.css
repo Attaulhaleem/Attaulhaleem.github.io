@@ -130,9 +130,20 @@
 		min-height: var(--chrome-height);
 	}
 
+	/* Section headings: symmetrical hairline + type (no lateral rails) */
+	.section-heading {
+		@apply pb-1;
+	}
+
+	.section-heading::after {
+		content: '';
+		@apply mt-5 block h-px w-full bg-linear-to-r from-transparent via-white/15 to-transparent;
+	}
+
 	.section-title {
-		@apply text-2xl font-bold tracking-tight md:text-3xl;
-		text-shadow: 0 0 24px rgba(0, 255, 102, 0.2);
+		@apply m-0 max-w-4xl font-sans text-3xl font-semibold leading-[1.12] tracking-[-0.045em] text-main md:text-4xl md:tracking-[-0.055em];
+		font-feature-settings: 'cv02' on, 'cv11' on;
+		text-shadow: 0 1px 0 rgba(255, 255, 255, 0.05);
 	}
 
 	/* Prose wrapper for MD/HTML article bodies */
