@@ -130,14 +130,9 @@
 		min-height: var(--chrome-height);
 	}
 
-	/* Section headings: symmetrical hairline + type (no lateral rails) */
+	/* Section headings: double hairline frame (style #5) — chrome vocabulary, no fill/blur */
 	.section-heading {
-		@apply pb-1;
-	}
-
-	.section-heading::after {
-		content: '';
-		@apply mt-5 block h-px w-full bg-linear-to-r from-transparent via-white/15 to-transparent;
+		@apply border-y border-subtle/70 py-4 md:py-5;
 	}
 
 	.section-title {
