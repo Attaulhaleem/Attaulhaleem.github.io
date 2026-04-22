@@ -17,6 +17,12 @@ export const site = {
 /** Hero eyebrow line */
 export const heroEyebrow = 'Electronics Engineer · Software Developer · Game Designer';
 
+/** Main hero headline */
+export const heroHeadline = {
+	title: "Hi, I'm Atta 👋",
+	subtitle: 'Engineer with an obsession for electronics and <code/>'
+} as const;
+
 /** Main hero image */
 export const heroProfilePhoto = {
 	src: profilePhoto,
