@@ -1,10 +1,10 @@
-import cLogo from '$lib/assets/logos/c_logo.svg';
-import cppLogo from '$lib/assets/logos/cplusplus_logo.svg';
-import godotLogo from '$lib/assets/logos/godot_logo.svg';
-import pythonLogo from '$lib/assets/logos/python_logo.svg';
-import svelteLogo from '$lib/assets/logos/svelte_logo.svg';
-import tailwindLogo from '$lib/assets/logos/tailwindcss_logo.svg';
-import typescriptLogo from '$lib/assets/logos/typescript_logo.svg';
+import cLogo from '$lib/assets/icons/c_logo.svg';
+import cppLogo from '$lib/assets/icons/cplusplus_logo.svg';
+import godotLogo from '$lib/assets/icons/godot_logo.svg';
+import pythonLogo from '$lib/assets/icons/python_logo.svg';
+import svelteLogo from '$lib/assets/icons/svelte_logo.svg';
+import tailwindLogo from '$lib/assets/icons/tailwindcss_logo.svg';
+import typescriptLogo from '$lib/assets/icons/typescript_logo.svg';
 import type { Skill } from '$lib/types/content';
 
 export const skills: Skill[] = [

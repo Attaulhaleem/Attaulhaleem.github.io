@@ -1,16 +1,16 @@
 import profilePhoto from '$lib/assets/photos/profile_photo.png';
-import discordLogo from '$lib/assets/logos/discord_logo.svg';
-import fiverrLogo from '$lib/assets/logos/fiverr_logo.svg';
-import githubLogo from '$lib/assets/logos/github_logo.svg';
-import gmailLogo from '$lib/assets/logos/gmail_logo.svg';
-import itchIoLogo from '$lib/assets/logos/itch_io_logo.svg';
-import linkedinLogo from '$lib/assets/logos/linkedin_logo.svg';
-import upworkLogo from '$lib/assets/logos/upwork_logo.svg';
+import discordLogo from '$lib/assets/icons/discord_logo.svg';
+import fiverrLogo from '$lib/assets/icons/fiverr_logo.svg';
+import githubLogo from '$lib/assets/icons/github_logo.svg';
+import gmailLogo from '$lib/assets/icons/gmail_logo.svg';
+import itchIoLogo from '$lib/assets/icons/itch_io_logo.svg';
+import linkedinLogo from '$lib/assets/icons/linkedin_logo.svg';
+import upworkLogo from '$lib/assets/icons/upwork_logo.svg';
 import type { NavItem, SocialLink } from '$lib/types/content';
 
 export const site = {
 	/** Shown in nav + footer */
-		name: 'Atta Ul Haleem',
+	name: 'Atta Ul Haleem',
 	description: "Engineer's portfolio: projects, writing, and background.",
 	url: 'https://example.com' // TODO: replace when deploying
 } as const;

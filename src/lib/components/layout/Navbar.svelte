@@ -1,6 +1,7 @@
 <script lang="ts">
 	import { resolve } from '$app/paths';
 	import { page } from '$app/state';
+	import personalLogoWhite from '$lib/assets/icons/personal_logo_white.svg?url';
 	import { navItems, site } from '$lib/config/site';
 
 	function isActive(href: string, pathname: string): boolean {
@@ -13,9 +14,9 @@
 	<div class="section-inner chrome-bar-inner">
 		<a
 			href={resolve('/')}
-			class="text-base font-semibold tracking-tight text-main no-underline transition-colors hover:text-accent-green"
+			class="inline-flex shrink-0 items-center no-underline transition-opacity hover:opacity-90"
 		>
-			<img src={favicon} alt={site.name} width="32" height="32" class="size-8" />
+			<img src={personalLogoWhite} alt={site.name} width="32" height="32" class="size-8" />
 		</a>
 		<nav
 			aria-label="Main"
