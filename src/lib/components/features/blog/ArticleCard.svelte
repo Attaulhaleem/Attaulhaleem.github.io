@@ -13,7 +13,9 @@
 <article class="group interactive-surface rounded-lg p-5">
 	<a href={resolve(href as '/')} class="block no-underline">
 		<time class="font-mono text-xs text-muted" datetime={post.date}>{post.date}</time>
-		<h3 class="mt-2 text-lg font-semibold text-main transition-colors group-hover:text-accent-green">
+		<h3
+			class="mt-2 text-lg font-semibold text-main transition-colors group-hover:text-accent-green"
+		>
 			{post.title}
 		</h3>
 		<p class="mt-2 line-clamp-2 text-sm text-muted">{post.summary}</p>
