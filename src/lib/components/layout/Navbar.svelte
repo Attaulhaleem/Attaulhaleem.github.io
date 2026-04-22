@@ -12,11 +12,14 @@
 
 <header class="chrome-bar chrome-bar--top sticky top-0 z-50">
 	<div class="section-inner chrome-bar-inner">
-		<a
-			href={resolve('/')}
-			class="inline-flex shrink-0 items-center no-underline transition-opacity hover:opacity-90"
-		>
-			<img src={personalLogoWhite} alt={site.name} width="32" height="32" class="size-8" />
+		<a href={resolve('/')} class="group inline-flex shrink-0 items-center no-underline">
+			<img
+				src={personalLogoWhite}
+				alt={site.name}
+				width="32"
+				height="32"
+				class="size-8 transition-[filter] duration-300 ease-out group-hover:filter-[drop-shadow(0_0_10px_rgba(0,255,102,0.95))_drop-shadow(0_0_22px_rgba(0,255,102,0.45))_drop-shadow(0_0_36px_rgba(0,255,102,0.2))]"
+			/>
 		</a>
 		<nav
 			aria-label="Main"

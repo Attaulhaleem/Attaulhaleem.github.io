@@ -17,7 +17,7 @@
 		<li>
 			<a
 				href={link.href}
-				class="inline-flex items-center text-muted transition-colors hover:text-accent-green"
+				class="inline-flex origin-center items-center text-muted transition-[transform,color] duration-300 ease-out hover:scale-130 hover:text-accent-green active:scale-95"
 				target={external ? '_blank' : undefined}
 				rel={external ? 'noreferrer noopener' : undefined}
 			>
