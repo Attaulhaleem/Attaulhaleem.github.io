@@ -15,7 +15,7 @@
 			href={resolve('/')}
 			class="text-base font-semibold tracking-tight text-main no-underline transition-colors hover:text-accent-green"
 		>
-			{site.brand}
+			<img src={favicon} alt={site.name} width="32" height="32" class="size-8" />
 		</a>
 		<nav
 			aria-label="Main"

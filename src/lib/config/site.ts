@@ -10,8 +10,7 @@ import type { NavItem, SocialLink } from '$lib/types/content';
 
 export const site = {
 	/** Shown in nav + footer */
-	brand: 'Personal Site · Atta Ul Haleem',
-	name: 'Atta Ul Haleem',
+		name: 'Atta Ul Haleem',
 	description: "Engineer's portfolio: projects, writing, and background.",
 	url: 'https://example.com' // TODO: replace when deploying
 } as const;

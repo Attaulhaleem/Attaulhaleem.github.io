@@ -8,7 +8,7 @@
 </script>
 
 <svelte:head>
-	<title>Blog — {site.brand}</title>
+	<title>Blog — {site.name}</title>
 	<meta name="description" content="Articles and notes on engineering and tools." />
 </svelte:head>
 

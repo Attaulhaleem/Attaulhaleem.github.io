@@ -13,7 +13,7 @@
 </script>
 
 <svelte:head>
-	<title>{site.brand}</title>
+	<title>Home - {site.name}</title>
 	<meta name="description" content={site.description} />
 </svelte:head>
 

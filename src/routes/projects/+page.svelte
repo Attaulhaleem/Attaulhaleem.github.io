@@ -8,7 +8,7 @@
 </script>
 
 <svelte:head>
-	<title>Projects — {site.brand}</title>
+	<title>Projects — {site.name}</title>
 	<meta name="description" content="Selected engineering work and experiments." />
 </svelte:head>
 

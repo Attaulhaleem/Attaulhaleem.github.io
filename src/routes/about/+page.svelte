@@ -9,7 +9,7 @@
 </script>
 
 <svelte:head>
-	<title>About — {site.brand}</title>
+	<title>About — {site.name}</title>
 	<meta name="description" content={aboutContent.description} />
 </svelte:head>
 
