@@ -27,6 +27,16 @@ const aboutByLocale: Record<Locale, AboutContent> = {
 			"J'adore bricoler du matériel et je suis obsédé par l'écriture de code propre. Je m'intéresse à de nombreux sujets : systèmes embarqués, game design, IA/ML et AR/VR.",
 			"Quand je ne travaille pas, on me trouve souvent plongé dans un bon film, en train de planifier mon prochain voyage, ou autour d'une partie d'échecs tranquille."
 		]
+	},
+	ur: {
+		title: 'میرے بارے میں',
+		description: 'تعارف، وقت کی لکیر، اور وہ ٹولز جن کے ساتھ میں کام کرتا ہوں۔',
+		paragraphs: [
+			'السلام علیکم، میں عطا ہوں۔ فی الحال میں پیرس، فرانس میں رہتا ہوں۔',
+			'میں انسٹی ٹیوٹ پولی ٹیکنیک ڈی پیرس میں برقی ہندسیات میں گریجویٹ طالب علم ہوں۔ میرا تخصص ڈیٹا اینالیٹکس اور پیٹرن ریکگنیشن ہے۔',
+			'مجھے ہارڈ ویئر کے ساتھ تجربے کرنا پسند ہے اور صاف کوڈ لکھنے کا شوق ہے۔ امبیڈڈ سسٹمز، گیم ڈیزائن، AI/ML، اور AR/VR جیسے موضوعات میں دلچسپی ہے۔',
+			'جب میں کام نہیں کر رہا ہوتا، اکثر اچھی فلم دیکھ رہا ہوتا ہوں، اگلے سفر کی منصوبہ بندی کر رہا ہوتا ہوں، یا چس کی پرسکون بازی سے لطف اندوز ہو رہا ہوتا ہوں۔'
+		]
 	}
 };
 

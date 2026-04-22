@@ -170,6 +170,51 @@ const copyByLocale: Record<Locale, Record<string, ProjectCopy>> = {
 			imageAlt: "Jeu d'échecs",
 			linkLabels: ['Code source']
 		}
+	},
+	ur: {
+		flash: {
+			title: 'Flash',
+			summary: 'ریل ٹائم ٹریفک اور واقعات کے ڈیٹا سے فعال ٹریفک مینجمنٹ۔',
+			imageAlt: 'Flash',
+			linkLabels: ['سورس کوڈ (جلد...)']
+		},
+		oblivision: {
+			title: 'Oblivision',
+			summary: 'گیم جم کے لیے Godot میں بنایا گیا 2D پزل پلیٹ فارمر۔',
+			imageAlt: 'Oblivision',
+			linkLabels: ['ڈیمو', 'سورس کوڈ']
+		},
+		grounded: {
+			title: 'Grounded',
+			summary: 'مزیدار منی گیمز کے ساتھ ایک آرام دہ سائیڈ سکولر۔',
+			imageAlt: 'Grounded',
+			linkLabels: ['ڈیمو', 'سورس کوڈ']
+		},
+		'omnidirectional-conveyor': {
+			title: 'اومنی ڈائریکشنل کنویئر',
+			summary: 'مواد کی نقل کے لیے ماڈیولر اومنی ڈائریکشنل کنویئر۔',
+			imageAlt: 'اومنی ڈائریکشنل کنویئر',
+			linkLabels: ['سورس کوڈ']
+		},
+		'smart-dumbbell': {
+			title: 'اسمارٹ ڈمبل',
+			summary:
+				'Arduino Nano 33 BLE Sense، Edge Impulse، اور Web Bluetooth کے ساتھ ورزش کی قسم کی ریئل ٹائم درجہ بندی۔',
+			imageAlt: 'اسمارٹ ڈمبل',
+			linkLabels: ['سورس کوڈ']
+		},
+		'arduino-maze': {
+			title: 'میز حل کرنے والا روبوٹ',
+			summary: 'Arduino پلیٹ فارم پر بند میزوں کی نقشہ سازی اور حل۔',
+			imageAlt: 'میز حل کرنے والا روبوٹ',
+			linkLabels: ['سورس کوڈ']
+		},
+		'sfml-chess': {
+			title: 'شطرنج',
+			summary: 'C++ اور SFML سے بنایا گیا کلاسک شطرنج کا کھیل۔',
+			imageAlt: 'شطرنج',
+			linkLabels: ['سورس کوڈ']
+		}
 	}
 };
 

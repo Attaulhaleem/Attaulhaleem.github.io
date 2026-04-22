@@ -40,6 +40,16 @@ const siteCopy: Record<Locale, SiteCopy> = {
 			subtitle: "Ingénieur passionné par l'électronique et le <code/>"
 		},
 		heroProfilePhotoAlt: `Portrait de ${site.name}`
+	},
+	ur: {
+		description:
+			'عطا الحلیم کی ذاتی ویب سائٹ۔ میرے منصوبے اور تحریریں یہاں دیکھیں۔',
+		heroEyebrow: 'برقی انجینئر · سافٹ ویئر ڈویلپر · گیم ڈیزائنر',
+		heroHeadline: {
+			title: 'السلام علیکم، میں عطا ہوں 👋',
+			subtitle: 'برقیات کے شوقین انجینئر اور <code/> سے لگاؤ'
+		},
+		heroProfilePhotoAlt: `${site.name} کی تصویر`
 	}
 };
 

@@ -123,6 +123,67 @@ const timelineByLocale: Record<Locale, TimelineEntry[]> = {
 				'Activités : Team Foxtrot (drones).'
 			]
 		}
+	],
+	ur: [
+		{
+			id: 'ip-paris',
+			kind: 'education',
+			title: 'ماسٹر آف سائنس',
+			subtitle:
+				'Institut Polytechnique de Paris · برقی ہندسیات (ڈیٹا اینالیسز اور پیٹرن کلاسیفیکیشن)',
+			period: 'ستمبر 2025 — ابھی تک',
+			description: [
+				'کورسز: کمپیوٹر سائنس، امکان و شماریات، آپٹمائزیشن میتھڈز، شماریاتی ڈیٹا اینالیسز، شماریاتی میتھڈز کی ایپلیکیشن، فرانسیسی، مؤثر مواصلات',
+				'سرگرمیاں: Hi! Paris H!ckathon 2025، INNOV\'NIGHT 2026'
+			]
+		},
+		{
+			id: 'motive',
+			kind: 'experience',
+			title: 'QA انجینئر، امبیڈڈ',
+			subtitle: 'Motive Technologies Inc.',
+			period: 'جون 2025 — اگست 2025',
+			description: [
+				'Vehicle Gateway (VG) ڈیوائسز کا دستی ٹیسٹنگ اور QA ورک فلو میں خودکار کاری میں مدد۔',
+				'آٹوموٹو ECU کے CAN سگنلز (J1939 اور J1979) کی سمیلیشن اور خودکار ٹیسٹ کے لیے Python اسکرپٹس۔'
+			]
+		},
+		{
+			id: 'software-motion',
+			kind: 'experience',
+			title: 'امبیڈڈ سافٹ ویئر انجینئر',
+			subtitle: 'Software Motion (Suzhou) Engineering Services Co., Ltd.',
+			period: 'اکتوبر 2024 — جون 2025',
+			description: [
+				'آٹوموٹو انڈسٹری کے لیے L1-L2 ایڈوانس ڈرائیور اسسٹنس سسٹمز (ADAS) کی ترقی۔',
+				'ISO-15765 اور ISO-14229 کے مطابق آٹوموٹو ECUs کے لیے مضبوط FOTA حل کی ڈیزائن۔',
+				'اہم ADAS فیچرز (اینٹی لاک بریکنگ سسٹم، لین ڈیپارچر وارننگ، فارورڈ کولیزن وارننگ) کے لیے C++ اسٹیٹ مشینز۔',
+				'GoogleTest فریم ورک کے ساتھ یونٹ ٹیسٹس کی عمل درآمد اور ڈیبگ۔'
+			]
+		},
+		{
+			id: 'lums',
+			kind: 'experience',
+			title: 'ریسرچ ایسوسی ایٹ',
+			subtitle: 'Lahore University of Management Sciences (LUMS)',
+			period: 'ستمبر 2023 — اپریل 2024',
+			description: [
+				'NeuBolt: پاکستان کی پہلی تبدیل ہونے والی بیٹری والی 3 پہیے والی EV میں حصہ — سوئپنگ میکانزم کے لیے IoT اور کسٹم انٹرا-ویکل کمیونیکیشن پروٹوکول۔',
+				'enfo.ai: اسمارٹ IoT توانائی میٹرز اور AI پر مبنی تجزیہ بجلی کے استعمال اور لاگت میں کمی؛ ہارڈ ویئر اور فرم ویئر کی قیادت، بشمول FOTA، کنفیگریشن کے لیے ویب ڈیش بورڈ، اور MQTT پر فائل ٹرانسفر۔'
+			]
+		},
+		{
+			id: 'giki',
+			kind: 'education',
+			title: 'بیچلر آف سائنس',
+			subtitle:
+				'Ghulam Ishaq Khan Institute of Engineering Sciences and Technology (GIKI) · برقی ہندسیات (الیکٹرانکس)',
+			period: 'اگست 2019 — جولائی 2023',
+			description: [
+				'اختیاری مضامین: امبیڈڈ سسٹمز، ڈیجیٹل سسٹم ڈیزائن، روبوٹکس کا تعارف',
+				'سرگرمیاں: Team Foxtrot (UAVs)'
+			]
+		}
 	]
 };
 

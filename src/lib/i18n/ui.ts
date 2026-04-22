@@ -98,6 +98,37 @@ const strings: Record<Locale, UiStrings> = {
 			allPostsBack: '← Tous les articles'
 		},
 		timeline: { education: 'Études', experience: 'Expérience' }
+	},
+	ur: {
+		nav: { home: 'ہوم', about: 'میرے بارے میں', projects: 'منصوبے', blog: 'بلاگ' },
+		languageSwitcher: { label: 'زبان' },
+		home: {
+			metaTitle: 'ہوم',
+			recentProjects: 'حالیہ منصوبے',
+			recentPosts: 'حالیہ تحریریں',
+			allProjects: 'تمام منصوبے ←',
+			allPosts: 'تمام تحریریں ←',
+			aboutMe: 'میرے بارے میں',
+			viewProjects: 'منصوبے دیکھیں'
+		},
+		about: {
+			metaTitle: 'میرے بارے میں',
+			educationExperience: 'تعلیم اور تجربہ',
+			techStack: 'ٹیکنیکل اسٹیک'
+		},
+		projects: {
+			metaTitle: 'منصوبے',
+			metaDescription: 'منتخب انجینئرنگ کے کام اور تجربات۔',
+			heading: 'منصوبے'
+		},
+		blog: {
+			metaTitle: 'بلاگ',
+			metaDescription: 'انجینئرنگ اور ٹولز پر مضامین اور نوٹس۔',
+			heading: 'بلاگ',
+			readLength: (minutes) => `${minutes} منٹ پڑھنے کا وقت`,
+			allPostsBack: 'تمام تحریریں ←'
+		},
+		timeline: { education: 'تعلیم', experience: 'تجربہ' }
 	}
 };
 

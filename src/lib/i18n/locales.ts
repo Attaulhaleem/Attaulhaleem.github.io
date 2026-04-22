@@ -1,13 +1,22 @@
 /** Canonical list of locales supported across content, routing, and UI. */
-export const LOCALES = ['en', 'fr'] as const;
+export const LOCALES = ['en', 'fr', 'ur'] as const;
 
 export type Locale = (typeof LOCALES)[number];
 
 export const DEFAULT_LOCALE: Locale = 'en';
 
+export type TextDirection = 'ltr' | 'rtl';
+
+export const LOCALE_TEXT_DIRECTION: Record<Locale, TextDirection> = {
+	en: 'ltr',
+	fr: 'ltr',
+	ur: 'rtl'
+};
+
 export const LOCALE_LABELS: Record<Locale, string> = {
 	en: 'English',
-	fr: 'Français'
+	fr: 'Français',
+	ur: 'اردو'
 };
 
 export function isLocale(value: string): value is Locale {
