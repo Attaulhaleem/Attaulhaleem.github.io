@@ -1,7 +1,7 @@
 <script lang="ts">
 	import { resolve } from '$app/paths';
 	import { page } from '$app/state';
-	import personalLogoWhite from '$lib/assets/icons/personal_logo_white.svg?url';
+	import personalLogoWhite from '$lib/assets/logos/personal_white.svg?url';
 	import { navItems, site } from '$lib/config/site';
 
 	function isActive(href: string, pathname: string): boolean {

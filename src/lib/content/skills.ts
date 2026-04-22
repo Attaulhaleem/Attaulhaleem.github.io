@@ -1,8 +1,13 @@
-import cLogo from '$lib/assets/icons/c_logo.svg';
-import cppLogo from '$lib/assets/icons/cplusplus_logo.svg';
-import godotLogo from '$lib/assets/icons/godot_logo.svg';
-import pythonLogo from '$lib/assets/icons/python_logo.svg';
-import svelteLogo from '$lib/assets/icons/svelte_logo.svg';
+import cLogo from '$lib/assets/logos/c.svg';
+import cppLogo from '$lib/assets/logos/cplusplus.svg';
+import godotLogo from '$lib/assets/logos/godotengine.svg';
+import pythonLogo from '$lib/assets/logos/python.svg';
+import svelteLogo from '$lib/assets/logos/svelte.svg';
+import arduinoLogo from '$lib/assets/logos/arduino.svg';
+import raspberryPiLogo from '$lib/assets/logos/raspberrypi.svg';
+import appleLogo from '$lib/assets/logos/apple.svg';
+import cursorLogo from '$lib/assets/logos/cursor.svg';
+import vimLogo from '$lib/assets/logos/vim.svg';
 
 export type Skill = {
 	label: string;
@@ -10,13 +15,16 @@ export type Skill = {
 };
 
 export const skills = {
+	apple: { label: 'macOS', iconSrc: appleLogo },
+	cursor: { label: 'Cursor', iconSrc: cursorLogo },
+	vim: { label: 'Vim', iconSrc: vimLogo },
 	c: { label: 'C', iconSrc: cLogo },
 	'c++': { label: 'C++', iconSrc: cppLogo },
 	python: { label: 'Python', iconSrc: pythonLogo },
 	godot: { label: 'Godot', iconSrc: godotLogo },
 	svelte: { label: 'Svelte', iconSrc: svelteLogo },
-	arduino: { label: 'Arduino' },
-	'raspberry-pi': { label: 'Raspberry Pi' }
+	arduino: { label: 'Arduino', iconSrc: arduinoLogo },
+	'raspberry-pi': { label: 'Raspberry Pi', iconSrc: raspberryPiLogo }
 } as const satisfies Record<string, Skill>;
 
 export type SkillId = keyof typeof skills;

@@ -13,7 +13,7 @@ export type NavItem = {
 export type SocialLink = {
 	label: string;
 	href: string;
-	/** Vite-resolved URL of an SVG from `$lib/assets` (e.g. `github_logo.svg`) */
+	/** Vite-resolved URL of an SVG from `$lib/assets` (e.g. `github.svg`) */
 	iconSrc: string;
 };
 

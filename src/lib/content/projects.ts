@@ -17,8 +17,8 @@ const projects: Project[] = [
 		links: [
 			{
 				label: 'Source (Coming Soon...)',
-				href: '',
-				external: false
+				href: 'https://github.com/anirudhprabhakaran3/llm-traffic-management',
+				external: true
 			}
 		],
 		imageSrc: flashImage

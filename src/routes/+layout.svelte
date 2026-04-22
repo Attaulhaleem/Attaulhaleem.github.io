@@ -1,7 +1,7 @@
 <script lang="ts">
 	import './layout.css';
 	/* `?url` avoids data: URI inlining — browsers update favicons reliably from real URLs */
-	import favicon from '$lib/assets/icons/personal_logo_black.svg?url';
+	import favicon from '$lib/assets/logos/personal_black.svg?url';
 	import Footer from '$lib/components/layout/Footer.svelte';
 	import Navbar from '$lib/components/layout/Navbar.svelte';
 	import type { LayoutProps } from './$types';
