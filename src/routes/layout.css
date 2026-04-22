@@ -52,6 +52,30 @@
 	--text-post-title--letter-spacing: -0.04em;
 }
 
+/*
+ * Urdu (Arabic script): Naskh reads clearer than geometric Latin sans.
+ * Reset tight/negative tracking and Inter-only features — they harm joins and readability.
+ */
+html:lang(ur) {
+	--font-sans: 'Noto Naskh Arabic', ui-sans-serif, system-ui, sans-serif;
+
+	--text-display--line-height: 1.22;
+	--text-display--letter-spacing: 0;
+
+	--text-section-title--line-height: 1.24;
+	--text-section-title--letter-spacing: 0;
+
+	--text-card-title--line-height: 1.4;
+	--text-card-title--letter-spacing: 0;
+
+	--text-post-title--line-height: 1.22;
+	--text-post-title--letter-spacing: 0;
+
+	--text-eyebrow--letter-spacing: 0.03em;
+
+	--text-lede--line-height: 1.8;
+}
+
 /* Base document */
 @layer base {
 	html {
@@ -61,6 +85,11 @@
 		font-optical-sizing: auto;
 		-webkit-font-smoothing: antialiased;
 		-moz-osx-font-smoothing: grayscale;
+	}
+
+	html:lang(ur) {
+		font-size: 17px;
+		text-rendering: optimizeLegibility;
 	}
 
 	body {
@@ -74,6 +103,11 @@
 			radial-gradient(circle at 85% 8%, rgba(0, 85, 255, 0.07), transparent 38%),
 			radial-gradient(circle at 50% 92%, rgba(255, 255, 255, 0.025), transparent 45%);
 		background-attachment: fixed;
+	}
+
+	html:lang(ur) body {
+		line-height: 1.72;
+		font-feature-settings: normal;
 	}
 
 	a {
@@ -379,5 +413,26 @@
 		.page-ripple.is-fading {
 			transition: none;
 		}
+	}
+
+	html:lang(ur) .section-title,
+	html:lang(ur) .type-display,
+	html:lang(ur) .type-post-title {
+		font-feature-settings: normal;
+	}
+
+	html:lang(ur) .type-eyebrow {
+		font-family: var(--font-sans);
+		text-transform: none;
+		letter-spacing: var(--text-eyebrow--letter-spacing);
+	}
+
+	html:lang(ur) .locale-select {
+		font-family: var(--font-sans);
+		max-width: 11.5rem;
+	}
+
+	html:lang(ur) .prose-article :where(h1, h2, h3, h4) {
+		letter-spacing: normal;
 	}
 }
