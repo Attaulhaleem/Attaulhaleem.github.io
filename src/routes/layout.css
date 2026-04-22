@@ -282,8 +282,10 @@
 
 	/*
 	 * Ripple field blur overlay driven by `onNavigate` in +layout.svelte.
-	 * Sits below the chrome bars (z-50) so the nav/footer stay crisp while
-	 * the page content pulses behind a frosted glass sheet during a route swap.
+	 * Sits below the chrome bars (z-50) so the nav/footer stay crisp while a
+	 * circular frosted-glass ripple expands from the click origin during a
+	 * route swap. Relies on `backdrop-filter` alone — no color wash — so the
+	 * effect reads as a subtle glass pulse rather than a tinted veil.
 	 */
 	.page-ripple {
 		position: fixed;
@@ -293,28 +295,51 @@
 		opacity: 0;
 		backdrop-filter: blur(0) saturate(1);
 		-webkit-backdrop-filter: blur(0) saturate(1);
+		/*
+		 * Faint frosted sheen that rides with the ripple. The page background is
+		 * near-black, so a pure backdrop-filter would be invisible — this keeps
+		 * the expansion readable while staying subtle (no colour tint, just a
+		 * low-alpha white wash that fades toward the ripple edge).
+		 */
 		background: radial-gradient(
-			120% 120% at var(--ripple-x, 50%) var(--ripple-y, 50%),
-			rgba(255, 255, 255, 0.05),
-			rgba(255, 255, 255, 0.015) 45%,
-			transparent 70%
+			circle at var(--ripple-x, 50%) var(--ripple-y, 50%),
+			rgba(255, 255, 255, 0.045),
+			rgba(255, 255, 255, 0.02) 40%,
+			transparent 75%
 		);
-		transition:
-			opacity 320ms cubic-bezier(0.22, 0.88, 0.28, 1),
-			backdrop-filter 320ms cubic-bezier(0.22, 0.88, 0.28, 1),
-			-webkit-backdrop-filter 320ms cubic-bezier(0.22, 0.88, 0.28, 1);
-		will-change: backdrop-filter, opacity;
+		clip-path: circle(0% at var(--ripple-x, 50%) var(--ripple-y, 50%));
+		will-change: backdrop-filter, clip-path, opacity;
 	}
 
-	.page-ripple.is-active {
+	/* Phase 1: circle expands from the click point, blur ramps in */
+	.page-ripple.is-expanding {
 		opacity: 1;
-		backdrop-filter: blur(28px) saturate(1.08) brightness(1.02);
-		-webkit-backdrop-filter: blur(28px) saturate(1.08) brightness(1.02);
-		transition-duration: 180ms;
+		backdrop-filter: blur(32px) saturate(1.05);
+		-webkit-backdrop-filter: blur(32px) saturate(1.05);
+		clip-path: circle(150% at var(--ripple-x, 50%) var(--ripple-y, 50%));
+		transition:
+			clip-path 280ms cubic-bezier(0.22, 0.88, 0.28, 1),
+			opacity 200ms cubic-bezier(0.22, 0.88, 0.28, 1),
+			backdrop-filter 240ms cubic-bezier(0.22, 0.88, 0.28, 1),
+			-webkit-backdrop-filter 240ms cubic-bezier(0.22, 0.88, 0.28, 1);
+	}
+
+	/* Phase 2: circle stays fully expanded; blur/opacity softly fade out */
+	.page-ripple.is-fading {
+		opacity: 0;
+		backdrop-filter: blur(0) saturate(1);
+		-webkit-backdrop-filter: blur(0) saturate(1);
+		clip-path: circle(150% at var(--ripple-x, 50%) var(--ripple-y, 50%));
+		transition:
+			opacity 520ms cubic-bezier(0.22, 0.88, 0.28, 1),
+			backdrop-filter 520ms cubic-bezier(0.22, 0.88, 0.28, 1),
+			-webkit-backdrop-filter 520ms cubic-bezier(0.22, 0.88, 0.28, 1);
 	}
 
 	@media (prefers-reduced-motion: reduce) {
-		.page-ripple {
+		.page-ripple,
+		.page-ripple.is-expanding,
+		.page-ripple.is-fading {
 			transition: none;
 		}
 	}

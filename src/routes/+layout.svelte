@@ -44,15 +44,20 @@
 
 		overlay.style.setProperty('--ripple-x', `${lastPointer.x}px`);
 		overlay.style.setProperty('--ripple-y', `${lastPointer.y}px`);
-		overlay.classList.add('is-active');
+		overlay.classList.remove('is-fading');
+		overlay.classList.add('is-expanding');
 
 		return new Promise<void>((resolve) => {
 			setTimeout(async () => {
 				resolve();
 				await navigation.complete;
 				window.scrollTo({ top: 0, behavior: 'instant' });
-				requestAnimationFrame(() => overlay.classList.remove('is-active'));
-			}, 180);
+				requestAnimationFrame(() => {
+					overlay.classList.remove('is-expanding');
+					overlay.classList.add('is-fading');
+					setTimeout(() => overlay.classList.remove('is-fading'), 520);
+				});
+			}, 300);
 		});
 	});
 </script>
