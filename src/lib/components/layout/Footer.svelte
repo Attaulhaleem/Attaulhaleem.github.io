@@ -7,7 +7,7 @@
 
 <footer class="chrome-bar chrome-bar--bottom fixed inset-x-0 bottom-0 z-50">
 	<div class="section-inner chrome-bar-inner">
-		<p class="text-sm text-muted sm:text-base">
+		<p class="type-meta sm:text-sm">
 			© {year}
 			{site.name}
 		</p>

@@ -18,12 +18,12 @@
 <Section>
 	<article class="max-w-3xl">
 		<header class="mb-8 border-b border-subtle pb-8">
-			<p class="font-mono text-sm text-accent-green">
+			<p class="type-eyebrow">
 				<time datetime={data.post.date}>{data.post.date}</time>
 				· {data.post.readingMinutes} min read
 			</p>
-			<h1 class="mt-3 text-3xl font-bold tracking-tight md:text-4xl">{data.post.title}</h1>
-			<p class="mt-4 text-lg text-muted">{data.post.summary}</p>
+			<h1 class="type-post-title mt-3">{data.post.title}</h1>
+			<p class="type-lede mt-4">{data.post.summary}</p>
 		</header>
 		<Prose html={data.post.html} />
 		<p class="mt-10">

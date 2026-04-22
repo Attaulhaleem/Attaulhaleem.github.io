@@ -12,13 +12,11 @@
 
 <article class="group interactive-surface rounded-card p-5">
 	<a href={resolve(href as '/')} class="block no-underline">
-		<time class="font-mono text-xs text-muted" datetime={post.date}>{post.date}</time>
-		<h3
-			class="mt-2 text-lg font-semibold text-main transition-colors group-hover:text-accent-green"
-		>
+		<time class="type-meta" datetime={post.date}>{post.date}</time>
+		<h3 class="type-card-title mt-2 transition-colors group-hover:text-accent-green">
 			{post.title}
 		</h3>
-		<p class="mt-2 line-clamp-2 text-sm text-muted">{post.summary}</p>
-		<p class="mt-3 font-mono text-xs text-accent-green">{post.readingMinutes} min read</p>
+		<p class="type-card-body mt-2 line-clamp-2">{post.summary}</p>
+		<p class="type-eyebrow mt-3">{post.readingMinutes} min read</p>
 	</a>
 </article>

@@ -33,11 +33,11 @@
 	{/if}
 
 	<div class="flex min-w-0 flex-1 flex-col gap-6">
-		<p class="font-mono text-sm text-accent-green">{eyebrow}</p>
-		<h1 class="max-w-3xl text-4xl font-extrabold tracking-tight md:text-5xl lg:text-6xl">
+		<p class="type-eyebrow">{eyebrow}</p>
+		<h1 class="type-display max-w-3xl">
 			{title}
 		</h1>
-		<p class="max-w-2xl text-lg text-muted md:text-xl">
+		<p class="type-lede max-w-2xl">
 			{subtitle}
 		</p>
 		{#if actions}

@@ -31,12 +31,12 @@
 			/>
 		{:else}
 			<div class="absolute inset-0 flex items-center justify-center p-6 text-center">
-				<span class="font-mono text-xs text-muted">{project.imageAlt}</span>
+				<span class="type-meta">{project.imageAlt}</span>
 			</div>
 		{/if}
 	</div>
-	<h3 class="text-xl font-semibold tracking-tight">{project.title}</h3>
-	<p class="mt-2 flex-1 text-sm text-muted">{project.summary}</p>
+	<h3 class="type-card-title">{project.title}</h3>
+	<p class="type-card-body mt-2 flex-1">{project.summary}</p>
 	<SkillList skills={projectSkills} class="mt-4" />
 	<ul class="mt-5 flex flex-wrap gap-3 border-t border-subtle/70 pt-4">
 		{#each project.links as link (link.href)}

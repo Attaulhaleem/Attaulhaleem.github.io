@@ -22,13 +22,13 @@
 		<span class="w-0.5 grow bg-white/12" aria-hidden="true"></span>
 	</div>
 	<div class="interactive-surface min-w-0 flex-1 p-4 sm:p-5">
-		<p class="font-mono text-xs tracking-wide text-accent-green uppercase">
+		<p class="type-eyebrow">
 			{TIMELINE_KIND_LABEL[entry.kind]} · {entry.period}
 		</p>
-		<h3 class="mt-1 text-lg font-semibold text-main">{entry.title}</h3>
-		<p class="text-sm text-muted">{entry.subtitle}</p>
+		<h3 class="type-card-title mt-1">{entry.title}</h3>
+		<p class="type-card-body">{entry.subtitle}</p>
 		<ul
-			class="mt-3 list-outside list-disc space-y-2 ps-4 text-sm leading-relaxed text-main/90 marker:text-accent-green"
+			class="type-card-body mt-3 list-outside list-disc space-y-2 ps-4 text-main/90 marker:text-accent-green"
 		>
 			{#each entry.description as line, i (`${entry.id}-${i}`)}
 				<li>{line}</li>

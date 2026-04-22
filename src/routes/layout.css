@@ -1,6 +1,3 @@
-/* Swapped to Inter for the quintessential UI look, and JetBrains for clean code blocks */
-@import url('https://fonts.googleapis.com/css2?family=Inter:wght@400;500;600;700;800&family=JetBrains+Mono:wght@400;500&display=swap');
-
 @import 'tailwindcss';
 @plugin '@tailwindcss/forms';
 @plugin '@tailwindcss/typography';
@@ -18,7 +15,8 @@
 	--color-subtle: rgba(255, 255, 255, 0.08);
 
 	--color-main: #ffffff;
-	--color-muted: #888888;
+	--color-muted: #9f9f9f;
+	--color-faint: #7a7a7a;
 	/* Deep, vibrant electric green */
 	--color-accent-green: #00ff66;
 	--color-glass-highlight: rgba(255, 255, 255, 0.24);
@@ -33,17 +31,44 @@
 	/* Larger, smoother border radii mimic Apple/Framer hardware feel */
 	--radius-card: 16px;
 	--chrome-height: 4rem;
+
+	/* Semantic type scale */
+	--text-eyebrow: 0.75rem;
+	--text-eyebrow--line-height: 1.25rem;
+	--text-eyebrow--letter-spacing: 0.08em;
+	--text-lede: 1.125rem;
+	--text-lede--line-height: 1.65;
+	--text-display: clamp(2.5rem, 5.8vw, 4.6rem);
+	--text-display--line-height: 1.06;
+	--text-display--letter-spacing: -0.05em;
+	--text-section-title: clamp(1.9rem, 3.2vw, 2.7rem);
+	--text-section-title--line-height: 1.12;
+	--text-section-title--letter-spacing: -0.045em;
+	--text-card-title: 1.2rem;
+	--text-card-title--line-height: 1.25;
+	--text-card-title--letter-spacing: -0.02em;
+	--text-post-title: clamp(2rem, 4.2vw, 3rem);
+	--text-post-title--line-height: 1.08;
+	--text-post-title--letter-spacing: -0.04em;
 }
 
 /* Base document */
 @layer base {
 	html {
 		@apply scroll-smooth antialiased;
+		font-size: 16px;
+		line-height: 1.6;
+		font-optical-sizing: auto;
+		-webkit-font-smoothing: antialiased;
+		-moz-osx-font-smoothing: grayscale;
 	}
 
 	body {
 		/* Framer sites are almost always dark mode by default */
 		@apply min-h-dvh bg-app font-sans text-main selection:bg-accent-green/30 selection:text-white;
+		font-feature-settings:
+			'cv02' on,
+			'cv11' on;
 		background-image:
 			radial-gradient(circle at 18% 12%, rgba(0, 255, 102, 0.06), transparent 40%),
 			radial-gradient(circle at 85% 8%, rgba(0, 85, 255, 0.07), transparent 38%),
@@ -136,14 +161,50 @@
 	}
 
 	.section-title {
-		@apply m-0 max-w-4xl font-sans text-3xl font-semibold leading-[1.12] tracking-[-0.045em] text-main md:text-4xl md:tracking-[-0.055em];
-		font-feature-settings: 'cv02' on, 'cv11' on;
+		@apply m-0 max-w-4xl font-sans text-section-title font-semibold text-main;
+		font-feature-settings:
+			'cv02' on,
+			'cv11' on;
 		text-shadow: 0 1px 0 rgba(255, 255, 255, 0.05);
+	}
+
+	.type-eyebrow {
+		@apply font-mono text-eyebrow font-medium text-accent-green uppercase;
+	}
+
+	.type-display {
+		@apply font-sans text-display font-semibold text-main;
+		font-feature-settings:
+			'cv02' on,
+			'cv11' on;
+	}
+
+	.type-lede {
+		@apply text-lede text-muted;
+	}
+
+	.type-card-title {
+		@apply text-card-title font-semibold text-main;
+	}
+
+	.type-card-body {
+		@apply text-sm leading-relaxed text-muted;
+	}
+
+	.type-post-title {
+		@apply font-sans text-post-title font-semibold text-main;
+		font-feature-settings:
+			'cv02' on,
+			'cv11' on;
+	}
+
+	.type-meta {
+		@apply font-mono text-eyebrow text-faint;
 	}
 
 	/* Prose wrapper for MD/HTML article bodies */
 	.prose-article {
-		@apply prose max-w-none prose-invert prose-headings:font-semibold prose-headings:tracking-tight prose-a:text-accent-green prose-a:no-underline hover:prose-a:text-white prose-code:font-mono prose-pre:border prose-pre:border-subtle prose-pre:bg-surface;
+		@apply prose max-w-none prose-invert prose-headings:font-semibold prose-headings:tracking-tight prose-h2:mt-11 prose-h2:mb-4 prose-h3:mt-8 prose-h3:mb-3 prose-p:leading-relaxed prose-p:text-main/90 prose-a:text-accent-green prose-a:no-underline hover:prose-a:text-white prose-strong:text-main prose-code:font-mono prose-code:text-main prose-pre:border prose-pre:border-subtle prose-pre:bg-surface prose-li:my-1 prose-li:leading-relaxed;
 	}
 
 	.btn {
