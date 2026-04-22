@@ -32,7 +32,7 @@
 	{/if}
 
 	<div class="flex min-w-0 flex-1 flex-col gap-6">
-		<p class="type-eyebrow">{eyebrow}</p>
+		<p class="type-eyebrow hero-eyebrow">{eyebrow}</p>
 		<h1 class="type-display max-w-3xl">
 			{title}
 		</h1>

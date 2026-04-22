@@ -28,6 +28,21 @@
 	--shadow-lift: 0 20px 40px rgba(0, 0, 0, 0.8);
 	--shadow-soft: 0 8px 28px rgba(0, 0, 0, 0.45);
 
+	/*
+	 * Page atmosphere (see `body` background-image). Three fixed radials: green
+	 * top-left, blue top-right, soft white bottom — same layout everywhere.
+	 */
+	--bg-ambient-layers:
+		radial-gradient(circle at 18% 12%, rgba(0, 255, 102, 0.06), transparent 40%),
+		radial-gradient(circle at 85% 8%, rgba(0, 85, 255, 0.07), transparent 38%),
+		radial-gradient(circle at 50% 92%, rgba(255, 255, 255, 0.025), transparent 45%);
+
+	/* Same three radials as `--bg-ambient-layers`, ~2× stronger for interactive hovers */
+	--surface-hover-fill:
+		radial-gradient(circle at 18% 12%, rgba(0, 255, 102, 0.12), transparent 42%),
+		radial-gradient(circle at 85% 8%, rgba(0, 85, 255, 0.14), transparent 40%),
+		radial-gradient(circle at 50% 92%, rgba(255, 255, 255, 0.055), transparent 48%);
+
 	/* Larger, smoother border radii mimic Apple/Framer hardware feel */
 	--radius-card: 16px;
 	--chrome-height: 4rem;
@@ -98,10 +113,7 @@ html:lang(ur) {
 		font-feature-settings:
 			'cv02' on,
 			'cv11' on;
-		background-image:
-			radial-gradient(circle at 18% 12%, rgba(0, 255, 102, 0.06), transparent 40%),
-			radial-gradient(circle at 85% 8%, rgba(0, 85, 255, 0.07), transparent 38%),
-			radial-gradient(circle at 50% 92%, rgba(255, 255, 255, 0.025), transparent 45%);
+		background-image: var(--bg-ambient-layers);
 		background-attachment: fixed;
 	}
 
@@ -148,6 +160,7 @@ html:lang(ur) {
 	/* Framer-style interactive cards: translucent, thin borders, slow easing */
 	.interactive-surface {
 		@apply rounded-card border border-subtle bg-surface/90 backdrop-blur-xl transition-all duration-500 ease-out;
+		background-image: none;
 		box-shadow:
 			inset 0 1px 0 var(--color-glass-highlight),
 			0 0 0 1px color-mix(in srgb, var(--color-glass-soft) 55%, transparent),
@@ -157,7 +170,9 @@ html:lang(ur) {
 	/* Lift effect with a subtle electric green diffused shadow */
 	@media (hover: hover) {
 		.interactive-surface:hover {
-			@apply -translate-y-1 border-accent-green/35 bg-white/6;
+			@apply -translate-y-1 border-accent-green/35;
+			background-color: rgba(255, 255, 255, 0.04);
+			background-image: var(--surface-hover-fill);
 			box-shadow:
 				inset 0 1px 0 var(--color-glass-highlight),
 				var(--shadow-lift),
@@ -243,72 +258,129 @@ html:lang(ur) {
 
 	.btn {
 		@apply inline-flex items-center justify-center gap-2 rounded-lg px-4 py-2.5 text-sm font-medium no-underline transition-all duration-300 focus-visible:outline-2 focus-visible:outline-offset-2 focus-visible:outline-accent-green;
+		background-color: transparent;
+		background-image: none;
 	}
 
 	.btn--primary {
-		@apply border border-subtle bg-white/[0.07] text-main shadow-[0_8px_28px_rgba(0,0,0,0.38)];
+		@apply border border-subtle text-main;
+		box-shadow:
+			inset 0 1px 0 rgba(255, 255, 255, 0.1),
+			0 0 0 1px rgba(255, 255, 255, 0.04);
 	}
 
 	@media (hover: hover) {
 		.btn--primary:hover {
-			@apply -translate-y-0.5 border-accent-green/45 bg-white/13 shadow-[0_14px_32px_rgba(0,255,102,0.2)];
+			@apply -translate-y-0.5 border-accent-green/45 text-main;
+			background-image: var(--surface-hover-fill);
+			backdrop-filter: blur(22px) saturate(175%);
+			-webkit-backdrop-filter: blur(22px) saturate(175%);
+			box-shadow:
+				inset 0 1px 0 rgba(255, 255, 255, 0.22),
+				0 10px 36px rgba(0, 0, 0, 0.42),
+				0 0 32px rgba(0, 255, 102, 0.16);
 		}
 	}
 
 	.btn--ghost {
 		@apply border border-transparent text-main;
+		box-shadow: none;
 	}
 
 	@media (hover: hover) {
 		.btn--ghost:hover {
-			@apply border-subtle bg-white/6;
+			@apply -translate-y-0.5 border-subtle/90 text-main;
+			background-image: var(--surface-hover-fill);
+			backdrop-filter: blur(22px) saturate(175%);
+			-webkit-backdrop-filter: blur(22px) saturate(175%);
+			box-shadow:
+				inset 0 1px 0 rgba(255, 255, 255, 0.18),
+				0 10px 36px rgba(0, 0, 0, 0.38),
+				0 0 28px rgba(0, 255, 102, 0.12);
 		}
 	}
 
 	.nav-pill {
-		@apply rounded-md border border-transparent px-3 py-2 text-sm font-medium text-muted no-underline transition-all;
+		@apply rounded-md border border-transparent px-3 py-2 text-sm font-medium text-muted no-underline transition-all duration-300;
+		background-color: transparent;
+		background-image: none;
+		box-shadow: none;
 	}
 
 	@media (hover: hover) {
 		.nav-pill:hover {
-			@apply border-subtle bg-white/6 text-main;
+			@apply -translate-y-0.5 border-subtle/90 text-main;
+			background-image: var(--surface-hover-fill);
+			backdrop-filter: blur(22px) saturate(175%);
+			-webkit-backdrop-filter: blur(22px) saturate(175%);
+			box-shadow:
+				inset 0 1px 0 rgba(255, 255, 255, 0.18),
+				0 10px 36px rgba(0, 0, 0, 0.38),
+				0 0 28px rgba(0, 255, 102, 0.12);
+		}
+
+		.nav-pill--active:hover {
+			border-color: rgba(0, 255, 102, 0.5);
+			box-shadow:
+				inset 0 1px 0 rgba(255, 255, 255, 0.22),
+				0 10px 36px rgba(0, 0, 0, 0.38),
+				0 0 32px rgba(0, 255, 102, 0.18);
 		}
 	}
 
 	.nav-pill--active {
-		@apply border-accent-green/30 bg-white/8 text-main shadow-(--shadow-glow-green);
+		@apply text-main;
+		background-color: transparent;
+		background-image: none;
+		border-color: rgba(0, 255, 102, 0.35);
+		box-shadow:
+			inset 0 1px 0 rgba(255, 255, 255, 0.1),
+			0 0 20px rgba(0, 255, 102, 0.12);
 	}
 
 	/*
 	 * Language dropdown in the chrome bar: strip the native chevron (it often stacks
-	 * under the label in WebKit) and paint a custom chevron + soft glass shadow stack.
+	 * under the label in WebKit) and paint a custom chevron — same glass idle/hover
+	 * as nav pills / buttons (chevron layered above `--surface-hover-fill` on hover).
 	 */
 	.locale-select {
-		@apply w-max max-w-[10rem] cursor-pointer rounded border border-subtle py-1 pr-6 pl-1.5 font-mono text-[0.6875rem] leading-tight font-medium text-main transition-all duration-300 ease-out;
+		@apply w-max max-w-[10rem] cursor-pointer rounded-lg border border-subtle py-1 pr-6 pl-1.5 font-mono text-[0.6875rem] leading-tight font-medium text-main transition-all duration-300 ease-out;
 		appearance: none;
 		-webkit-appearance: none;
 		-moz-appearance: none;
 		color-scheme: dark;
-		background-color: rgba(255, 255, 255, 0.07);
+		background-color: transparent;
 		/* Set on `<select class="locale-select">` via `--locale-select-chevron` (see LanguageSwitcher.svelte) */
 		background-image: var(--locale-select-chevron);
 		background-repeat: no-repeat;
 		background-position: right 0.35rem center;
 		background-size: 0.5625rem;
 		box-shadow:
-			inset 0 1px 0 var(--color-glass-highlight),
-			0 0 0 1px color-mix(in srgb, var(--color-glass-soft) 55%, transparent),
-			0 6px 22px rgba(0, 0, 0, 0.32);
+			inset 0 1px 0 rgba(255, 255, 255, 0.1),
+			0 0 0 1px rgba(255, 255, 255, 0.04);
+	}
+
+	html[dir='rtl'] .locale-select {
+		background-position: left 0.35rem center;
 	}
 
 	@media (hover: hover) {
 		.locale-select:hover {
-			@apply border-accent-green/28 bg-white/10 text-main;
+			@apply -translate-y-0.5 border-accent-green/45 text-main;
+			background-image: var(--locale-select-chevron), var(--surface-hover-fill);
+			background-position: right 0.35rem center, 0 0;
+			background-size: 0.5625rem auto, 100% 100%;
+			background-repeat: no-repeat, no-repeat;
+			backdrop-filter: blur(22px) saturate(175%);
+			-webkit-backdrop-filter: blur(22px) saturate(175%);
 			box-shadow:
-				inset 0 1px 0 var(--color-glass-highlight),
-				0 0 0 1px color-mix(in srgb, var(--color-glass-soft) 55%, transparent),
-				0 8px 26px rgba(0, 0, 0, 0.38),
-				0 0 18px rgba(0, 255, 102, 0.07);
+				inset 0 1px 0 rgba(255, 255, 255, 0.22),
+				0 10px 36px rgba(0, 0, 0, 0.42),
+				0 0 32px rgba(0, 255, 102, 0.16);
+		}
+
+		html[dir='rtl'] .locale-select:hover {
+			background-position: left 0.35rem center, 0 0;
 		}
 	}
 
@@ -317,25 +389,40 @@ html:lang(ur) {
 	}
 
 	.link-accent {
-		@apply inline-flex items-center gap-1.5 rounded-md px-2 py-1 text-sm font-medium text-accent-green no-underline transition-all duration-300 ease-out active:scale-[0.98];
+		@apply inline-flex items-center gap-1.5 rounded-md border border-transparent px-2 py-1 text-sm font-medium text-accent-green no-underline transition-all duration-300 ease-out active:scale-[0.98];
 		margin-inline: -0.5rem;
+		background-color: transparent;
+		background-image: none;
 	}
 
 	@media (hover: hover) {
 		.link-accent:hover {
-			@apply bg-white/5 text-main shadow-[0_0_22px_rgba(0,255,102,0.22),0_0_40px_rgba(0,255,102,0.08)];
-			text-shadow: 0 0 20px rgba(0, 255, 102, 0.45);
+			@apply border-subtle/80 text-main;
+			background-image: var(--surface-hover-fill);
+			backdrop-filter: blur(22px) saturate(175%);
+			-webkit-backdrop-filter: blur(22px) saturate(175%);
+			box-shadow:
+				inset 0 1px 0 rgba(255, 255, 255, 0.18),
+				0 0 24px rgba(0, 255, 102, 0.18),
+				0 0 48px rgba(0, 255, 102, 0.06);
+			text-shadow: 0 0 18px rgba(0, 255, 102, 0.35);
 		}
 	}
 
 	.tag-pill {
 		@apply inline-flex items-center gap-1.5 rounded-md border border-subtle bg-app/60 px-2 py-0.5 font-mono text-xs text-muted transition-all duration-300 ease-out;
+		background-image: none;
 	}
 
 	@media (hover: hover) {
 		.tag-pill:hover {
-			@apply border-accent-green/40 bg-white/4 text-main;
+			@apply border-accent-green/40 text-main;
+			background-color: rgba(255, 255, 255, 0.03);
+			background-image: var(--surface-hover-fill);
+			backdrop-filter: blur(22px) saturate(175%);
+			-webkit-backdrop-filter: blur(22px) saturate(175%);
 			box-shadow:
+				inset 0 1px 0 rgba(255, 255, 255, 0.12),
 				0 0 16px rgba(0, 255, 102, 0.28),
 				0 0 32px rgba(0, 255, 102, 0.1);
 		}
@@ -425,6 +512,12 @@ html:lang(ur) {
 		font-family: var(--font-sans);
 		text-transform: none;
 		letter-spacing: var(--text-eyebrow--letter-spacing);
+	}
+
+	/* Hero career line: longer Urdu string + Naskh needs more than mono eyebrow scale */
+	html:lang(ur) .type-eyebrow.hero-eyebrow {
+		font-size: 1.125rem;
+		line-height: 1.7;
 	}
 
 	html:lang(ur) .locale-select {
