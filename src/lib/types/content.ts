@@ -1,5 +1,7 @@
 /** Shared content models — keep UI generic and data replaceable (CMS/MD later). */
 
+import type { SkillId } from '$lib/content/skills';
+
 /** Keep in sync with `src/routes` so `resolve()` stays type-safe */
 export type AppNavHref = '/' | '/about' | '/projects' | '/blog';
 
@@ -24,18 +26,13 @@ export type TimelineEntry = {
 	kind: 'education' | 'experience';
 };
 
-export type Skill = {
-	id: string;
-	label: string;
-	iconSrc?: string;
-};
-
 export type Project = {
 	slug: string;
 	title: string;
 	summary: string;
 	imageAlt: string;
-	tags: string[];
+	/** Keys from the `skills` registry in `$lib/content/skills`. */
+	skills: readonly SkillId[];
 	links: { label: string; href: string; external?: boolean }[];
 	/** Optional; use placeholder gradient if absent */
 	imageSrc?: string;

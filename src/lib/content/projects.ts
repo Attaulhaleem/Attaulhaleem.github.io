@@ -13,7 +13,7 @@ const projects: Project[] = [
 		title: 'Flash',
 		summary: 'Proactive traffic management using real-time traffic and event data.',
 		imageAlt: 'Flash',
-		tags: ['Svelte', 'TypeScript', 'Tailwind CSS'],
+		skills: ['svelte'],
 		links: [
 			{
 				label: 'Source (Coming Soon...)',
@@ -28,7 +28,7 @@ const projects: Project[] = [
 		title: 'Oblivision',
 		summary: 'A 2D puzzle platformer made in Godot for a game jam.',
 		imageAlt: 'Oblivision',
-		tags: ['Godot'],
+		skills: ['godot'],
 		links: [
 			{
 				label: 'Demo',
@@ -48,7 +48,7 @@ const projects: Project[] = [
 		title: 'Grounded',
 		summary: 'A casual side-scroller with fun mini-games.',
 		imageAlt: 'Grounded',
-		tags: ['Godot'],
+		skills: ['godot'],
 		links: [
 			{
 				label: 'Demo',
@@ -68,7 +68,7 @@ const projects: Project[] = [
 		title: 'Omnidirectional Conveyor',
 		summary: 'A modular omnidirectional conveyor for material flow.',
 		imageAlt: 'Omnidirectional Conveyor',
-		tags: ['Python', 'Raspberry Pi', 'Computer Vision'],
+		skills: ['python', 'raspberry-pi'],
 		links: [
 			{
 				label: 'Source',
@@ -84,7 +84,7 @@ const projects: Project[] = [
 		summary:
 			'Real-time workout classification using Arduino Nano 33 BLE Sense, Edge Impulse, and Web Bluetooth.',
 		imageAlt: 'Smart Dumbbell',
-		tags: ['C++', 'Edge Impulse'],
+		skills: ['c++'],
 		links: [
 			{ label: 'Source', href: 'https://github.com/Attaulhaleem/smart-dumbbell', external: true }
 		],
@@ -95,7 +95,7 @@ const projects: Project[] = [
 		title: 'Maze Solving Robot',
 		summary: 'Mapping and solving of closed mazes using the Arduino platform.',
 		imageAlt: 'Maze Solving Robot',
-		tags: ['Arduino'],
+		skills: ['arduino'],
 		links: [
 			{ label: 'Source', href: 'https://github.com/Attaulhaleem/arduino-maze', external: true }
 		],
@@ -106,7 +106,7 @@ const projects: Project[] = [
 		title: 'Chess Game',
 		summary: 'A vanilla Chess game created using C++ and SFML.',
 		imageAlt: 'Chess Game',
-		tags: ['C++', 'SFML'],
+		skills: ['c++'],
 		links: [
 			{ label: 'Source', href: 'https://github.com/Attaulhaleem/sfml-chess', external: true }
 		],

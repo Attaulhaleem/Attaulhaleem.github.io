@@ -4,7 +4,8 @@
 	import GlowingCard from '$lib/components/ui/GlowingCard.svelte';
 	import Icon from '$lib/components/ui/Icon.svelte';
 	import OutboundLink from '$lib/components/ui/OutboundLink.svelte';
-	import Tag from '$lib/components/ui/Tag.svelte';
+	import SkillList from '$lib/components/ui/SkillList.svelte';
+	import { resolveSkills } from '$lib/content/skills';
 	import type { Project } from '$lib/types/content';
 
 	type Props = {
@@ -12,6 +13,8 @@
 	};
 
 	let { project }: Props = $props();
+
+	const projectSkills = $derived(resolveSkills(project.skills));
 </script>
 
 <GlowingCard as="article" class="flex h-full flex-col overflow-hidden">
@@ -21,7 +24,11 @@
 		aria-label={project.imageAlt}
 	>
 		{#if project.imageSrc}
-			<img src={project.imageSrc} alt={project.imageAlt} class="block h-full w-auto max-w-none object-contain" />
+			<img
+				src={project.imageSrc}
+				alt={project.imageAlt}
+				class="block h-full w-auto max-w-none object-contain"
+			/>
 		{:else}
 			<div class="absolute inset-0 flex items-center justify-center p-6 text-center">
 				<span class="font-mono text-xs text-muted">{project.imageAlt}</span>
@@ -30,11 +37,7 @@
 	</div>
 	<h3 class="text-xl font-semibold tracking-tight">{project.title}</h3>
 	<p class="mt-2 flex-1 text-sm text-muted">{project.summary}</p>
-	<div class="mt-4 flex flex-wrap gap-2">
-		{#each project.tags as tag (tag)}
-			<Tag text={tag} />
-		{/each}
-	</div>
+	<SkillList skills={projectSkills} class="mt-4" />
 	<ul class="mt-5 flex flex-wrap gap-3 border-t border-subtle/70 pt-4">
 		{#each project.links as link (link.href)}
 			<li>

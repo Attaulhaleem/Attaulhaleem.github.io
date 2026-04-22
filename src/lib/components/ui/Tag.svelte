@@ -2,13 +2,13 @@
 	import Icon from '$lib/components/ui/Icon.svelte';
 
 	type Props = {
-		text: string;
-		/** Optional SVG from `$lib/assets`; rendered to the left of the text */
+		label: string;
+		/** Optional SVG from `$lib/assets`; rendered to the left of the label */
 		iconSrc?: string;
 		class?: string;
 	};
 
-	let { text, iconSrc, class: className = '' }: Props = $props();
+	let { label, iconSrc, class: className = '' }: Props = $props();
 </script>
 
 <span
@@ -17,5 +17,5 @@
 	{#if iconSrc}
 		<Icon src={iconSrc} class="h-3.5 w-3.5 shrink-0" />
 	{/if}
-	{text}
+	{label}
 </span>

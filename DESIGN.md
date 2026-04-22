@@ -68,7 +68,7 @@ Break down the UI into highly reusable Svelte components.
 #### 📂 UI Primitives
 
 - `Button.svelte` — Reusable button component. Props: `href` (optional for link behavior), `variant` (primary with glow, or ghost/outline).
-- `Tag.svelte` — Small pill component for tech stack elements using `JetBrains Mono`. Props: `text`.
+- `Tag.svelte` — Small pill component for tech stack elements using `JetBrains Mono`. Props: `label`, optional `iconSrc`.
 - `GlowingCard.svelte` — Base wrapper for anything that needs the subtle 1px border and green glow on hover.
 
 #### 📂 Feature Components
@@ -77,9 +77,9 @@ Break down the UI into highly reusable Svelte components.
   - `Hero.svelte` — The introduction, tagline, and CTA.
 - **About:**
   - `Timeline.svelte` & `TimelineItem.svelte` — For Education and Experience. Vertical line with green nodes.
-  - `TechStackGrid.svelte` — Maps through an array of skills and renders them via `Tag.svelte`.
+  - `SkillList.svelte` — Maps through skills and renders each via `Tag.svelte` (shared with Projects).
 - **Projects:**
-  - `ProjectCard.svelte` — Composes `GlowingCard`, `Tag` (for tech stack), and standard HTML for images/links.
+  - `ProjectCard.svelte` — Composes `GlowingCard`, `SkillList` (tech stack), and standard HTML for images/links.
 - **Blog:**
   - `ArticleCard.svelte` — Minimalist list item for the blog feed showing Title, Date, and Reading Time.
   - `Prose.svelte` — A wrapper utilizing `@tailwindcss/typography` (`prose prose-invert prose-green`) to style the rendered Markdown content beautifully.
