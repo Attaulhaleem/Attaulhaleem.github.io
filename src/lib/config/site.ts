@@ -9,10 +9,9 @@ import upworkLogo from '$lib/assets/logos/upwork.svg';
 import type { NavItem, SocialLink } from '$lib/types/content';
 
 export const site = {
-	/** Shown in nav + footer */
 	name: 'Atta Ul Haleem',
-	description: "Engineer's portfolio: projects, writing, and background.",
-	url: 'https://example.com' // TODO: replace when deploying
+	description: 'Personal website of Atta Ul Haleem. Come explore my projects and writings.',
+	url: 'https://attaulhaleem.com'
 } as const;
 
 /** Hero eyebrow line */

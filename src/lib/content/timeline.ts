@@ -9,7 +9,7 @@ export const timeline: TimelineEntry[] = [
 			'Institut Polytechnique de Paris · Electrical Engineering (Data Analysis and Pattern Classification)',
 		period: 'Sep 2025 — present',
 		description: [
-			'Grade: 15.4/20.0',
+			// 'Grade: 15.4/20.0',
 			'Courses: Computer Science, Probability and Statistics, Optimization Methods, Statistical Data Analysis, Application of Statistical Methods, French, Effective Communication',
 			"Activities: Hi! Paris H!ckathon 2025, INNOV'NIGHT 2026"
 		]
@@ -49,17 +49,17 @@ export const timeline: TimelineEntry[] = [
 			'enfo.ai: Smart IoT energy meters and AI-driven analytics to cut electricity use and cost; led hardware and firmware, including FOTA, a web dashboard for configuration, and file transfer over MQTT.'
 		]
 	},
-	{
-		id: 'pel',
-		kind: 'experience',
-		title: 'Intern',
-		subtitle: 'Pak Elektron Limited (PEL)',
-		period: 'Jun 2022 — Aug 2022',
-		description: [
-			'First exposure to assembly-line work: energy meter types/classes, fabrication, and QA.',
-			'Capstone: Arduino-based adjustable timer for automating DC motor control.'
-		]
-	},
+	// {
+	// 	id: 'pel',
+	// 	kind: 'experience',
+	// 	title: 'Intern',
+	// 	subtitle: 'Pak Elektron Limited (PEL)',
+	// 	period: 'Jun 2022 — Aug 2022',
+	// 	description: [
+	// 		'First exposure to assembly-line work: energy meter types/classes, fabrication, and QA.',
+	// 		'Capstone: Arduino-based adjustable timer for automating DC motor control.'
+	// 	]
+	// },
 	{
 		id: 'giki',
 		kind: 'education',
@@ -68,7 +68,7 @@ export const timeline: TimelineEntry[] = [
 			'Ghulam Ishaq Khan Institute of Engineering Sciences and Technology (GIKI) · Electrical Engineering (Electronics)',
 		period: 'Aug 2019 — Jul 2023',
 		description: [
-			'Grade: 3.24 / 4.00',
+			// 'Grade: 3.24 / 4.00',
 			'Electives: Embedded Systems, Digital System Design, Introduction to Robotics',
 			'Activities: Team Foxtrot (UAVs)'
 		]
