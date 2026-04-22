@@ -7,7 +7,7 @@ import mazeSolvingRobotImage from '$lib/assets/captures/arduino_maze.png';
 import chessGameImage from '$lib/assets/captures/sfml_chess.png';
 import type { Project } from '$lib/types/content';
 
-const projects: Project[] = [
+export const projects: readonly Project[] = [
 	{
 		slug: 'flash',
 		title: 'Flash',
@@ -114,8 +114,8 @@ const projects: Project[] = [
 	}
 ];
 
-export function getAllProjects(): Project[] {
-	return [...projects];
+export function getAllProjects(): readonly Project[] {
+	return projects;
 }
 
 export function getProjectBySlug(slug: string): Project | undefined {

@@ -5,15 +5,15 @@
 	import Section from '$lib/components/layout/Section.svelte';
 	import Button from '$lib/components/ui/Button.svelte';
 	import { heroProfilePhoto, site } from '$lib/config/site';
-	import { getFeaturedPostsMeta } from '$lib/content/blog';
+	import { getFeaturedPosts } from '$lib/content/blog';
 	import { getFeaturedProjects } from '$lib/content/projects';
 
 	const featuredProjects = getFeaturedProjects(2);
-	const featuredPosts = getFeaturedPostsMeta(2);
+	const featuredPosts = getFeaturedPosts(2);
 </script>
 
 <svelte:head>
-	<title>Home - {site.name}</title>
+	<title>Home — {site.name}</title>
 	<meta name="description" content={site.description} />
 </svelte:head>
 

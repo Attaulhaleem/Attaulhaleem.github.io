@@ -1,0 +1,13 @@
+export function isExternalHref(href: string): boolean {
+	return (
+		href.startsWith('http://') ||
+		href.startsWith('https://') ||
+		href.startsWith('mailto:') ||
+		href.startsWith('tel:') ||
+		href.startsWith('#')
+	);
+}
+
+export function toInternalHref(href: string): '/' {
+	return href as '/';
+}

@@ -6,6 +6,11 @@
 	};
 
 	let { entry }: Props = $props();
+
+	const TIMELINE_KIND_LABEL: Record<TimelineEntry['kind'], string> = {
+		education: 'Education',
+		experience: 'Experience'
+	};
 </script>
 
 <li class="relative flex gap-4 pb-10 last:pb-0 sm:gap-6">
@@ -16,11 +21,9 @@
 		></span>
 		<span class="w-0.5 grow bg-white/12" aria-hidden="true"></span>
 	</div>
-	<div
-		class="min-w-0 flex-1 rounded-card border border-subtle/70 bg-surface/70 p-4 backdrop-blur-lg transition-all duration-500 ease-out hover:-translate-y-1 hover:border-accent-green/35 hover:bg-white/6 hover:shadow-[inset_0_1px_0_var(--color-glass-highlight),var(--shadow-lift),var(--shadow-glow)] sm:p-5"
-	>
+	<div class="interactive-surface min-w-0 flex-1 p-4 sm:p-5">
 		<p class="font-mono text-xs tracking-wide text-accent-green uppercase">
-			{entry.kind === 'education' ? 'Education' : 'Experience'} · {entry.period}
+			{TIMELINE_KIND_LABEL[entry.kind]} · {entry.period}
 		</p>
 		<h3 class="mt-1 text-lg font-semibold text-main">{entry.title}</h3>
 		<p class="text-sm text-muted">{entry.subtitle}</p>

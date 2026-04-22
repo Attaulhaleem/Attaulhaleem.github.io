@@ -27,9 +27,7 @@
 		</header>
 		<Prose html={data.post.html} />
 		<p class="mt-10">
-			<a href={blogIndexHref} class="font-medium text-accent-green no-underline hover:underline">
-				← All posts
-			</a>
+			<a href={blogIndexHref} class="link-accent"> ← All posts </a>
 		</p>
 	</article>
 </Section>

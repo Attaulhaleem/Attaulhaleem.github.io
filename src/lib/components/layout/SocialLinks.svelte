@@ -2,6 +2,7 @@
 	/* eslint-disable svelte/no-navigation-without-resolve -- only https/mailto external links */
 	import Icon from '$lib/components/ui/Icon.svelte';
 	import type { SocialLink } from '$lib/types/content';
+	import { isExternalHref } from '$lib/utils/href';
 
 	type Props = {
 		links: SocialLink[];
@@ -13,11 +14,11 @@
 
 <ul class={`flex flex-wrap items-center gap-4 ${className}`}>
 	{#each links as link (link.href)}
-		{@const external = link.href.startsWith('http')}
+		{@const external = isExternalHref(link.href)}
 		<li>
 			<a
 				href={link.href}
-				class="inline-flex origin-center items-center text-muted transition-[scale,color] duration-300 ease-out motion-reduce:transition-none hover:scale-130 hover:text-accent-green active:scale-95"
+				class="social-icon"
 				target={external ? '_blank' : undefined}
 				rel={external ? 'noreferrer noopener' : undefined}
 			>

@@ -10,7 +10,7 @@
 	let { post, href }: Props = $props();
 </script>
 
-<article class="group interactive-surface rounded-lg p-5">
+<article class="group interactive-surface rounded-card p-5">
 	<a href={resolve(href as '/')} class="block no-underline">
 		<time class="font-mono text-xs text-muted" datetime={post.date}>{post.date}</time>
 		<h3

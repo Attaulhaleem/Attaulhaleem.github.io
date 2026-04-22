@@ -23,7 +23,7 @@
 			<img
 				src={profileSrc}
 				alt={profileAlt ?? ''}
-				class="interactive-surface aspect-square h-36 w-36 rounded-full! object-cover shadow-(--shadow-glow) md:h-44 md:w-44"
+				class="aspect-square h-36 w-36 rounded-full border border-subtle bg-surface/90 object-cover shadow-(--shadow-glow) md:h-44 md:w-44"
 				width="176"
 				height="176"
 				decoding="async"

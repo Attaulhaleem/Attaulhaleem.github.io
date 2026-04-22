@@ -3,10 +3,10 @@
 	import arrowUpRight from '$lib/assets/icons/arrow_up_right.svg';
 	import GlowingCard from '$lib/components/ui/GlowingCard.svelte';
 	import Icon from '$lib/components/ui/Icon.svelte';
-	import OutboundLink from '$lib/components/ui/OutboundLink.svelte';
 	import SkillList from '$lib/components/ui/SkillList.svelte';
 	import { resolveSkills } from '$lib/content/skills';
 	import type { Project } from '$lib/types/content';
+	import { isExternalHref, toInternalHref } from '$lib/utils/href';
 
 	type Props = {
 		project: Project;
@@ -15,10 +15,6 @@
 	let { project }: Props = $props();
 
 	const projectSkills = $derived(resolveSkills(project.skills));
-
-	/** Project footer links: accent + glow, pill surface, nudge icon on hover */
-	const projectLinkClass =
-		'group inline-flex items-center gap-1.5 rounded-md px-2 -mx-2 py-1 text-sm font-medium text-accent-green no-underline transition-all duration-300 ease-out hover:bg-white/5 hover:text-main hover:shadow-[0_0_22px_rgba(0,255,102,0.22),0_0_40px_rgba(0,255,102,0.08)] hover:[text-shadow:0_0_20px_rgba(0,255,102,0.45)] active:scale-[0.98]';
 </script>
 
 <GlowingCard as="article" class="flex h-full flex-col overflow-hidden">
@@ -45,16 +41,17 @@
 	<ul class="mt-5 flex flex-wrap gap-3 border-t border-subtle/70 pt-4">
 		{#each project.links as link (link.href)}
 			<li>
-				{#if link.external}
-					<OutboundLink href={link.href} class={projectLinkClass}>
+				{#if isExternalHref(link.href)}
+					<!-- eslint-disable-next-line svelte/no-navigation-without-resolve -- explicit outbound URL -->
+					<a href={link.href} class="link-accent" target="_blank" rel="noreferrer noopener">
 						{link.label}
 						<Icon
 							src={arrowUpRight}
 							class="h-4 w-4 shrink-0 transition-transform duration-300 ease-out group-hover:translate-x-0.5 group-hover:-translate-y-0.5"
 						/>
-					</OutboundLink>
+					</a>
 				{:else}
-					<a href={resolve(link.href as '/')} class={projectLinkClass}>
+					<a href={resolve(toInternalHref(link.href))} class="link-accent">
 						{link.label}
 					</a>
 				{/if}
