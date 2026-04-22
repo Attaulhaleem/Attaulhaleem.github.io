@@ -15,6 +15,10 @@
 	let { project }: Props = $props();
 
 	const projectSkills = $derived(resolveSkills(project.skills));
+
+	/** Project footer links: accent + glow, pill surface, nudge icon on hover */
+	const projectLinkClass =
+		'group inline-flex items-center gap-1.5 rounded-md px-2 -mx-2 py-1 text-sm font-medium text-accent-green no-underline transition-all duration-300 ease-out hover:bg-white/5 hover:text-main hover:shadow-[0_0_22px_rgba(0,255,102,0.22),0_0_40px_rgba(0,255,102,0.08)] hover:[text-shadow:0_0_20px_rgba(0,255,102,0.45)] active:scale-[0.98]';
 </script>
 
 <GlowingCard as="article" class="flex h-full flex-col overflow-hidden">
@@ -42,18 +46,15 @@
 		{#each project.links as link (link.href)}
 			<li>
 				{#if link.external}
-					<OutboundLink
-						href={link.href}
-						class="inline-flex items-center gap-1 text-sm font-medium text-accent-green no-underline hover:text-main"
-					>
+					<OutboundLink href={link.href} class={projectLinkClass}>
 						{link.label}
-						<Icon src={arrowUpRight} class="h-4 w-4" />
+						<Icon
+							src={arrowUpRight}
+							class="h-4 w-4 shrink-0 transition-transform duration-300 ease-out group-hover:translate-x-0.5 group-hover:-translate-y-0.5"
+						/>
 					</OutboundLink>
 				{:else}
-					<a
-						href={resolve(link.href as '/')}
-						class="inline-flex items-center gap-1 text-sm font-medium text-accent-green no-underline hover:text-main"
-					>
+					<a href={resolve(link.href as '/')} class={projectLinkClass}>
 						{link.label}
 					</a>
 				{/if}
