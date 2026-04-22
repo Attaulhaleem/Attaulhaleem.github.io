@@ -4,9 +4,22 @@
 	import favicon from '$lib/assets/icons/favicon.svg?url';
 	import Footer from '$lib/components/layout/Footer.svelte';
 	import Navbar from '$lib/components/layout/Navbar.svelte';
+	import { onNavigate } from '$app/navigation';
 	import type { LayoutProps } from './$types';
 
 	let { children }: LayoutProps = $props();
+
+	/** Same-document navigations: browser View Transitions API + SvelteKit `onNavigate` */
+	onNavigate((navigation) => {
+		if (!document.startViewTransition) return;
+
+		return new Promise<void>((resolve) => {
+			document.startViewTransition(async () => {
+				resolve();
+				await navigation.complete;
+			});
+		});
+	});
 </script>
 
 <svelte:head>
