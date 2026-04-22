@@ -85,44 +85,44 @@ const copyByLocale: Record<Locale, Record<string, ProjectCopy>> = {
 			title: 'Flash',
 			summary: 'Proactive traffic management using real-time traffic and event data.',
 			imageAlt: 'Flash',
-			linkLabels: ['Source (Coming Soon...)']
+			linkLabels: ['Source Code (Coming Soon...)']
 		},
 		oblivision: {
 			title: 'Oblivision',
 			summary: 'A 2D puzzle platformer made in Godot for a game jam.',
 			imageAlt: 'Oblivision',
-			linkLabels: ['Demo', 'Source']
+			linkLabels: ['Demo', 'Source Code']
 		},
 		grounded: {
 			title: 'Grounded',
 			summary: 'A casual side-scroller with fun mini-games.',
 			imageAlt: 'Grounded',
-			linkLabels: ['Demo', 'Source']
+			linkLabels: ['Demo', 'Source Code']
 		},
 		'omnidirectional-conveyor': {
 			title: 'Omnidirectional Conveyor',
 			summary: 'A modular omnidirectional conveyor for material flow.',
 			imageAlt: 'Omnidirectional Conveyor',
-			linkLabels: ['Source']
+			linkLabels: ['Source Code']
 		},
 		'smart-dumbbell': {
 			title: 'Smart Dumbbell',
 			summary:
 				'Real-time workout classification using Arduino Nano 33 BLE Sense, Edge Impulse, and Web Bluetooth.',
 			imageAlt: 'Smart Dumbbell',
-			linkLabels: ['Source']
+			linkLabels: ['Source Code']
 		},
 		'arduino-maze': {
 			title: 'Maze Solving Robot',
 			summary: 'Mapping and solving of closed mazes using the Arduino platform.',
 			imageAlt: 'Maze Solving Robot',
-			linkLabels: ['Source']
+			linkLabels: ['Source Code']
 		},
 		'sfml-chess': {
 			title: 'Chess Game',
 			summary: 'A vanilla Chess game created using C++ and SFML.',
 			imageAlt: 'Chess Game',
-			linkLabels: ['Source']
+			linkLabels: ['Source Code']
 		}
 	},
 	fr: {

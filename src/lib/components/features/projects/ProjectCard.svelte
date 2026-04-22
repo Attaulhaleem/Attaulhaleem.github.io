@@ -1,5 +1,5 @@
 <script lang="ts">
-	import arrowUpRight from '$lib/assets/icons/arrow_up_right.svg';
+	import arrowUpRight from '$lib/assets/icons/arrow-up-right-from-square-solid-full.svg';
 	import GlowingCard from '$lib/components/ui/GlowingCard.svelte';
 	import Icon from '$lib/components/ui/Icon.svelte';
 	import SkillList from '$lib/components/ui/SkillList.svelte';

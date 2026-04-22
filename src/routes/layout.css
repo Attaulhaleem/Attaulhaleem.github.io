@@ -245,6 +245,43 @@
 		@apply border-accent-green/30 bg-white/8 text-main shadow-(--shadow-glow-green);
 	}
 
+	/*
+	 * Language dropdown in the chrome bar: strip the native chevron (it often stacks
+	 * under the label in WebKit) and paint a custom chevron + soft glass shadow stack.
+	 */
+	.locale-select {
+		@apply w-max max-w-[10rem] cursor-pointer rounded border border-subtle py-1 pr-6 pl-1.5 font-mono text-[0.6875rem] leading-tight font-medium text-main transition-all duration-300 ease-out;
+		appearance: none;
+		-webkit-appearance: none;
+		-moz-appearance: none;
+		color-scheme: dark;
+		background-color: rgba(255, 255, 255, 0.07);
+		/* Set on `<select class="locale-select">` via `--locale-select-chevron` (see LanguageSwitcher.svelte) */
+		background-image: var(--locale-select-chevron);
+		background-repeat: no-repeat;
+		background-position: right 0.35rem center;
+		background-size: 0.5625rem;
+		box-shadow:
+			inset 0 1px 0 var(--color-glass-highlight),
+			0 0 0 1px color-mix(in srgb, var(--color-glass-soft) 55%, transparent),
+			0 6px 22px rgba(0, 0, 0, 0.32);
+	}
+
+	@media (hover: hover) {
+		.locale-select:hover {
+			@apply border-accent-green/28 bg-white/10 text-main;
+			box-shadow:
+				inset 0 1px 0 var(--color-glass-highlight),
+				0 0 0 1px color-mix(in srgb, var(--color-glass-soft) 55%, transparent),
+				0 8px 26px rgba(0, 0, 0, 0.38),
+				0 0 18px rgba(0, 255, 102, 0.07);
+		}
+	}
+
+	.locale-select:focus-visible {
+		@apply outline-2 outline-offset-2 outline-accent-green;
+	}
+
 	.link-accent {
 		@apply inline-flex items-center gap-1.5 rounded-md px-2 py-1 text-sm font-medium text-accent-green no-underline transition-all duration-300 ease-out active:scale-[0.98];
 		margin-inline: -0.5rem;
