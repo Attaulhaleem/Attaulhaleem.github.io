@@ -9,15 +9,50 @@
 
 	let { children }: LayoutProps = $props();
 
-	/** Same-document navigations: browser View Transitions API + SvelteKit `onNavigate` */
+	let ripple = $state<HTMLDivElement | undefined>(undefined);
+	let lastPointer = { x: 0, y: 0 };
+	let reducedMotion: MediaQueryList | undefined;
+
+	$effect(() => {
+		lastPointer = { x: window.innerWidth / 2, y: window.innerHeight / 2 };
+
+		const onPointerDown = (event: PointerEvent) => {
+			lastPointer = { x: event.clientX, y: event.clientY };
+		};
+		document.addEventListener('pointerdown', onPointerDown);
+
+		return () => {
+			document.removeEventListener('pointerdown', onPointerDown);
+		};
+	});
+
+	$effect(() => {
+		reducedMotion = window.matchMedia('(prefers-reduced-motion: reduce)');
+
+		return () => {
+			reducedMotion = undefined;
+		};
+	});
+
+	/** Scripted ripple field blur overlay during same-document navigations */
 	onNavigate((navigation) => {
-		if (!document.startViewTransition) return;
+		const overlay = ripple;
+		if (!overlay || reducedMotion?.matches) {
+			window.scrollTo({ top: 0, behavior: 'instant' });
+			return;
+		}
+
+		overlay.style.setProperty('--ripple-x', `${lastPointer.x}px`);
+		overlay.style.setProperty('--ripple-y', `${lastPointer.y}px`);
+		overlay.classList.add('is-active');
 
 		return new Promise<void>((resolve) => {
-			document.startViewTransition(async () => {
+			setTimeout(async () => {
 				resolve();
 				await navigation.complete;
-			});
+				window.scrollTo({ top: 0, behavior: 'instant' });
+				requestAnimationFrame(() => overlay.classList.remove('is-active'));
+			}, 180);
 		});
 	});
 </script>
@@ -36,6 +71,7 @@
 
 <div class="app-shell">
 	<Navbar />
+	<div class="page-ripple" aria-hidden="true" bind:this={ripple}></div>
 	<main id="main" class="app-main">
 		{@render children()}
 	</main>
