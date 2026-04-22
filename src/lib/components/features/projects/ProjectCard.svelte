@@ -1,18 +1,20 @@
 <script lang="ts">
-	import { resolve } from '$app/paths';
 	import arrowUpRight from '$lib/assets/icons/arrow_up_right.svg';
 	import GlowingCard from '$lib/components/ui/GlowingCard.svelte';
 	import Icon from '$lib/components/ui/Icon.svelte';
 	import SkillList from '$lib/components/ui/SkillList.svelte';
 	import { resolveSkills } from '$lib/content/skills';
+	import type { Locale } from '$lib/i18n/locales';
+	import { localizedPath, type AppPath } from '$lib/i18n/paths';
 	import type { Project } from '$lib/types/content';
-	import { isExternalHref, toInternalHref } from '$lib/utils/href';
+	import { isExternalHref } from '$lib/utils/href';
 
 	type Props = {
 		project: Project;
+		locale: Locale;
 	};
 
-	let { project }: Props = $props();
+	let { project, locale }: Props = $props();
 
 	const projectSkills = $derived(resolveSkills(project.skills));
 </script>
@@ -51,7 +53,8 @@
 						/>
 					</a>
 				{:else}
-					<a href={resolve(toInternalHref(link.href))} class="link-accent">
+					<!-- eslint-disable-next-line svelte/no-navigation-without-resolve -- href resolved via $lib/i18n/paths -->
+					<a href={localizedPath(locale, link.href as AppPath)} class="link-accent">
 						{link.label}
 					</a>
 				{/if}

@@ -7,7 +7,3 @@ export function isExternalHref(href: string): boolean {
 		href.startsWith('#')
 	);
 }
-
-export function toInternalHref(href: string): '/' {
-	return href as '/';
-}

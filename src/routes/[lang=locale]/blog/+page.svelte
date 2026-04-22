@@ -2,21 +2,25 @@
 	import ArticleCard from '$lib/components/features/blog/ArticleCard.svelte';
 	import Section from '$lib/components/layout/Section.svelte';
 	import { site } from '$lib/config/site';
+	import { getUi } from '$lib/i18n/ui';
 	import type { PageProps } from './$types';
 
 	let { data }: PageProps = $props();
+
+	const locale = $derived(data.locale);
+	const ui = $derived(getUi(locale));
 </script>
 
 <svelte:head>
-	<title>Blog — {site.name}</title>
-	<meta name="description" content="Articles and notes on engineering and tools." />
+	<title>{ui.blog.metaTitle} — {site.name}</title>
+	<meta name="description" content={ui.blog.metaDescription} />
 </svelte:head>
 
-<Section title="Blog" id="blog-list">
+<Section title={ui.blog.heading} id="blog-list">
 	<ul class="flex list-none flex-col gap-4 p-0">
 		{#each data.posts as post (post.slug)}
 			<li>
-				<ArticleCard {post} href={`/blog/${post.slug}`} />
+				<ArticleCard {post} {locale} />
 			</li>
 		{/each}
 	</ul>

@@ -1,16 +1,19 @@
 <script lang="ts">
+	import type { Locale } from '$lib/i18n/locales';
+	import { getUi } from '$lib/i18n/ui';
 	import type { TimelineEntry } from '$lib/types/content';
 
 	type Props = {
 		entry: TimelineEntry;
+		locale: Locale;
 	};
 
-	let { entry }: Props = $props();
+	let { entry, locale }: Props = $props();
 
-	const TIMELINE_KIND_LABEL: Record<TimelineEntry['kind'], string> = {
-		education: 'Education',
-		experience: 'Experience'
-	};
+	const ui = $derived(getUi(locale));
+	const kindLabel = $derived(
+		entry.kind === 'education' ? ui.timeline.education : ui.timeline.experience
+	);
 </script>
 
 <li class="relative flex gap-4 pb-10 last:pb-0 sm:gap-6">
@@ -23,7 +26,7 @@
 	</div>
 	<div class="interactive-surface min-w-0 flex-1 p-4 sm:p-5">
 		<p class="type-eyebrow">
-			{TIMELINE_KIND_LABEL[entry.kind]} · {entry.period}
+			{kindLabel} · {entry.period}
 		</p>
 		<h3 class="type-card-title mt-1">{entry.title}</h3>
 		<p class="type-card-body">{entry.subtitle}</p>

@@ -1,6 +1,8 @@
 <script lang="ts">
-	import { resolve } from '$app/paths';
-	import { isExternalHref, toInternalHref } from '$lib/utils/href';
+	import { page } from '$app/state';
+	import { toLocale } from '$lib/i18n/locales';
+	import { localizedPath, type AppPath } from '$lib/i18n/paths';
+	import { isExternalHref } from '$lib/utils/href';
 	import type { Snippet } from 'svelte';
 
 	type Variant = 'primary' | 'ghost';
@@ -16,6 +18,8 @@
 
 	const isExternal = $derived(!!href && isExternalHref(href));
 	const variantClass = $derived(variant === 'ghost' ? 'btn--ghost' : 'btn--primary');
+	const locale = $derived(toLocale(page.params.lang));
+	const internalHref = $derived(href && !isExternal ? localizedPath(locale, href as AppPath) : '');
 </script>
 
 {#if href && isExternal}
@@ -24,7 +28,8 @@
 		{@render children()}
 	</a>
 {:else if href}
-	<a href={resolve(toInternalHref(href))} class={`btn ${variantClass} ${className}`} {...rest}>
+	<!-- eslint-disable-next-line svelte/no-navigation-without-resolve -- href resolved via $lib/i18n/paths -->
+	<a href={internalHref} class={`btn ${variantClass} ${className}`} {...rest}>
 		{@render children()}
 	</a>
 {:else}

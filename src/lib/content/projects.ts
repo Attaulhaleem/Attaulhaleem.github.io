@@ -5,123 +5,205 @@ import omnidirectionalConveyorImage from '$lib/assets/captures/omnidirectional_c
 import smartDumbbellImage from '$lib/assets/captures/smart_dumbbell.png';
 import mazeSolvingRobotImage from '$lib/assets/captures/arduino_maze.png';
 import chessGameImage from '$lib/assets/captures/sfml_chess.png';
+import type { Locale } from '$lib/i18n/locales';
 import type { Project } from '$lib/types/content';
+import type { SkillId } from '$lib/content/skills';
 
-export const projects: readonly Project[] = [
+/** Locale-independent wiring (slug, skills, image, outbound URLs). */
+type ProjectShared = {
+	slug: string;
+	skills: readonly SkillId[];
+	imageSrc?: string;
+	links: { href: string; external?: boolean }[];
+};
+
+/** Translatable fields per locale. */
+type ProjectCopy = {
+	title: string;
+	summary: string;
+	imageAlt: string;
+	/** Labels align 1:1 with `shared.links` by position. */
+	linkLabels: string[];
+};
+
+const shared: ProjectShared[] = [
 	{
 		slug: 'flash',
-		title: 'Flash',
-		summary: 'Proactive traffic management using real-time traffic and event data.',
-		imageAlt: 'Flash',
 		skills: ['svelte'],
+		imageSrc: flashImage,
 		links: [
-			{
-				label: 'Source (Coming Soon...)',
-				href: 'https://github.com/anirudhprabhakaran3/llm-traffic-management',
-				external: true
-			}
-		],
-		imageSrc: flashImage
+			{ href: 'https://github.com/anirudhprabhakaran3/llm-traffic-management', external: true }
+		]
 	},
 	{
 		slug: 'oblivision',
-		title: 'Oblivision',
-		summary: 'A 2D puzzle platformer made in Godot for a game jam.',
-		imageAlt: 'Oblivision',
 		skills: ['godot'],
+		imageSrc: oblivisionImage,
 		links: [
-			{
-				label: 'Demo',
-				href: 'https://dustypizza.itch.io/oblivision',
-				external: true
-			},
-			{
-				label: 'Source',
-				href: 'https://github.com/Attaulhaleem/oblivision',
-				external: true
-			}
-		],
-		imageSrc: oblivisionImage
+			{ href: 'https://dustypizza.itch.io/oblivision', external: true },
+			{ href: 'https://github.com/Attaulhaleem/oblivision', external: true }
+		]
 	},
 	{
 		slug: 'grounded',
-		title: 'Grounded',
-		summary: 'A casual side-scroller with fun mini-games.',
-		imageAlt: 'Grounded',
 		skills: ['godot'],
+		imageSrc: groundedImage,
 		links: [
-			{
-				label: 'Demo',
-				href: 'https://dustypizza.itch.io/grounded',
-				external: true
-			},
-			{
-				label: 'Source',
-				href: 'https://github.com/Attaulhaleem/grounded',
-				external: true
-			}
-		],
-		imageSrc: groundedImage
+			{ href: 'https://dustypizza.itch.io/grounded', external: true },
+			{ href: 'https://github.com/Attaulhaleem/grounded', external: true }
+		]
 	},
 	{
 		slug: 'omnidirectional-conveyor',
-		title: 'Omnidirectional Conveyor',
-		summary: 'A modular omnidirectional conveyor for material flow.',
-		imageAlt: 'Omnidirectional Conveyor',
 		skills: ['python', 'raspberry-pi'],
-		links: [
-			{
-				label: 'Source',
-				href: 'https://github.com/Attaulhaleem/omnidirectional-conveyor',
-				external: true
-			}
-		],
-		imageSrc: omnidirectionalConveyorImage
+		imageSrc: omnidirectionalConveyorImage,
+		links: [{ href: 'https://github.com/Attaulhaleem/omnidirectional-conveyor', external: true }]
 	},
 	{
 		slug: 'smart-dumbbell',
-		title: 'Smart Dumbbell',
-		summary:
-			'Real-time workout classification using Arduino Nano 33 BLE Sense, Edge Impulse, and Web Bluetooth.',
-		imageAlt: 'Smart Dumbbell',
 		skills: ['c++'],
-		links: [
-			{ label: 'Source', href: 'https://github.com/Attaulhaleem/smart-dumbbell', external: true }
-		],
-		imageSrc: smartDumbbellImage
+		imageSrc: smartDumbbellImage,
+		links: [{ href: 'https://github.com/Attaulhaleem/smart-dumbbell', external: true }]
 	},
 	{
 		slug: 'arduino-maze',
-		title: 'Maze Solving Robot',
-		summary: 'Mapping and solving of closed mazes using the Arduino platform.',
-		imageAlt: 'Maze Solving Robot',
 		skills: ['arduino'],
-		links: [
-			{ label: 'Source', href: 'https://github.com/Attaulhaleem/arduino-maze', external: true }
-		],
-		imageSrc: mazeSolvingRobotImage
+		imageSrc: mazeSolvingRobotImage,
+		links: [{ href: 'https://github.com/Attaulhaleem/arduino-maze', external: true }]
 	},
 	{
 		slug: 'sfml-chess',
-		title: 'Chess Game',
-		summary: 'A vanilla Chess game created using C++ and SFML.',
-		imageAlt: 'Chess Game',
 		skills: ['c++'],
-		links: [
-			{ label: 'Source', href: 'https://github.com/Attaulhaleem/sfml-chess', external: true }
-		],
-		imageSrc: chessGameImage
+		imageSrc: chessGameImage,
+		links: [{ href: 'https://github.com/Attaulhaleem/sfml-chess', external: true }]
 	}
 ];
 
-export function getAllProjects(): readonly Project[] {
-	return projects;
+const copyByLocale: Record<Locale, Record<string, ProjectCopy>> = {
+	en: {
+		flash: {
+			title: 'Flash',
+			summary: 'Proactive traffic management using real-time traffic and event data.',
+			imageAlt: 'Flash',
+			linkLabels: ['Source (Coming Soon...)']
+		},
+		oblivision: {
+			title: 'Oblivision',
+			summary: 'A 2D puzzle platformer made in Godot for a game jam.',
+			imageAlt: 'Oblivision',
+			linkLabels: ['Demo', 'Source']
+		},
+		grounded: {
+			title: 'Grounded',
+			summary: 'A casual side-scroller with fun mini-games.',
+			imageAlt: 'Grounded',
+			linkLabels: ['Demo', 'Source']
+		},
+		'omnidirectional-conveyor': {
+			title: 'Omnidirectional Conveyor',
+			summary: 'A modular omnidirectional conveyor for material flow.',
+			imageAlt: 'Omnidirectional Conveyor',
+			linkLabels: ['Source']
+		},
+		'smart-dumbbell': {
+			title: 'Smart Dumbbell',
+			summary:
+				'Real-time workout classification using Arduino Nano 33 BLE Sense, Edge Impulse, and Web Bluetooth.',
+			imageAlt: 'Smart Dumbbell',
+			linkLabels: ['Source']
+		},
+		'arduino-maze': {
+			title: 'Maze Solving Robot',
+			summary: 'Mapping and solving of closed mazes using the Arduino platform.',
+			imageAlt: 'Maze Solving Robot',
+			linkLabels: ['Source']
+		},
+		'sfml-chess': {
+			title: 'Chess Game',
+			summary: 'A vanilla Chess game created using C++ and SFML.',
+			imageAlt: 'Chess Game',
+			linkLabels: ['Source']
+		}
+	},
+	fr: {
+		flash: {
+			title: 'Flash',
+			summary:
+				'Gestion proactive du trafic à partir de données de circulation et d’évènements en temps réel.',
+			imageAlt: 'Flash',
+			linkLabels: ['Code source (bientôt...)']
+		},
+		oblivision: {
+			title: 'Oblivision',
+			summary: 'Un jeu de plateformes avec énigmes en 2D réalisé sous Godot pour une game jam.',
+			imageAlt: 'Oblivision',
+			linkLabels: ['Démo', 'Code source']
+		},
+		grounded: {
+			title: 'Grounded',
+			summary: 'Un side-scroller décontracté avec des mini-jeux amusants.',
+			imageAlt: 'Grounded',
+			linkLabels: ['Démo', 'Code source']
+		},
+		'omnidirectional-conveyor': {
+			title: 'Convoyeur omnidirectionnel',
+			summary: 'Un convoyeur omnidirectionnel modulaire pour le déplacement de matériaux.',
+			imageAlt: 'Convoyeur omnidirectionnel',
+			linkLabels: ['Code source']
+		},
+		'smart-dumbbell': {
+			title: 'Haltère connecté',
+			summary:
+				"Classification d'exercices en temps réel avec Arduino Nano 33 BLE Sense, Edge Impulse et Web Bluetooth.",
+			imageAlt: 'Haltère connecté',
+			linkLabels: ['Code source']
+		},
+		'arduino-maze': {
+			title: 'Robot résolveur de labyrinthe',
+			summary: 'Cartographie et résolution de labyrinthes fermés sur plateforme Arduino.',
+			imageAlt: 'Robot résolveur de labyrinthe',
+			linkLabels: ['Code source']
+		},
+		'sfml-chess': {
+			title: "Jeu d'échecs",
+			summary: "Un jeu d'échecs classique développé en C++ avec SFML.",
+			imageAlt: "Jeu d'échecs",
+			linkLabels: ['Code source']
+		}
+	}
+};
+
+function buildProject(s: ProjectShared, c: ProjectCopy): Project {
+	return {
+		slug: s.slug,
+		title: c.title,
+		summary: c.summary,
+		imageAlt: c.imageAlt,
+		skills: s.skills,
+		imageSrc: s.imageSrc,
+		links: s.links.map((link, i) => ({
+			label: c.linkLabels[i] ?? '',
+			href: link.href,
+			external: link.external
+		}))
+	};
 }
 
-export function getProjectBySlug(slug: string): Project | undefined {
-	return projects.find((p) => p.slug === slug);
+function allForLocale(locale: Locale): Project[] {
+	const localeCopy = copyByLocale[locale];
+	return shared.map((s) => buildProject(s, localeCopy[s.slug]));
 }
 
-export function getFeaturedProjects(limit = 2): Project[] {
-	return projects.slice(0, limit);
+export function getAllProjects(locale: Locale): Project[] {
+	return allForLocale(locale);
+}
+
+export function getProjectBySlug(slug: string, locale: Locale): Project | undefined {
+	const s = shared.find((p) => p.slug === slug);
+	if (!s) return undefined;
+	return buildProject(s, copyByLocale[locale][slug]);
+}
+
+export function getFeaturedProjects(locale: Locale, limit = 2): Project[] {
+	return allForLocale(locale).slice(0, limit);
 }

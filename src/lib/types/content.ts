@@ -1,13 +1,11 @@
 /** Shared content models — keep UI generic and data replaceable (CMS/MD later). */
 
 import type { SkillId } from '$lib/content/skills';
-
-/** Keep in sync with `src/routes` so `resolve()` stays type-safe */
-export type AppNavHref = '/' | '/about' | '/projects' | '/blog';
+import type { AppPath } from '$lib/i18n/paths';
 
 export type NavItem = {
 	label: string;
-	href: AppNavHref;
+	href: AppPath;
 };
 
 export type SocialLink = {

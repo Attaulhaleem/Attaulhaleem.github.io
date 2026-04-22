@@ -6,37 +6,51 @@ import gmailLogo from '$lib/assets/logos/gmail.svg';
 import itchIoLogo from '$lib/assets/logos/itchdotio.svg';
 import linkedinLogo from '$lib/assets/logos/linkedin.svg';
 import upworkLogo from '$lib/assets/logos/upwork.svg';
-import type { NavItem, SocialLink } from '$lib/types/content';
+import type { SocialLink } from '$lib/types/content';
+import type { Locale } from '$lib/i18n/locales';
 
+/** Locale-independent site identity. */
 export const site = {
 	name: 'Atta Ul Haleem',
-	description: 'Personal website of Atta Ul Haleem. Come explore my projects and writings.',
 	url: 'https://attaulhaleem.com'
 } as const;
 
-/** Hero eyebrow line */
-export const heroEyebrow = 'Electronics Engineer · Software Developer · Game Designer';
+type SiteCopy = {
+	description: string;
+	heroEyebrow: string;
+	heroHeadline: { title: string; subtitle: string };
+	heroProfilePhotoAlt: string;
+};
 
-/** Main hero headline */
-export const heroHeadline = {
-	title: "Hi, I'm Atta 👋",
-	subtitle: 'Engineer with an obsession for electronics and <code/>'
-} as const;
+const siteCopy: Record<Locale, SiteCopy> = {
+	en: {
+		description: 'Personal website of Atta Ul Haleem. Come explore my projects and writings.',
+		heroEyebrow: 'Electronics Engineer · Software Developer · Game Designer',
+		heroHeadline: {
+			title: "Hi, I'm Atta 👋",
+			subtitle: 'Engineer with an obsession for electronics and <code/>'
+		},
+		heroProfilePhotoAlt: `Portrait of ${site.name}`
+	},
+	fr: {
+		description: "Site personnel d'Atta Ul Haleem. Découvrez mes projets et mes écrits.",
+		heroEyebrow: 'Ingénieur en électronique · Développeur · Game designer',
+		heroHeadline: {
+			title: 'Salut, je suis Atta 👋',
+			subtitle: "Ingénieur passionné par l'électronique et le <code/>"
+		},
+		heroProfilePhotoAlt: `Portrait de ${site.name}`
+	}
+};
 
-/** Main hero image */
-export const heroProfilePhoto = {
-	src: profilePhoto,
-	alt: `Portrait of ${site.name}`
-} as const;
+export function getSiteCopy(locale: Locale): SiteCopy {
+	return siteCopy[locale];
+}
 
-export const navItems: NavItem[] = [
-	{ label: 'Home', href: '/' },
-	{ label: 'About', href: '/about' },
-	{ label: 'Projects', href: '/projects' },
-	{ label: 'Blog', href: '/blog' }
-];
+/** Shared profile photo (same asset across locales). */
+export const heroProfilePhotoSrc = profilePhoto;
 
-/** Footer / social row */
+/** Footer / social row — locale-independent. */
 export const socialLinks: SocialLink[] = [
 	{ label: 'Email', href: 'mailto:haleem.attaul@gmail.com', iconSrc: gmailLogo },
 	{ label: 'LinkedIn', href: 'https://linkedin.com/in/attaulhaleem', iconSrc: linkedinLogo },

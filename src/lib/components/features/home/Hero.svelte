@@ -1,18 +1,17 @@
 <script lang="ts">
-	import { heroEyebrow } from '$lib/config/site';
 	import type { Snippet } from 'svelte';
 
 	type Props = {
 		title: string;
 		subtitle: string;
-		eyebrow?: string;
+		eyebrow: string;
 		/** Vite-resolved URL (import from `$lib/assets`) */
 		profileSrc?: string;
 		profileAlt?: string;
 		actions?: Snippet;
 	};
 
-	let { title, subtitle, eyebrow = heroEyebrow, profileSrc, profileAlt, actions }: Props = $props();
+	let { title, subtitle, eyebrow, profileSrc, profileAlt, actions }: Props = $props();
 </script>
 
 <div
