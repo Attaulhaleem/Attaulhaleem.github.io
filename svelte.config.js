@@ -1,4 +1,4 @@
-import adapter from '@sveltejs/adapter-auto';
+import adapter from '@sveltejs/adapter-static';
 
 /** @type {import('@sveltejs/kit').Config} */
 const config = {
@@ -9,10 +9,14 @@ const config = {
 	kit: {
 		// Match server `resolve()` to the client (default relative SSR used `./about` vs `/about`).
 		paths: { relative: false },
-		// adapter-auto only supports some environments, see https://svelte.dev/docs/kit/adapter-auto for a list.
-		// If your environment is not supported, or you settled on a specific environment, switch out the adapter.
-		// See https://svelte.dev/docs/kit/adapters for more information about adapters.
-		adapter: adapter()
+		// Static adapter for GitHub Pages. `fallback` enables SPA routing for dynamic client-side paths.
+		adapter: adapter({
+			pages: 'build',
+			assets: 'build',
+			fallback: '404.html',
+			precompress: false,
+			strict: true
+		})
 	}
 };
 
