@@ -344,7 +344,7 @@ html:lang(ur) {
 	 * as nav pills / buttons (chevron layered above `--surface-hover-fill` on hover).
 	 */
 	.locale-select {
-		@apply w-max max-w-[10rem] cursor-pointer rounded-lg border border-subtle py-1 pr-6 pl-1.5 font-mono text-[0.6875rem] leading-tight font-medium text-main transition-all duration-300 ease-out;
+		@apply w-max max-w-40 cursor-pointer rounded-lg border border-subtle py-1 pr-6 pl-1.5 font-mono text-[0.6875rem] leading-tight font-medium text-main transition-all duration-300 ease-out;
 		appearance: none;
 		-webkit-appearance: none;
 		-moz-appearance: none;
@@ -368,8 +368,12 @@ html:lang(ur) {
 		.locale-select:hover {
 			@apply -translate-y-0.5 border-accent-green/45 text-main;
 			background-image: var(--locale-select-chevron), var(--surface-hover-fill);
-			background-position: right 0.35rem center, 0 0;
-			background-size: 0.5625rem auto, 100% 100%;
+			background-position:
+				right 0.35rem center,
+				0 0;
+			background-size:
+				0.5625rem auto,
+				100% 100%;
 			background-repeat: no-repeat, no-repeat;
 			backdrop-filter: blur(22px) saturate(175%);
 			-webkit-backdrop-filter: blur(22px) saturate(175%);
@@ -380,7 +384,9 @@ html:lang(ur) {
 		}
 
 		html[dir='rtl'] .locale-select:hover {
-			background-position: left 0.35rem center, 0 0;
+			background-position:
+				left 0.35rem center,
+				0 0;
 		}
 	}
 
