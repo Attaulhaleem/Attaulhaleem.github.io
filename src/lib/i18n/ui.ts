@@ -100,10 +100,10 @@ const strings: Record<Locale, UiStrings> = {
 		timeline: { education: 'Études', experience: 'Expérience' }
 	},
 	ur: {
-		nav: { home: 'ہوم', about: 'میرا تعارف', projects: 'پروجکٹس', blog: 'بلاگ' },
+		nav: { home: 'مرکز', about: 'تعارف', projects: 'پروجکٹس', blog: 'بلاگ' },
 		languageSwitcher: { label: 'زبان' },
 		home: {
-			metaTitle: 'ہوم',
+			metaTitle: 'مرکز',
 			recentProjects: 'حالیہ پروجکٹس',
 			recentPosts: 'حالیہ تحریریں',
 			allProjects: 'تمام پروجکٹس ←',
@@ -112,7 +112,7 @@ const strings: Record<Locale, UiStrings> = {
 			viewProjects: 'پروجکٹس دیکھیں'
 		},
 		about: {
-			metaTitle: 'میرا تعارف',
+			metaTitle: 'تعارف',
 			educationExperience: 'تعلیم اور تجربہ',
 			techStack: 'ٹیکنیکل اسٹیک'
 		},

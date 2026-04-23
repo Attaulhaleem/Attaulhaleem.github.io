@@ -35,7 +35,7 @@ const copyByLocale: Record<Locale, Record<string, PostCopy>> = {
 	},
 	ur: {
 		'hello-world': {
-			title: 'ہیلو، دنیا!',
+			title: 'سلام، دنیا!',
 			summary: 'میرے بلاگ میں خوش آمدید!',
 			readingMinutes: 2,
 			html: '<p>جلد آرہا ہے...</p>'
