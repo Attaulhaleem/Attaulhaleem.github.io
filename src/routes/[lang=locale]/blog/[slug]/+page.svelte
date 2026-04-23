@@ -1,7 +1,7 @@
 <script lang="ts">
 	import Prose from '$lib/components/features/blog/Prose.svelte';
 	import Section from '$lib/components/layout/Section.svelte';
-	import { site } from '$lib/config/site';
+	import { getSiteDisplayName } from '$lib/config/site';
 	import { localizedPath } from '$lib/i18n/paths';
 	import { getUi } from '$lib/i18n/ui';
 	import type { PageProps } from './$types';
@@ -14,7 +14,7 @@
 </script>
 
 <svelte:head>
-	<title>{data.post.title} — {site.name}</title>
+	<title>{data.post.title} — {getSiteDisplayName(locale)}</title>
 	<meta name="description" content={data.post.summary} />
 </svelte:head>
 

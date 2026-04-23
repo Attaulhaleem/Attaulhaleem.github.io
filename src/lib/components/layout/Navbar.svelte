@@ -1,9 +1,10 @@
 <script lang="ts">
 	import { page } from '$app/state';
 	import personalLogo from '$lib/assets/logos/personal.svg';
+	import personalUrduLogo from '$lib/assets/logos/personal_urdu.svg';
 	import Icon from '$lib/components/ui/Icon.svelte';
 	import LanguageSwitcher from '$lib/components/layout/LanguageSwitcher.svelte';
-	import { site } from '$lib/config/site';
+	import { getSiteDisplayName } from '$lib/config/site';
 	import { toLocale } from '$lib/i18n/locales';
 	import { getNavItems } from '$lib/i18n/nav';
 	import { localizedPath } from '$lib/i18n/paths';
@@ -11,6 +12,8 @@
 	const locale = $derived(toLocale(page.params.lang));
 	const navItems = $derived(getNavItems(locale));
 	const homeHref = $derived(localizedPath(locale, '/'));
+	const logoSrc = $derived(locale === 'ur' ? personalUrduLogo : personalLogo);
+	const siteDisplayName = $derived(getSiteDisplayName(locale));
 
 	function isActive(href: string, pathname: string): boolean {
 		if (href === homeHref) return pathname === homeHref;
@@ -23,8 +26,8 @@
 		<!-- eslint-disable-next-line svelte/no-navigation-without-resolve -- href resolved via $lib/i18n/paths -->
 		<a href={homeHref} class="group inline-flex shrink-0 items-center text-main no-underline">
 			<Icon
-				src={personalLogo}
-				label={site.name}
+				src={logoSrc}
+				label={siteDisplayName}
 				class="size-8 transition-[filter] duration-300 ease-out group-hover:filter-[drop-shadow(0_0_10px_rgba(0,255,102,0.95))_drop-shadow(0_0_22px_rgba(0,255,102,0.45))_drop-shadow(0_0_36px_rgba(0,255,102,0.2))]"
 			/>
 		</a>

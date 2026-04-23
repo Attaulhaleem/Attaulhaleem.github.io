@@ -1,7 +1,7 @@
 <script lang="ts">
 	import ProjectCard from '$lib/components/features/projects/ProjectCard.svelte';
 	import Section from '$lib/components/layout/Section.svelte';
-	import { site } from '$lib/config/site';
+	import { getSiteDisplayName } from '$lib/config/site';
 	import { getAllProjects } from '$lib/content/projects';
 	import { getUi } from '$lib/i18n/ui';
 	import type { PageProps } from './$types';
@@ -14,7 +14,7 @@
 </script>
 
 <svelte:head>
-	<title>{ui.projects.metaTitle} — {site.name}</title>
+	<title>{ui.projects.metaTitle} — {getSiteDisplayName(locale)}</title>
 	<meta name="description" content={ui.projects.metaDescription} />
 </svelte:head>
 

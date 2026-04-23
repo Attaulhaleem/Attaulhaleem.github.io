@@ -1,7 +1,7 @@
 <script lang="ts">
 	import ArticleCard from '$lib/components/features/blog/ArticleCard.svelte';
 	import Section from '$lib/components/layout/Section.svelte';
-	import { site } from '$lib/config/site';
+	import { getSiteDisplayName } from '$lib/config/site';
 	import { getUi } from '$lib/i18n/ui';
 	import type { PageProps } from './$types';
 
@@ -12,7 +12,7 @@
 </script>
 
 <svelte:head>
-	<title>{ui.blog.metaTitle} — {site.name}</title>
+	<title>{ui.blog.metaTitle} — {getSiteDisplayName(locale)}</title>
 	<meta name="description" content={ui.blog.metaDescription} />
 </svelte:head>
 

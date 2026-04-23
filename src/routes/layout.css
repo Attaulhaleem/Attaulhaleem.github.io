@@ -525,6 +525,13 @@ html:lang(ur) {
 		max-width: 11.5rem;
 	}
 
+	/* Mono breaks Arabic shaping; meta line mixes © / year / Urdu name */
+	html:lang(ur) .type-meta {
+		font-family: var(--font-sans);
+		letter-spacing: normal;
+		word-spacing: normal;
+	}
+
 	html:lang(ur) .prose-article :where(h1, h2, h3, h4) {
 		letter-spacing: normal;
 	}

@@ -4,7 +4,7 @@
 	import ProjectCard from '$lib/components/features/projects/ProjectCard.svelte';
 	import Section from '$lib/components/layout/Section.svelte';
 	import Button from '$lib/components/ui/Button.svelte';
-	import { getSiteCopy, heroProfilePhotoSrc, site } from '$lib/config/site';
+	import { getSiteCopy, getSiteDisplayName, heroProfilePhotoSrc } from '$lib/config/site';
 	import { getFeaturedPosts } from '$lib/content/blog';
 	import { getFeaturedProjects } from '$lib/content/projects';
 	import { getUi } from '$lib/i18n/ui';
@@ -20,7 +20,7 @@
 </script>
 
 <svelte:head>
-	<title>{ui.home.metaTitle} — {site.name}</title>
+	<title>{ui.home.metaTitle} — {getSiteDisplayName(locale)}</title>
 	<meta name="description" content={siteCopy.description} />
 </svelte:head>
 

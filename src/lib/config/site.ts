@@ -9,11 +9,22 @@ import upworkLogo from '$lib/assets/logos/upwork.svg';
 import type { SocialLink } from '$lib/types/content';
 import type { Locale } from '$lib/i18n/locales';
 
-/** Locale-independent site identity. */
+/** Locale-independent site identity (canonical Latin name for URLs / structured data). */
 export const site = {
 	name: 'Atta Ul Haleem',
 	url: 'https://attaulhaleem.com'
 } as const;
+
+/** UI / document titles — Arabic script for Urdu. */
+const SITE_DISPLAY_NAME: Record<Locale, string> = {
+	en: site.name,
+	fr: site.name,
+	ur: 'عطاءالحلیم'
+};
+
+export function getSiteDisplayName(locale: Locale): string {
+	return SITE_DISPLAY_NAME[locale];
+}
 
 type SiteCopy = {
 	description: string;
@@ -30,7 +41,7 @@ const siteCopy: Record<Locale, SiteCopy> = {
 			title: "Hi, I'm Atta 👋",
 			subtitle: 'Engineer with an obsession for electronics and <code/>'
 		},
-		heroProfilePhotoAlt: `Portrait of ${site.name}`
+		heroProfilePhotoAlt: `Portrait of ${SITE_DISPLAY_NAME.en}`
 	},
 	fr: {
 		description: "Site personnel d'Atta Ul Haleem. Découvrez mes projets et mes écrits.",
@@ -39,7 +50,7 @@ const siteCopy: Record<Locale, SiteCopy> = {
 			title: 'Salut, je suis Atta 👋',
 			subtitle: "Ingénieur passionné par l'électronique et le <code/>"
 		},
-		heroProfilePhotoAlt: `Portrait de ${site.name}`
+		heroProfilePhotoAlt: `Portrait de ${SITE_DISPLAY_NAME.fr}`
 	},
 	ur: {
 		description: 'عطا الحلیم کی ذاتی ویب سائٹ۔ میرے پروجکٹس اور تحریریں یہاں دیکھیں۔',
@@ -48,7 +59,7 @@ const siteCopy: Record<Locale, SiteCopy> = {
 			title: 'سلام، میرا نام عطاء ہے 👋',
 			subtitle: 'الیکٹرونکس اور <code/> کا شوقین انجنیر'
 		},
-		heroProfilePhotoAlt: `${site.name} کی تصویر`
+		heroProfilePhotoAlt: `کی تصویر ${SITE_DISPLAY_NAME.ur}`
 	}
 };
 

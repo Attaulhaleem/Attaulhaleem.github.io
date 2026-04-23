@@ -2,7 +2,7 @@
 	import Timeline from '$lib/components/features/about/Timeline.svelte';
 	import Section from '$lib/components/layout/Section.svelte';
 	import SkillList from '$lib/components/ui/SkillList.svelte';
-	import { site } from '$lib/config/site';
+	import { getSiteDisplayName } from '$lib/config/site';
 	import { getAbout } from '$lib/content/about';
 	import { allSkills } from '$lib/content/skills';
 	import { getTimeline } from '$lib/content/timeline';
@@ -18,7 +18,7 @@
 </script>
 
 <svelte:head>
-	<title>{ui.about.metaTitle} — {site.name}</title>
+	<title>{ui.about.metaTitle} — {getSiteDisplayName(locale)}</title>
 	<meta name="description" content={about.description} />
 </svelte:head>
 
