@@ -100,26 +100,26 @@ const strings: Record<Locale, UiStrings> = {
 		timeline: { education: 'Études', experience: 'Expérience' }
 	},
 	ur: {
-		nav: { home: 'ہوم', about: 'میرے بارے میں', projects: 'منصوبے', blog: 'بلاگ' },
+		nav: { home: 'ہوم', about: 'میرا تعارف', projects: 'پروجکٹس', blog: 'بلاگ' },
 		languageSwitcher: { label: 'زبان' },
 		home: {
 			metaTitle: 'ہوم',
-			recentProjects: 'حالیہ منصوبے',
+			recentProjects: 'حالیہ پروجکٹس',
 			recentPosts: 'حالیہ تحریریں',
-			allProjects: 'تمام منصوبے ←',
+			allProjects: 'تمام پروجکٹس ←',
 			allPosts: 'تمام تحریریں ←',
-			aboutMe: 'میرے بارے میں',
-			viewProjects: 'منصوبے دیکھیں'
+			aboutMe: 'میرا تعارف',
+			viewProjects: 'پروجکٹس دیکھیں'
 		},
 		about: {
-			metaTitle: 'میرے بارے میں',
+			metaTitle: 'میرا تعارف',
 			educationExperience: 'تعلیم اور تجربہ',
 			techStack: 'ٹیکنیکل اسٹیک'
 		},
 		projects: {
-			metaTitle: 'منصوبے',
+			metaTitle: 'پروجکٹس',
 			metaDescription: 'منتخب انجینئرنگ کے کام اور تجربات۔',
-			heading: 'منصوبے'
+			heading: 'پروجکٹس'
 		},
 		blog: {
 			metaTitle: 'بلاگ',

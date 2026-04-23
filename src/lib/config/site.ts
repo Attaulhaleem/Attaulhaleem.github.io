@@ -42,12 +42,11 @@ const siteCopy: Record<Locale, SiteCopy> = {
 		heroProfilePhotoAlt: `Portrait de ${site.name}`
 	},
 	ur: {
-		description:
-			'عطا الحلیم کی ذاتی ویب سائٹ۔ میرے منصوبے اور تحریریں یہاں دیکھیں۔',
-		heroEyebrow: 'برقی انجینئر · سافٹ ویئر ڈویلپر · گیم ڈیزائنر',
+		description: 'عطا الحلیم کی ذاتی ویب سائٹ۔ میرے پروجکٹس اور تحریریں یہاں دیکھیں۔',
+		heroEyebrow: 'الیکٹریکل انجینئر · سافٹ ویئر ڈویلپر · گیم ڈیزائنر',
 		heroHeadline: {
-			title: 'السلام علیکم، میں عطا ہوں 👋',
-			subtitle: 'برقیات کے شوقین انجینئر اور <code/> سے لگاؤ'
+			title: 'سلام، میرا نام عطاء ہے 👋',
+			subtitle: 'الیکٹرونکس اور <code/> کا شوقین انجنیر'
 		},
 		heroProfilePhotoAlt: `${site.name} کی تصویر`
 	}

@@ -134,7 +134,7 @@ const timelineByLocale: Record<Locale, TimelineEntry[]> = {
 			period: 'ستمبر 2025 — ابھی تک',
 			description: [
 				'کورسز: کمپیوٹر سائنس، امکان و شماریات، آپٹمائزیشن میتھڈز، شماریاتی ڈیٹا اینالیسز، شماریاتی میتھڈز کی ایپلیکیشن، فرانسیسی، مؤثر مواصلات',
-				'سرگرمیاں: Hi! Paris H!ckathon 2025، INNOV\'NIGHT 2026'
+				"سرگرمیاں: Hi! Paris H!ckathon 2025، INNOV'NIGHT 2026"
 			]
 		},
 		{
