@@ -8,6 +8,7 @@ import raspberryPiLogo from '$lib/assets/logos/raspberrypi.svg';
 import appleLogo from '$lib/assets/logos/apple.svg';
 import cursorLogo from '$lib/assets/logos/cursor.svg';
 import vimLogo from '$lib/assets/logos/vim.svg';
+import latexLogo from '$lib/assets/logos/latex.svg';
 
 export type Skill = {
 	label: string;
@@ -18,6 +19,7 @@ export const skills = {
 	apple: { label: 'macOS', iconSrc: appleLogo },
 	cursor: { label: 'Cursor', iconSrc: cursorLogo },
 	vim: { label: 'Vim', iconSrc: vimLogo },
+	latex: { label: 'LaTeX', iconSrc: latexLogo },
 	c: { label: 'C', iconSrc: cLogo },
 	'c++': { label: 'C++', iconSrc: cppLogo },
 	python: { label: 'Python', iconSrc: pythonLogo },

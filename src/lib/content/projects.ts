@@ -61,7 +61,7 @@ const shared: ProjectShared[] = [
 	},
 	{
 		slug: 'smart-dumbbell',
-		skills: ['c++'],
+		skills: ['c++', 'arduino'],
 		imageSrc: smartDumbbellImage,
 		links: [{ href: 'https://github.com/Attaulhaleem/smart-dumbbell', external: true }]
 	},
