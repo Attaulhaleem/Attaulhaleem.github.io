@@ -19,15 +19,19 @@
 >
 	{#if profileSrc}
 		<div class="flex shrink-0 justify-center md:justify-end">
-			<img
-				src={profileSrc}
-				alt={profileAlt ?? ''}
-				class="aspect-square h-36 w-36 rounded-full border border-subtle bg-surface/90 object-cover shadow-(--shadow-glow) md:h-44 md:w-44"
-				width="176"
-				height="176"
-				decoding="async"
-				fetchpriority="high"
-			/>
+			<div
+				class="rounded-full shadow-[var(--shadow-soft),0_0_36px_rgba(0,255,102,0.11)] ring-2 ring-accent-green/30 ring-offset-2 ring-offset-app"
+			>
+				<img
+					src={profileSrc}
+					alt={profileAlt ?? ''}
+					class="aspect-square h-36 w-36 rounded-full object-cover md:h-44 md:w-44"
+					width="176"
+					height="176"
+					decoding="async"
+					fetchpriority="high"
+				/>
+			</div>
 		</div>
 	{/if}
 
