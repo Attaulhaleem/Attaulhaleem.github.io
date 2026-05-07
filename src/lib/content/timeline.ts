@@ -1,4 +1,9 @@
 import type { Locale } from '$lib/i18n/locales';
+import gikiLogo from '$lib/assets/logos/giki.png';
+import ipParisLogo from '$lib/assets/logos/ip_paris.jpeg';
+import lumsLogo from '$lib/assets/logos/lums.svg';
+import motiveLogo from '$lib/assets/logos/motive.jpg';
+import softwareMotionLogo from '$lib/assets/logos/software_motion.jpeg';
 import type { TimelineEntry } from '$lib/types/content';
 
 const timelineByLocale: Record<Locale, TimelineEntry[]> = {
@@ -188,5 +193,16 @@ const timelineByLocale: Record<Locale, TimelineEntry[]> = {
 };
 
 export function getTimeline(locale: Locale): TimelineEntry[] {
-	return timelineByLocale[locale];
+	const logoByEntryId: Record<string, string> = {
+		'ip-paris': ipParisLogo,
+		motive: motiveLogo,
+		'software-motion': softwareMotionLogo,
+		lums: lumsLogo,
+		giki: gikiLogo
+	};
+
+	return timelineByLocale[locale].map((entry) => ({
+		...entry,
+		logoSrc: logoByEntryId[entry.id] ?? gikiLogo
+	}));
 }

@@ -28,8 +28,23 @@
 		<p class="type-eyebrow">
 			{kindLabel} · {entry.period}
 		</p>
-		<h3 class="type-card-title mt-1">{entry.title}</h3>
-		<p class="type-card-body">{entry.subtitle}</p>
+		<div class="mt-2 flex items-start gap-3">
+			{#if entry.logoSrc}
+				<div class="flex h-10 w-10 shrink-0 items-center justify-center">
+					<img
+						src={entry.logoSrc}
+						alt={`${entry.subtitle} logo`}
+						class="max-h-full max-w-full object-contain"
+						loading="lazy"
+						decoding="async"
+					/>
+				</div>
+			{/if}
+			<div class="min-w-0">
+				<h3 class="type-card-title">{entry.title}</h3>
+				<p class="type-card-body">{entry.subtitle}</p>
+			</div>
+		</div>
 		<ul
 			class="type-card-body mt-3 list-outside list-disc space-y-2 ps-4 text-main/90 marker:text-accent-green"
 		>

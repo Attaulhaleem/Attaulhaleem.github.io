@@ -22,6 +22,8 @@ export type TimelineEntry = {
 	period: string;
 	description: string[];
 	kind: 'education' | 'experience';
+	/** Optional Vite-resolved logo URL shown for each timeline item. */
+	logoSrc?: string;
 };
 
 export type Project = {
