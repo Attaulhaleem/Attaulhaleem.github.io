@@ -1,4 +1,4 @@
-import adapter from '@sveltejs/adapter-static';
+import adapter from '@sveltejs/adapter-auto';
 
 /** @type {import('@sveltejs/kit').Config} */
 const config = {
@@ -9,14 +9,8 @@ const config = {
 	kit: {
 		// Match server `resolve()` to the client (default relative SSR used `./about` vs `/about`).
 		paths: { relative: false },
-		// Static adapter for GitHub Pages. `fallback` enables SPA routing for dynamic client-side paths.
-		adapter: adapter({
-			pages: 'build',
-			assets: 'build',
-			fallback: '404.html',
-			precompress: false,
-			strict: true
-		})
+		// Auto adapter for Vercel deployment (and other supported platforms).
+		adapter: adapter()
 	}
 };
 
