@@ -6,6 +6,10 @@
 	import Navbar from '$lib/components/layout/Navbar.svelte';
 	import { onNavigate } from '$app/navigation';
 	import type { LayoutProps } from './$types';
+	import { dev } from '$app/environment';
+	import { injectAnalytics } from '@vercel/analytics/sveltekit';
+
+	injectAnalytics({ mode: dev ? 'development' : 'production' });
 
 	let { children }: LayoutProps = $props();
 
