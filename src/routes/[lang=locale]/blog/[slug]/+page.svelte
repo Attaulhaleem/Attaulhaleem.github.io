@@ -4,7 +4,7 @@
 	import { getSiteDisplayName } from '$lib/config/site';
 	import { localizedPath } from '$lib/i18n/paths';
 	import { getUi } from '$lib/i18n/ui';
-	import type { PageProps } from './$types';
+	import SEO from '$lib/components/layout/SEO.svelte';
 
 	let { data }: PageProps = $props();
 
@@ -13,10 +13,7 @@
 	const blogIndexHref = $derived(localizedPath(locale, '/blog'));
 </script>
 
-<svelte:head>
-	<title>{data.post.title} — {getSiteDisplayName(locale)}</title>
-	<meta name="description" content={data.post.summary} />
-</svelte:head>
+<SEO title={data.post.title} description={data.post.summary} type="article" />
 
 <Section>
 	<article class="max-w-3xl">

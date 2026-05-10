@@ -8,7 +8,7 @@
 	import { getFeaturedPosts } from '$lib/content/blog';
 	import { getFeaturedProjects } from '$lib/content/projects';
 	import { getUi } from '$lib/i18n/ui';
-	import type { PageProps } from './$types';
+	import SEO from '$lib/components/layout/SEO.svelte';
 
 	let { data }: PageProps = $props();
 
@@ -19,10 +19,7 @@
 	const featuredPosts = $derived(getFeaturedPosts(locale, 2));
 </script>
 
-<svelte:head>
-	<title>{ui.home.metaTitle} — {getSiteDisplayName(locale)}</title>
-	<meta name="description" content={siteCopy.description} />
-</svelte:head>
+<SEO title={ui.home.metaTitle} description={siteCopy.description} />
 
 <div class="section-inner flex flex-col">
 	<Hero

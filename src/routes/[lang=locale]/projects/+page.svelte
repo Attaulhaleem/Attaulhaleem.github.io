@@ -4,7 +4,7 @@
 	import { getSiteDisplayName } from '$lib/config/site';
 	import { getAllProjects } from '$lib/content/projects';
 	import { getUi } from '$lib/i18n/ui';
-	import type { PageProps } from './$types';
+	import SEO from '$lib/components/layout/SEO.svelte';
 
 	let { data }: PageProps = $props();
 
@@ -13,10 +13,7 @@
 	const projects = $derived(getAllProjects(locale));
 </script>
 
-<svelte:head>
-	<title>{ui.projects.metaTitle} — {getSiteDisplayName(locale)}</title>
-	<meta name="description" content={ui.projects.metaDescription} />
-</svelte:head>
+<SEO title={ui.projects.metaTitle} description={ui.projects.metaDescription} />
 
 <Section title={ui.projects.heading} id="projects">
 	<div class="grid gap-6 sm:grid-cols-2">

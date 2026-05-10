@@ -7,7 +7,7 @@
 	import { allSkills } from '$lib/content/skills';
 	import { getTimeline } from '$lib/content/timeline';
 	import { getUi } from '$lib/i18n/ui';
-	import type { PageProps } from './$types';
+	import SEO from '$lib/components/layout/SEO.svelte';
 
 	let { data }: PageProps = $props();
 
@@ -17,10 +17,7 @@
 	const timeline = $derived(getTimeline(locale));
 </script>
 
-<svelte:head>
-	<title>{ui.about.metaTitle} — {getSiteDisplayName(locale)}</title>
-	<meta name="description" content={about.description} />
-</svelte:head>
+<SEO title={ui.about.metaTitle} description={about.description} />
 
 <Section title={about.title} id="about-intro">
 	<div class="flex flex-col gap-4 text-main/90">

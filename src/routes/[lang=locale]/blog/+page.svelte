@@ -3,7 +3,7 @@
 	import Section from '$lib/components/layout/Section.svelte';
 	import { getSiteDisplayName } from '$lib/config/site';
 	import { getUi } from '$lib/i18n/ui';
-	import type { PageProps } from './$types';
+	import SEO from '$lib/components/layout/SEO.svelte';
 
 	let { data }: PageProps = $props();
 
@@ -11,10 +11,7 @@
 	const ui = $derived(getUi(locale));
 </script>
 
-<svelte:head>
-	<title>{ui.blog.metaTitle} — {getSiteDisplayName(locale)}</title>
-	<meta name="description" content={ui.blog.metaDescription} />
-</svelte:head>
+<SEO title={ui.blog.metaTitle} description={ui.blog.metaDescription} />
 
 <Section title={ui.blog.heading} id="blog-list">
 	<ul class="flex list-none flex-col gap-4 p-0">
