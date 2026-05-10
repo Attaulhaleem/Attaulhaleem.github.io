@@ -20,7 +20,7 @@
 	{#if profileSrc}
 		<div class="flex shrink-0 justify-center md:justify-end">
 			<div
-				class="rounded-full shadow-[var(--shadow-soft),0_0_36px_rgba(0,255,102,0.11)] ring-2 ring-accent-green/30 ring-offset-2 ring-offset-app"
+				class="rounded-full shadow-hero-glow ring-2 ring-accent-green/30 ring-offset-2 ring-offset-app"
 			>
 				<img
 					src={profileSrc}

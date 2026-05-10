@@ -19,7 +19,7 @@
 <li class="relative flex gap-4 pb-10 last:pb-0 sm:gap-6">
 	<div class="flex flex-col items-center">
 		<span
-			class="z-10 mt-1.5 h-3 w-3 shrink-0 rounded-full border-2 border-accent-green bg-app shadow-[0_0_14px_rgba(0,255,102,0.55)]"
+			class="z-10 mt-1.5 h-3 w-3 shrink-0 rounded-full border-2 border-accent-green bg-app shadow-glow-green-sm"
 			aria-hidden="true"
 		></span>
 		<span class="w-0.5 grow bg-white/12" aria-hidden="true"></span>

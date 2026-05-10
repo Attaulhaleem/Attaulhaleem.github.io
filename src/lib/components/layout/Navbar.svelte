@@ -28,7 +28,7 @@
 			<Icon
 				src={logoSrc}
 				label={siteDisplayName}
-				class="size-8 transition-[filter] duration-300 ease-out group-hover:filter-[drop-shadow(0_0_10px_rgba(0,255,102,0.95))_drop-shadow(0_0_22px_rgba(0,255,102,0.45))_drop-shadow(0_0_36px_rgba(0,255,102,0.2))]"
+				class="size-8 transition-all duration-300 ease-out group-hover:text-accent-green group-hover:drop-shadow-glow-green"
 			/>
 		</a>
 		<nav

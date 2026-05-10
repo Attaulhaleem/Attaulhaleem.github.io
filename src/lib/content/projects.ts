@@ -85,7 +85,7 @@ const copyByLocale: Record<Locale, Record<string, ProjectCopy>> = {
 			title: 'Flash',
 			summary: 'Proactive traffic management using real-time traffic and event data.',
 			imageAlt: 'Flash',
-			linkLabels: ['Source Code (Coming Soon...)']
+			linkLabels: ['Source Code']
 		},
 		oblivision: {
 			title: 'Oblivision',
