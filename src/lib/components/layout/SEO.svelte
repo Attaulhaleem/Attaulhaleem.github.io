@@ -44,6 +44,17 @@
 	<meta property="og:image" content={seoImage} />
 	<meta property="og:site_name" content={siteName} />
 
+	<meta property="og:locale" content={locale === 'fr' ? 'fr_FR' : locale === 'ur' ? 'ur_PK' : 'en_US'} />
+	{#if locale !== 'en'}
+		<meta property="og:locale:alternate" content="en_US" />
+	{/if}
+	{#if locale !== 'fr'}
+		<meta property="og:locale:alternate" content="fr_FR" />
+	{/if}
+	{#if locale !== 'ur'}
+		<meta property="og:locale:alternate" content="ur_PK" />
+	{/if}
+
 	<!-- Twitter -->
 	<meta name="twitter:card" content="summary_large_image" />
 	<meta name="twitter:url" content={canonicalUrl} />
