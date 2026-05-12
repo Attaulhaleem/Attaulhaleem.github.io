@@ -162,16 +162,16 @@ const strings: Record<Locale, UiStrings> = {
 		}
 	},
 	ur: {
-		nav: { home: 'مرکز', about: 'تعارف', projects: 'پروجکٹس', blog: 'بلاگ', contact: 'رابطہ' },
+		nav: { home: 'مرکز', about: 'تعارف', projects: 'پراجیکٹس', blog: 'بلاگ', contact: 'رابطہ' },
 		languageSwitcher: { label: 'زبان' },
 		home: {
 			metaTitle: 'مرکز',
-			recentProjects: 'حالیہ پروجکٹس',
+			recentProjects: 'حالیہ پراجیکٹس',
 			recentPosts: 'حالیہ تحریریں',
-			allProjects: 'تمام پروجکٹس ←',
+			allProjects: 'تمام پراجیکٹس ←',
 			allPosts: 'تمام تحریریں ←',
 			aboutMe: 'میرا تعارف',
-			viewProjects: 'پروجکٹس دیکھیں'
+			viewProjects: 'پراجیکٹس دیکھیں'
 		},
 		about: {
 			metaTitle: 'تعارف',
@@ -179,13 +179,13 @@ const strings: Record<Locale, UiStrings> = {
 			techStack: 'ٹیکنیکل اسٹیک'
 		},
 		projects: {
-			metaTitle: 'پروجکٹس',
-			metaDescription: 'منتخب انجینئرنگ کے کام اور تجربات۔',
-			heading: 'پروجکٹس'
+			metaTitle: 'پراجیکٹس',
+			metaDescription: 'منتخب انجینیئرنگ کے کام اور تجربات۔',
+			heading: 'پراجیکٹس'
 		},
 		blog: {
 			metaTitle: 'بلاگ',
-			metaDescription: 'انجینئرنگ اور ٹولز پر مضامین اور نوٹس۔',
+			metaDescription: 'انجینیئرنگ اور ٹولز پر مضامین اور نوٹس۔',
 			heading: 'بلاگ',
 			readLength: (minutes) => `${minutes} منٹ پڑھنے کا وقت`,
 			allPostsBack: 'تمام تحریریں ←'

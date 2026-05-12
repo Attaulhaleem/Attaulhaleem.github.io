@@ -131,7 +131,7 @@ const copyByLocale: Record<Locale, Record<string, ProjectCopy>> = {
 			summary:
 				'Gestion proactive du trafic à partir de données de circulation et d’évènements en temps réel.',
 			imageAlt: 'Flash',
-			linkLabels: ['Code source (bientôt...)']
+			linkLabels: ['Code source']
 		},
 		oblivision: {
 			title: 'Oblivision',
@@ -176,11 +176,11 @@ const copyByLocale: Record<Locale, Record<string, ProjectCopy>> = {
 			title: 'Flash',
 			summary: 'ریل ٹائم ٹریفک اور واقعات کے ڈیٹا سے فعال ٹریفک مینجمنٹ۔',
 			imageAlt: 'Flash',
-			linkLabels: ['سورس کوڈ (جلد...)']
+			linkLabels: ['سورس کوڈ']
 		},
 		oblivision: {
 			title: 'Oblivision',
-			summary: 'گیم جم کے لیے Godot میں بنایا گیا 2D پزل پلیٹ فارمر۔',
+			summary: 'گیم جیم کے لیے Godot میں بنایا گیا 2D پزل پلیٹ فارمر۔',
 			imageAlt: 'Oblivision',
 			linkLabels: ['ڈیمو', 'سورس کوڈ']
 		},

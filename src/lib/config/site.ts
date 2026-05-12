@@ -56,11 +56,11 @@ const siteCopy: Record<Locale, SiteCopy> = {
 		footerLabel: `Fait avec 💚 par Atta © ${new Date().getFullYear()}`
 	},
 	ur: {
-		description: 'عطا الحلیم کی ذاتی ویب سائٹ۔ میرے پروجکٹس اور تحریریں یہاں دیکھیں۔',
-		heroEyebrow: 'الیکٹریکل انجینئر · سافٹ ویئر ڈویلپر · گیم ڈیزائنر',
+		description: 'عطاءالحلیم کی ذاتی ویب سائٹ۔ میرے پراجیکٹس اور تحریریں یہاں دیکھیں۔',
+		heroEyebrow: 'الیکٹریکل انجینیئر · سافٹ ویئر ڈویلپر · گیم ڈیزائنر',
 		heroHeadline: {
 			title: 'سلام، میرا نام عطا ہے 👋',
-			subtitle: 'الیکٹرونکس اور <code/> کا شوقین انجنیر'
+			subtitle: 'الیکٹرانکس اور <code/> کا شوقین انجینیئر'
 		},
 		heroProfilePhotoAlt: `کی تصویر ${SITE_DISPLAY_NAME.ur}`,
 		footerLabel: `💚 سے بنا۔ عطا © ${new Date().getFullYear()}`

@@ -75,7 +75,7 @@ const timelineByLocale: Record<Locale, TimelineEntry[]> = {
 			title: 'Master of Science',
 			subtitle:
 				'Institut Polytechnique de Paris · Génie électrique (Analyse de données et reconnaissance de formes)',
-			period: 'Sept. 2025 — aujourd’hui',
+			period: "Sept. 2025 — aujourd'hui",
 			description: [
 				"Cours : Informatique, Probabilités et statistiques, Méthodes d'optimisation, Analyse statistique de données, Applications des méthodes statistiques, Français, Communication",
 				"Activités : Hi! Paris H!ckathon 2025, INNOV'NIGHT 2026"
@@ -100,7 +100,7 @@ const timelineByLocale: Record<Locale, TimelineEntry[]> = {
 			period: 'Oct. 2024 — juin 2025',
 			description: [
 				'Développement de systèmes ADAS de niveaux L1-L2 pour le secteur automobile.',
-				'Conception d’une solution FOTA robuste pour les ECU automobiles, conforme aux normes ISO-15765 et ISO-14229.',
+				"Conception d'une solution FOTA robuste pour les ECU automobiles, conforme aux normes ISO-15765 et ISO-14229.",
 				'Machines à états en C++ pour des fonctionnalités ADAS critiques (ABS, alerte de franchissement de voie, alerte de collision frontale).',
 				'Mise en place et débogage de tests unitaires avec GoogleTest.'
 			]
@@ -113,7 +113,7 @@ const timelineByLocale: Record<Locale, TimelineEntry[]> = {
 			period: 'Sept. 2023 — avril 2024',
 			description: [
 				'NeuBolt : contribution au premier véhicule électrique à 3 roues à batterie échangeable du Pakistan — IoT pour le mécanisme d’échange et protocole de communication intra-véhicule personnalisé.',
-				'enfo.ai : compteurs d’énergie IoT intelligents et analyses assistées par IA pour réduire la consommation et les coûts ; pilotage du hardware et du firmware, dont FOTA, un tableau de bord web de configuration, et le transfert de fichiers via MQTT.'
+				"enfo.ai : compteurs d'énergie IoT intelligents et analyses assistées par IA pour réduire la consommation et les coûts ; pilotage du hardware et du firmware, dont FOTA, un tableau de bord web de configuration, et le transfert de fichiers via MQTT."
 			]
 		},
 		{
@@ -135,18 +135,18 @@ const timelineByLocale: Record<Locale, TimelineEntry[]> = {
 			kind: 'education',
 			title: 'ماسٹر آف سائنس',
 			subtitle:
-				'Institut Polytechnique de Paris · برقی ہندسیات (ڈیٹا اینالیسز اور پیٹرن کلاسیفیکیشن)',
+				'Institut Polytechnique de Paris · الیکٹریکل انجینیئرنگ (ڈیٹا اینالیسز اور پیٹرن کلاسیفیکیشن)',
 			period: 'ستمبر 2025 — ابھی تک',
 			description: [
-				'کورسز: کمپیوٹر سائنس، امکان و شماریات، آپٹمائزیشن میتھڈز، شماریاتی ڈیٹا اینالیسز، شماریاتی میتھڈز کی ایپلیکیشن، فرانسیسی، مؤثر مواصلات',
+				'کورسز: کمپیوٹر سائنس، پراببلٹی اور سٹیٹسٹکس، آپٹیمائزیشن میتھڈز، سٹیٹسٹیکل ڈیٹا انالیسس، ایپلیکیشنز آف سٹیٹسٹیکل میتھڈز، فرانسیسی، ایفیکٹو کمیونیکیشن',
 				"سرگرمیاں: Hi! Paris H!ckathon 2025، INNOV'NIGHT 2026"
 			]
 		},
 		{
 			id: 'motive',
 			kind: 'experience',
-			title: 'QA انجینئر، امبیڈڈ',
-			subtitle: 'Motive Technologies Inc.',
+			title: 'QA انجینیئر، امبیڈڈ',
+			subtitle: '.Motive Technologies Inc',
 			period: 'جون 2025 — اگست 2025',
 			description: [
 				'Vehicle Gateway (VG) ڈیوائسز کا دستی ٹیسٹنگ اور QA ورک فلو میں خودکار کاری میں مدد۔',
@@ -156,13 +156,13 @@ const timelineByLocale: Record<Locale, TimelineEntry[]> = {
 		{
 			id: 'software-motion',
 			kind: 'experience',
-			title: 'امبیڈڈ سافٹ ویئر انجینئر',
-			subtitle: 'Software Motion (Suzhou) Engineering Services Co., Ltd.',
+			title: 'امبیڈڈ سافٹ ویئر انجینیئر',
+			subtitle: '.Software Motion (Suzhou) Engineering Services Co., Ltd',
 			period: 'اکتوبر 2024 — جون 2025',
 			description: [
 				'آٹوموٹو انڈسٹری کے لیے L1-L2 ایڈوانس ڈرائیور اسسٹنس سسٹمز (ADAS) کی ترقی۔',
 				'ISO-15765 اور ISO-14229 کے مطابق آٹوموٹو ECUs کے لیے مضبوط FOTA حل کی ڈیزائن۔',
-				'اہم ADAS فیچرز (اینٹی لاک بریکنگ سسٹم، لین ڈیپارچر وارننگ، فارورڈ کولیزن وارننگ) کے لیے C++ اسٹیٹ مشینز۔',
+				'اہم ADAS فیچرز (اینٹی لاک بریکنگ سسٹم، لین ڈیپارچر وارننگ، فارورڈ کولیزن وارننگ) کے لیے \u202AC++\u202C اسٹیٹ مشینز۔',
 				'GoogleTest فریم ورک کے ساتھ یونٹ ٹیسٹس کی عمل درآمد اور ڈیبگ۔'
 			]
 		},
@@ -182,7 +182,7 @@ const timelineByLocale: Record<Locale, TimelineEntry[]> = {
 			kind: 'education',
 			title: 'بیچلر آف سائنس',
 			subtitle:
-				'Ghulam Ishaq Khan Institute of Engineering Sciences and Technology (GIKI) · برقی ہندسیات (الیکٹرانکس)',
+				'Ghulam Ishaq Khan Institute of Engineering Sciences and Technology (GIKI) ·الیکٹریکل انجینیئرنگ (الیکٹرانکس)',
 			period: 'اگست 2019 — جولائی 2023',
 			description: [
 				'اختیاری مضامین: امبیڈڈ سسٹمز، ڈیجیٹل سسٹم ڈیزائن، روبوٹکس کا تعارف',
