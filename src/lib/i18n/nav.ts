@@ -8,6 +8,7 @@ export function getNavItems(locale: Locale): NavItem[] {
 		{ label: nav.home, href: '/' },
 		{ label: nav.about, href: '/about' },
 		{ label: nav.projects, href: '/projects' },
-		{ label: nav.blog, href: '/blog' }
+		{ label: nav.blog, href: '/blog' },
+		{ label: nav.contact, href: '/contact' }
 	];
 }

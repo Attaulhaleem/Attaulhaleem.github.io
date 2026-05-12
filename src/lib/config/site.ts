@@ -56,7 +56,7 @@ const siteCopy: Record<Locale, SiteCopy> = {
 		description: 'عطا الحلیم کی ذاتی ویب سائٹ۔ میرے پروجکٹس اور تحریریں یہاں دیکھیں۔',
 		heroEyebrow: 'الیکٹریکل انجینئر · سافٹ ویئر ڈویلپر · گیم ڈیزائنر',
 		heroHeadline: {
-			title: 'سلام، میرا نام عطاء ہے 👋',
+			title: 'سلام، میرا نام عطا ہے 👋',
 			subtitle: 'الیکٹرونکس اور <code/> کا شوقین انجنیر'
 		},
 		heroProfilePhotoAlt: `کی تصویر ${SITE_DISPLAY_NAME.ur}`

@@ -2,7 +2,7 @@ import { resolve } from '$app/paths';
 import type { Locale } from '$lib/i18n/locales';
 
 /** Top-level in-app paths (without the locale segment). Keep in sync with `src/routes/[lang]`. */
-export type AppPath = '/' | '/about' | '/projects' | '/blog';
+export type AppPath = '/' | '/about' | '/projects' | '/blog' | '/contact';
 
 /** Build a type-safe URL under the active locale for a top-level page. */
 export function localizedPath(locale: Locale, path: AppPath): string {
@@ -15,6 +15,8 @@ export function localizedPath(locale: Locale, path: AppPath): string {
 			return resolve('/[lang=locale]/projects', { lang: locale });
 		case '/blog':
 			return resolve('/[lang=locale]/blog', { lang: locale });
+		case '/contact':
+			return resolve('/[lang=locale]/contact', { lang: locale });
 	}
 }
 
