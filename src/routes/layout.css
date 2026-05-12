@@ -351,7 +351,7 @@ html:lang(ur) {
 	 * as nav pills / buttons (chevron layered above `--surface-hover-fill` on hover).
 	 */
 	.locale-select {
-		@apply w-max max-w-40 cursor-pointer rounded-lg border border-subtle py-1 pr-6 pl-1.5 font-mono text-[0.6875rem] leading-tight font-medium text-main transition-all duration-300 ease-out;
+		@apply w-max max-w-40 cursor-pointer rounded-md border border-subtle py-2 pr-6 pl-2 text-sm font-medium text-muted transition-all duration-300 ease-out;
 		appearance: none;
 		-webkit-appearance: none;
 		-moz-appearance: none;
@@ -360,23 +360,21 @@ html:lang(ur) {
 		/* Set on `<select class="locale-select">` via `--locale-select-chevron` (see LanguageSwitcher.svelte) */
 		background-image: var(--locale-select-chevron);
 		background-repeat: no-repeat;
-		background-position: right 0.35rem center;
+		background-position: right 0.75rem center;
 		background-size: 0.5625rem;
-		box-shadow:
-			inset 0 1px 0 rgba(255, 255, 255, 0.1),
-			0 0 0 1px rgba(255, 255, 255, 0.04);
+		box-shadow: none;
 	}
 
 	html[dir='rtl'] .locale-select {
-		background-position: left 0.35rem center;
+		background-position: left 0.75rem center;
 	}
 
 	@media (hover: hover) {
 		.locale-select:hover {
-			@apply -translate-y-0.5 border-accent-green/45 text-main;
+			@apply -translate-y-0.5 border-subtle/90 text-main;
 			background-image: var(--locale-select-chevron), var(--surface-hover-fill);
 			background-position:
-				right 0.35rem center,
+				right 0.75rem center,
 				0 0;
 			background-size:
 				0.5625rem auto,
@@ -385,20 +383,21 @@ html:lang(ur) {
 			backdrop-filter: blur(22px) saturate(175%);
 			-webkit-backdrop-filter: blur(22px) saturate(175%);
 			box-shadow:
-				inset 0 1px 0 rgba(255, 255, 255, 0.22),
-				0 10px 36px rgba(0, 0, 0, 0.42),
-				0 0 32px rgba(0, 255, 102, 0.16);
+				inset 0 1px 0 rgba(255, 255, 255, 0.18),
+				0 10px 36px rgba(0, 0, 0, 0.38),
+				0 0 28px rgba(0, 255, 102, 0.12);
 		}
 
 		html[dir='rtl'] .locale-select:hover {
 			background-position:
-				left 0.35rem center,
+				left 0.75rem center,
 				0 0;
 		}
 	}
 
 	.locale-select:focus-visible {
-		@apply outline-2 outline-offset-2 outline-accent-green;
+		@apply outline-2 outline-offset-2;
+		border-color: rgba(0, 255, 102, 0.35);
 	}
 
 	.link-accent {
