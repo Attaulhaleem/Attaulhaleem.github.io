@@ -12,7 +12,7 @@ import type { Locale } from '$lib/i18n/locales';
 /** Locale-independent site identity (canonical Latin name for URLs / structured data). */
 export const site = {
 	name: 'Atta Ul Haleem',
-	url: 'https://attaulhaleem.com'
+	url: 'https://attaul.com'
 } as const;
 
 /** UI / document titles — Arabic script for Urdu. */
@@ -31,6 +31,7 @@ type SiteCopy = {
 	heroEyebrow: string;
 	heroHeadline: { title: string; subtitle: string };
 	heroProfilePhotoAlt: string;
+	footerLabel: string;
 };
 
 const siteCopy: Record<Locale, SiteCopy> = {
@@ -41,7 +42,8 @@ const siteCopy: Record<Locale, SiteCopy> = {
 			title: "Hi, I'm Atta 👋",
 			subtitle: 'Engineer with an obsession for electronics and <code/>'
 		},
-		heroProfilePhotoAlt: `Portrait of ${SITE_DISPLAY_NAME.en}`
+		heroProfilePhotoAlt: `Portrait of ${SITE_DISPLAY_NAME.en}`,
+		footerLabel: `Made with 💚 by Atta © ${new Date().getFullYear()}`
 	},
 	fr: {
 		description: "Site personnel d'Atta Ul Haleem. Découvrez mes projets et mes écrits.",
@@ -50,7 +52,8 @@ const siteCopy: Record<Locale, SiteCopy> = {
 			title: 'Salut, je suis Atta 👋',
 			subtitle: "Ingénieur passionné par l'électronique et le <code/>"
 		},
-		heroProfilePhotoAlt: `Portrait de ${SITE_DISPLAY_NAME.fr}`
+		heroProfilePhotoAlt: `Portrait de ${SITE_DISPLAY_NAME.fr}`,
+		footerLabel: `Fait avec 💚 par Atta © ${new Date().getFullYear()}`
 	},
 	ur: {
 		description: 'عطا الحلیم کی ذاتی ویب سائٹ۔ میرے پروجکٹس اور تحریریں یہاں دیکھیں۔',
@@ -59,7 +62,8 @@ const siteCopy: Record<Locale, SiteCopy> = {
 			title: 'سلام، میرا نام عطا ہے 👋',
 			subtitle: 'الیکٹرونکس اور <code/> کا شوقین انجنیر'
 		},
-		heroProfilePhotoAlt: `کی تصویر ${SITE_DISPLAY_NAME.ur}`
+		heroProfilePhotoAlt: `کی تصویر ${SITE_DISPLAY_NAME.ur}`,
+		footerLabel: `💚 سے بنا۔ عطا © ${new Date().getFullYear()}`
 	}
 };
 
@@ -67,12 +71,16 @@ export function getSiteCopy(locale: Locale): SiteCopy {
 	return siteCopy[locale];
 }
 
+export function getSiteFooterLabel(locale: Locale): string {
+	return siteCopy[locale].footerLabel;
+}
+
 /** Shared profile photo (same asset across locales). */
 export const heroProfilePhotoSrc = profilePhoto;
 
 /** Footer / social row — locale-independent. */
 export const socialLinks: SocialLink[] = [
-	{ label: 'Email', href: 'mailto:haleem.attaul@gmail.com', iconSrc: gmailLogo },
+	{ label: 'Email', href: 'mailto:contact@attaul.com', iconSrc: gmailLogo },
 	{ label: 'LinkedIn', href: 'https://linkedin.com/in/attaulhaleem', iconSrc: linkedinLogo },
 	{ label: 'GitHub', href: 'https://github.com/Attaulhaleem', iconSrc: githubLogo },
 	{ label: 'Itch.io', href: 'https://dustypizza.itch.io', iconSrc: itchIoLogo },

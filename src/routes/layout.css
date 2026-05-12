@@ -255,7 +255,7 @@ html:lang(ur) {
 	}
 
 	.type-meta {
-		@apply font-mono text-eyebrow text-faint;
+		@apply font-sans text-sm text-muted;
 	}
 
 	/* Prose wrapper for MD/HTML article bodies */
