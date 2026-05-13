@@ -43,7 +43,7 @@
 	};
 </script>
 
-<div class="rounded-xl border border-main/10 bg-main/5 p-6 md:p-8">
+<div class="surface p-6 md:p-8">
 	{#if state === 'success'}
 		<div class="flex flex-col items-center justify-center space-y-4 py-8 text-center">
 			<div
@@ -74,7 +74,7 @@
 					required
 					maxlength="100"
 					placeholder={ui.namePlaceholder}
-					class="w-full rounded-lg border border-main/20 bg-main/5 px-4 py-3 text-main placeholder-main/40 focus:border-accent-green focus:ring-1 focus:ring-accent-green focus:outline-none"
+					class="w-full rounded-lg border border-subtle bg-main/5 px-4 py-3 text-main placeholder-main/40 transition-all duration-300 focus:border-accent-green/50 focus:bg-white/5 focus:ring-1 focus:ring-accent-green/50 focus:outline-none"
 				/>
 			</div>
 
@@ -87,7 +87,7 @@
 					required
 					maxlength="100"
 					placeholder={ui.emailPlaceholder}
-					class="w-full rounded-lg border border-main/20 bg-main/5 px-4 py-3 text-main placeholder-main/40 focus:border-accent-green focus:ring-1 focus:ring-accent-green focus:outline-none"
+					class="w-full rounded-lg border border-subtle bg-main/5 px-4 py-3 text-main placeholder-main/40 transition-all duration-300 focus:border-accent-green/50 focus:bg-white/5 focus:ring-1 focus:ring-accent-green/50 focus:outline-none"
 				/>
 			</div>
 
@@ -101,7 +101,7 @@
 					maxlength="5000"
 					rows="5"
 					placeholder={ui.messagePlaceholder}
-					class="w-full rounded-lg border border-main/20 bg-main/5 px-4 py-3 text-main placeholder-main/40 focus:border-accent-green focus:ring-1 focus:ring-accent-green focus:outline-none"
+					class="w-full rounded-lg border border-subtle bg-main/5 px-4 py-3 text-main placeholder-main/40 transition-all duration-300 focus:border-accent-green/50 focus:bg-white/5 focus:ring-1 focus:ring-accent-green/50 focus:outline-none"
 				></textarea>
 			</div>
 

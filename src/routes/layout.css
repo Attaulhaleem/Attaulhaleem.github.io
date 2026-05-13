@@ -2,7 +2,9 @@
 @plugin '@tailwindcss/forms';
 @plugin '@tailwindcss/typography';
 
-/* Semantic palette + typography — single source for Tailwind utilities */
+/* ==========================================================================
+   Configuration & Theme Palette
+   ========================================================================== */
 @theme {
 	--font-sans: 'Inter', ui-sans-serif, system-ui, sans-serif;
 	--font-mono: 'JetBrains Mono', ui-monospace, monospace;
@@ -35,10 +37,7 @@
 		0 0 10px rgba(0, 255, 102, 0.95), 0 0 22px rgba(0, 255, 102, 0.45),
 		0 0 36px rgba(0, 255, 102, 0.2);
 
-	/*
-	 * Page atmosphere (see `body` background-image). Three fixed radials: green
-	 * top-left, blue top-right, soft white bottom — same layout everywhere.
-	 */
+	/* Page atmosphere (see `body` background-image) */
 	--bg-ambient-layers:
 		radial-gradient(circle at 18% 12%, rgba(0, 255, 102, 0.06), transparent 40%),
 		radial-gradient(circle at 85% 8%, rgba(0, 85, 255, 0.07), transparent 38%),
@@ -74,10 +73,9 @@
 	--text-post-title--letter-spacing: -0.04em;
 }
 
-/*
- * Urdu (Arabic script): Naskh reads clearer than geometric Latin sans.
- * Reset tight/negative tracking and Inter-only features — they harm joins and readability.
- */
+/* ==========================================================================
+   Typography & Language Specific Rules (Urdu)
+   ========================================================================== */
 html:lang(ur) {
 	--font-sans: 'Noto Naskh Arabic', ui-sans-serif, system-ui, sans-serif;
 
@@ -98,7 +96,9 @@ html:lang(ur) {
 	--text-lede--line-height: 1.8;
 }
 
-/* Base document */
+/* ==========================================================================
+   Base Document Styles
+   ========================================================================== */
 @layer base {
 	html {
 		@apply scroll-smooth antialiased;
@@ -115,7 +115,6 @@ html:lang(ur) {
 	}
 
 	body {
-		/* Framer sites are almost always dark mode by default */
 		@apply min-h-dvh bg-app font-sans text-main selection:bg-accent-green/30 selection:text-white;
 		font-feature-settings:
 			'cv02' on,
@@ -130,7 +129,6 @@ html:lang(ur) {
 	}
 
 	a {
-		/* Removed the default underline for a cleaner tech look, relying on color/opacity */
 		@apply text-muted transition-colors duration-300 hover:text-main;
 	}
 
@@ -139,8 +137,12 @@ html:lang(ur) {
 	}
 }
 
-/* Layout + glow patterns */
+/* ==========================================================================
+   Components
+   ========================================================================== */
 @layer components {
+	/* App Layout & Shell */
+	/* ---------------------------------------------------------------------- */
 	.app-shell {
 		@apply relative flex min-h-dvh flex-col overflow-x-clip;
 	}
@@ -164,7 +166,9 @@ html:lang(ur) {
 		@apply flex flex-col gap-10 py-12 md:gap-20 md:py-24;
 	}
 
-	/* Framer-style interactive cards: translucent, thin borders, slow easing */
+	/* Interactive Surfaces */
+	/* ---------------------------------------------------------------------- */
+	.surface,
 	.interactive-surface {
 		@apply rounded-card border border-subtle bg-surface/90 backdrop-blur-xl transition-all duration-500 ease-out;
 		background-image: none;
@@ -174,7 +178,6 @@ html:lang(ur) {
 			var(--shadow-soft);
 	}
 
-	/* Lift effect with a subtle electric green diffused shadow */
 	@media (hover: hover) {
 		.interactive-surface:hover {
 			@apply -translate-y-1 border-accent-green/35;
@@ -187,10 +190,8 @@ html:lang(ur) {
 		}
 	}
 
-	/*
-	 * Header + footer: shared glass chrome (same blur, opacity, and min height).
-	 * Background uses a single rgba so “bleed-through” matches top and bottom.
-	 */
+	/* Chrome (Header/Footer) */
+	/* ---------------------------------------------------------------------- */
 	.chrome-bar {
 		@apply border-subtle/80 backdrop-blur-2xl;
 		background-color: rgba(0, 0, 0, 0.5);
@@ -211,7 +212,8 @@ html:lang(ur) {
 		min-height: var(--chrome-height);
 	}
 
-	/* Section headings: double hairline frame (style #5) — chrome vocabulary, no fill/blur */
+	/* Typography Utilities */
+	/* ---------------------------------------------------------------------- */
 	.section-heading {
 		@apply border-y border-subtle/70 py-4 md:py-5;
 	}
@@ -258,11 +260,12 @@ html:lang(ur) {
 		@apply font-sans text-sm text-muted;
 	}
 
-	/* Prose wrapper for MD/HTML article bodies */
 	.prose-article {
 		@apply prose max-w-none prose-invert prose-headings:font-semibold prose-headings:tracking-tight prose-h2:mt-11 prose-h2:mb-4 prose-h3:mt-8 prose-h3:mb-3 prose-p:leading-relaxed prose-p:text-main/90 prose-a:text-accent-green prose-a:no-underline hover:prose-a:text-white prose-strong:text-main prose-code:font-mono prose-code:text-main prose-pre:border prose-pre:border-subtle prose-pre:bg-surface prose-li:my-1 prose-li:leading-relaxed;
 	}
 
+	/* Buttons & Interactive Elements */
+	/* ---------------------------------------------------------------------- */
 	.btn {
 		@apply inline-flex items-center justify-center gap-2 rounded-lg px-4 py-2.5 text-sm font-medium no-underline transition-all duration-300 focus-visible:outline-2 focus-visible:outline-offset-2 focus-visible:outline-accent-green;
 		background-color: transparent;
@@ -276,35 +279,9 @@ html:lang(ur) {
 			0 0 0 1px rgba(255, 255, 255, 0.04);
 	}
 
-	@media (hover: hover) {
-		.btn--primary:hover {
-			@apply -translate-y-0.5 border-accent-green/45 text-main;
-			background-image: var(--surface-hover-fill);
-			backdrop-filter: blur(22px) saturate(175%);
-			-webkit-backdrop-filter: blur(22px) saturate(175%);
-			box-shadow:
-				inset 0 1px 0 rgba(255, 255, 255, 0.22),
-				0 10px 36px rgba(0, 0, 0, 0.42),
-				0 0 32px rgba(0, 255, 102, 0.16);
-		}
-	}
-
 	.btn--ghost {
 		@apply border border-transparent text-main;
 		box-shadow: none;
-	}
-
-	@media (hover: hover) {
-		.btn--ghost:hover {
-			@apply -translate-y-0.5 border-subtle/90 text-main;
-			background-image: var(--surface-hover-fill);
-			backdrop-filter: blur(22px) saturate(175%);
-			-webkit-backdrop-filter: blur(22px) saturate(175%);
-			box-shadow:
-				inset 0 1px 0 rgba(255, 255, 255, 0.18),
-				0 10px 36px rgba(0, 0, 0, 0.38),
-				0 0 28px rgba(0, 255, 102, 0.12);
-		}
 	}
 
 	.nav-pill {
@@ -312,27 +289,6 @@ html:lang(ur) {
 		background-color: transparent;
 		background-image: none;
 		box-shadow: none;
-	}
-
-	@media (hover: hover) {
-		.nav-pill:hover {
-			@apply -translate-y-0.5 border-subtle/90 text-main;
-			background-image: var(--surface-hover-fill);
-			backdrop-filter: blur(22px) saturate(175%);
-			-webkit-backdrop-filter: blur(22px) saturate(175%);
-			box-shadow:
-				inset 0 1px 0 rgba(255, 255, 255, 0.18),
-				0 10px 36px rgba(0, 0, 0, 0.38),
-				0 0 28px rgba(0, 255, 102, 0.12);
-		}
-
-		.nav-pill--active:hover {
-			border-color: rgba(0, 255, 102, 0.5);
-			box-shadow:
-				inset 0 1px 0 rgba(255, 255, 255, 0.22),
-				0 10px 36px rgba(0, 0, 0, 0.38),
-				0 0 32px rgba(0, 255, 102, 0.18);
-		}
 	}
 
 	.nav-pill--active {
@@ -345,11 +301,6 @@ html:lang(ur) {
 			0 0 20px rgba(0, 255, 102, 0.12);
 	}
 
-	/*
-	 * Language dropdown in the chrome bar: strip the native chevron (it often stacks
-	 * under the label in WebKit) and paint a custom chevron — same glass idle/hover
-	 * as nav pills / buttons (chevron layered above `--surface-hover-fill` on hover).
-	 */
 	.locale-select {
 		@apply w-max max-w-40 cursor-pointer rounded-md border border-subtle py-2 pr-6 pl-2 text-sm font-medium text-muted transition-all duration-300 ease-out;
 		appearance: none;
@@ -357,7 +308,6 @@ html:lang(ur) {
 		-moz-appearance: none;
 		color-scheme: dark;
 		background-color: transparent;
-		/* Set on `<select class="locale-select">` via `--locale-select-chevron` (see LanguageSwitcher.svelte) */
 		background-image: var(--locale-select-chevron);
 		background-repeat: no-repeat;
 		background-position: right 0.75rem center;
@@ -367,32 +317,6 @@ html:lang(ur) {
 
 	html[dir='rtl'] .locale-select {
 		background-position: left 0.75rem center;
-	}
-
-	@media (hover: hover) {
-		.locale-select:hover {
-			@apply -translate-y-0.5 border-subtle/90 text-main;
-			background-image: var(--locale-select-chevron), var(--surface-hover-fill);
-			background-position:
-				right 0.75rem center,
-				0 0;
-			background-size:
-				0.5625rem auto,
-				100% 100%;
-			background-repeat: no-repeat, no-repeat;
-			backdrop-filter: blur(22px) saturate(175%);
-			-webkit-backdrop-filter: blur(22px) saturate(175%);
-			box-shadow:
-				inset 0 1px 0 rgba(255, 255, 255, 0.18),
-				0 10px 36px rgba(0, 0, 0, 0.38),
-				0 0 28px rgba(0, 255, 102, 0.12);
-		}
-
-		html[dir='rtl'] .locale-select:hover {
-			background-position:
-				left 0.75rem center,
-				0 0;
-		}
 	}
 
 	.locale-select:focus-visible {
@@ -407,56 +331,97 @@ html:lang(ur) {
 		background-image: none;
 	}
 
-	@media (hover: hover) {
-		.link-accent:hover {
-			@apply border-subtle/80 text-main;
-			background-image: var(--surface-hover-fill);
-			backdrop-filter: blur(22px) saturate(175%);
-			-webkit-backdrop-filter: blur(22px) saturate(175%);
-			box-shadow:
-				inset 0 1px 0 rgba(255, 255, 255, 0.18),
-				0 0 24px rgba(0, 255, 102, 0.18),
-				0 0 48px rgba(0, 255, 102, 0.06);
-			text-shadow: 0 0 18px rgba(0, 255, 102, 0.35);
-		}
-	}
-
 	.tag-pill {
 		@apply inline-flex items-center gap-1.5 rounded-md border border-subtle bg-app/60 px-2 py-0.5 font-mono text-xs text-muted transition-all duration-300 ease-out;
 		background-image: none;
-	}
-
-	@media (hover: hover) {
-		.tag-pill:hover {
-			@apply border-accent-green/40 text-main;
-			background-color: rgba(255, 255, 255, 0.03);
-			background-image: var(--surface-hover-fill);
-			backdrop-filter: blur(22px) saturate(175%);
-			-webkit-backdrop-filter: blur(22px) saturate(175%);
-			box-shadow:
-				inset 0 1px 0 rgba(255, 255, 255, 0.12),
-				0 0 16px rgba(0, 255, 102, 0.28),
-				0 0 32px rgba(0, 255, 102, 0.1);
-		}
 	}
 
 	.social-icon {
 		@apply inline-flex origin-center items-center text-muted transition-[scale,color] duration-300 ease-out active:scale-95 motion-reduce:transition-none;
 	}
 
+	/* Shared Glassmorphism Hover States */
 	@media (hover: hover) {
+		.btn--primary:hover,
+		.btn--ghost:hover,
+		.nav-pill:hover,
+		.locale-select:hover,
+		.link-accent:hover,
+		.tag-pill:hover {
+			@apply text-main;
+			background-image: var(--surface-hover-fill);
+			backdrop-filter: blur(22px) saturate(175%);
+			-webkit-backdrop-filter: blur(22px) saturate(175%);
+		}
+
+		.btn--primary:hover {
+			@apply -translate-y-0.5 border-accent-green/45;
+			box-shadow:
+				inset 0 1px 0 rgba(255, 255, 255, 0.22),
+				0 10px 36px rgba(0, 0, 0, 0.42),
+				0 0 32px rgba(0, 255, 102, 0.16);
+		}
+
+		.btn--ghost:hover,
+		.nav-pill:hover,
+		.locale-select:hover {
+			@apply -translate-y-0.5 border-subtle/90;
+			box-shadow:
+				inset 0 1px 0 rgba(255, 255, 255, 0.18),
+				0 10px 36px rgba(0, 0, 0, 0.38),
+				0 0 28px rgba(0, 255, 102, 0.12);
+		}
+
+		.nav-pill--active:hover {
+			border-color: rgba(0, 255, 102, 0.5);
+			box-shadow:
+				inset 0 1px 0 rgba(255, 255, 255, 0.22),
+				0 10px 36px rgba(0, 0, 0, 0.38),
+				0 0 32px rgba(0, 255, 102, 0.18);
+		}
+
+		.locale-select:hover {
+			background-image: var(--locale-select-chevron), var(--surface-hover-fill);
+			background-position:
+				right 0.75rem center,
+				0 0;
+			background-size:
+				0.5625rem auto,
+				100% 100%;
+			background-repeat: no-repeat, no-repeat;
+		}
+
+		html[dir='rtl'] .locale-select:hover {
+			background-position:
+				left 0.75rem center,
+				0 0;
+		}
+
+		.link-accent:hover {
+			@apply border-subtle/80;
+			box-shadow:
+				inset 0 1px 0 rgba(255, 255, 255, 0.18),
+				0 0 24px rgba(0, 255, 102, 0.18),
+				0 0 48px rgba(0, 255, 102, 0.06);
+			text-shadow: 0 0 18px rgba(0, 255, 102, 0.35);
+		}
+
+		.tag-pill:hover {
+			@apply border-accent-green/40;
+			background-color: rgba(255, 255, 255, 0.03);
+			box-shadow:
+				inset 0 1px 0 rgba(255, 255, 255, 0.12),
+				0 0 16px rgba(0, 255, 102, 0.28),
+				0 0 32px rgba(0, 255, 102, 0.1);
+		}
+
 		.social-icon:hover {
 			@apply scale-125 text-accent-green;
 		}
 	}
 
-	/*
-	 * Ripple field blur overlay driven by `onNavigate` in +layout.svelte.
-	 * Sits below the chrome bars (z-50) so the nav/footer stay crisp while a
-	 * circular frosted-glass ripple expands from the click origin during a
-	 * route swap. Relies on `backdrop-filter` alone — no color wash — so the
-	 * effect reads as a subtle glass pulse rather than a tinted veil.
-	 */
+	/* Animations & Effects */
+	/* ---------------------------------------------------------------------- */
 	.page-ripple {
 		position: fixed;
 		inset: 0;
@@ -465,12 +430,6 @@ html:lang(ur) {
 		opacity: 0;
 		backdrop-filter: blur(0) saturate(1);
 		-webkit-backdrop-filter: blur(0) saturate(1);
-		/*
-		 * Faint frosted sheen that rides with the ripple. The page background is
-		 * near-black, so a pure backdrop-filter would be invisible — this keeps
-		 * the expansion readable while staying subtle (no colour tint, just a
-		 * low-alpha white wash that fades toward the ripple edge).
-		 */
 		background: radial-gradient(
 			circle at var(--ripple-x, 50%) var(--ripple-y, 50%),
 			rgba(255, 255, 255, 0.045),
@@ -481,7 +440,6 @@ html:lang(ur) {
 		will-change: backdrop-filter, clip-path, opacity;
 	}
 
-	/* Phase 1: circle expands from the click point, blur ramps in */
 	.page-ripple.is-expanding {
 		opacity: 1;
 		backdrop-filter: blur(32px) saturate(1.05);
@@ -494,7 +452,6 @@ html:lang(ur) {
 			-webkit-backdrop-filter 240ms cubic-bezier(0.22, 0.88, 0.28, 1);
 	}
 
-	/* Phase 2: circle stays fully expanded; blur/opacity softly fade out */
 	.page-ripple.is-fading {
 		opacity: 0;
 		backdrop-filter: blur(0) saturate(1);
@@ -514,6 +471,8 @@ html:lang(ur) {
 		}
 	}
 
+	/* Language Specific Element Overrides (Urdu) */
+	/* ---------------------------------------------------------------------- */
 	html:lang(ur) .section-title,
 	html:lang(ur) .type-display,
 	html:lang(ur) .type-post-title {
@@ -526,7 +485,6 @@ html:lang(ur) {
 		letter-spacing: var(--text-eyebrow--letter-spacing);
 	}
 
-	/* Hero career line: longer Urdu string + Naskh needs more than mono eyebrow scale */
 	html:lang(ur) .type-eyebrow.hero-eyebrow {
 		font-size: 1.125rem;
 		line-height: 1.7;
@@ -537,7 +495,6 @@ html:lang(ur) {
 		max-width: 11.5rem;
 	}
 
-	/* Mono breaks Arabic shaping; meta line mixes © / year / Urdu name */
 	html:lang(ur) .type-meta {
 		font-family: var(--font-sans);
 		letter-spacing: normal;
