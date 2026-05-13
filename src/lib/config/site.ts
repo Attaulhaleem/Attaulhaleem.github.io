@@ -5,6 +5,7 @@ import githubLogo from '$lib/assets/logos/github.svg';
 import gmailLogo from '$lib/assets/logos/gmail.svg';
 import itchIoLogo from '$lib/assets/logos/itchdotio.svg';
 import linkedinLogo from '$lib/assets/logos/linkedin.svg';
+import blueskyLogo from '$lib/assets/logos/bluesky.svg';
 import upworkLogo from '$lib/assets/logos/upwork.svg';
 import type { SocialLink } from '$lib/types/content';
 import type { Locale } from '$lib/i18n/locales';
@@ -82,6 +83,7 @@ export const heroProfilePhotoSrc = profilePhoto;
 export const socialLinks: SocialLink[] = [
 	{ label: 'Email', href: 'mailto:contact@attaul.com', iconSrc: gmailLogo },
 	{ label: 'LinkedIn', href: 'https://linkedin.com/in/attaulhaleem', iconSrc: linkedinLogo },
+	{ label: 'Bluesky', href: 'https://bsky.app/profile/attaul.com', iconSrc: blueskyLogo },
 	{ label: 'GitHub', href: 'https://github.com/Attaulhaleem', iconSrc: githubLogo },
 	{ label: 'Itch.io', href: 'https://dustypizza.itch.io', iconSrc: itchIoLogo },
 	{ label: 'Discord', href: 'https://discord.com/users/1113896603418366023', iconSrc: discordLogo },
